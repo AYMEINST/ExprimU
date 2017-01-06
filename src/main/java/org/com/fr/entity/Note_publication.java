@@ -17,45 +17,85 @@ public class Note_publication implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id_note;
-	private Date date_appreciation;
+	private Long idNote;
+	private Date dateAppreciation;
 	private String note;
 	
-	@OneToOne(mappedBy="note_pub")
+	@OneToOne(mappedBy="notePublication")
 	private Publication publication;
 	
-	public Long getId_note() {
-		return id_note;
-	}
-	public void setId_note(Long id_note) {
-		this.id_note = id_note;
-	}
-	public Date getDate_appreciation() {
-		return date_appreciation;
-	}
-	public void setDate_appreciation(Date date_appreciation) {
-		this.date_appreciation = date_appreciation;
-	}
-	public String getNote() {
-		return note;
-	}
-	public void setNote(String note) {
-		this.note = note;
-	}
-	public Publication getPublication() {
-		return publication;
-	}
-	public void setPublication(Publication publication) {
-		this.publication = publication;
-	}
-	public Note_publication(Date date_appreciation, String note, Publication publication) {
+	
+
+	public Note_publication(Long idNote, Date dateAppreciation, String note, Publication publication) {
 		super();
-		this.date_appreciation = date_appreciation;
+		this.idNote = idNote;
+		this.dateAppreciation = dateAppreciation;
 		this.note = note;
 		this.publication = publication;
 	}
+
+
+
+
 	public Note_publication() {
 		super();
 	}
 	
+	
+	public Long getIdNote() {
+		return idNote;
+	}
+
+
+
+
+	public void setIdNote(Long idNote) {
+		this.idNote = idNote;
+	}
+
+
+
+
+	public Date getDateAppreciation() {
+		return dateAppreciation;
+	}
+
+
+
+
+	public void setDateAppreciation(Date dateAppreciation) {
+		this.dateAppreciation = dateAppreciation;
+	}
+
+
+
+
+	public String getNote() {
+		return note;
+	}
+
+
+
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+
+
+
+	public Publication getPublication() {
+		return publication;
+	}
+
+
+
+
+	public void setPublication(Publication publication) {
+		this.publication = publication;
+	}
+
+
+
+
 }

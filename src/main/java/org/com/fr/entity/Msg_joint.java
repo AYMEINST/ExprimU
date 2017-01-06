@@ -7,20 +7,25 @@ public class Msg_joint extends Message implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String contenu_jtn;
+	private String contenuJoint;
 
-	public String getContenu_jtn() {
-		return contenu_jtn;
+	
+	public String getContenuJoint() {
+		return contenuJoint;
 	}
 
-	public void setContenu_jtn(String contenu_jtn) {
-		this.contenu_jtn = contenu_jtn;
+
+	public void setContenuJoint(String contenuJoint) {
+		this.contenuJoint = contenuJoint;
 	}
 
-	public Msg_joint(String contenu_jtn) {
+
+	
+	public Msg_joint(String contenuJoint) {
 		super();
-		this.contenu_jtn = contenu_jtn;
+		this.contenuJoint = contenuJoint;
 	}
+
 
 	public Msg_joint() {
 		super();

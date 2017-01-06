@@ -18,14 +18,14 @@ public class Element_publication implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id_elementpub;
+	private Long idElementPublication;
 	private String libele;
 	private String attribute;
 	public Long getId_elementpub() {
-		return id_elementpub;
+		return idElementPublication;
 	}
 	public void setId_elementpub(Long id_elementpub) {
-		this.id_elementpub = id_elementpub;
+		this.idElementPublication = id_elementpub;
 	}
 	public String getLibele() {
 		return libele;

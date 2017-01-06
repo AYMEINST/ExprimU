@@ -13,31 +13,36 @@ public class Statue extends Element_publication implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Date date_statut;
+	private Date dateStatut;
 	@ManyToOne
-	@JoinColumn(name="id_publication")
+	@JoinColumn(name="idPublication")
 	private Publication publication;
-
-	public Statue(String libele, String attribute) {
-		super(libele, attribute);
-		// TODO Auto-generated constructor stub
+	
+	
+	public Date getDateStatut() {
+		return dateStatut;
 	}
-
-	public Date getDate_statut() {
-		return date_statut;
+	public void setDateStatut(Date dateStatut) {
+		this.dateStatut = dateStatut;
 	}
-
-	public void setDate_statut(Date date_statut) {
-		this.date_statut = date_statut;
-	}
-
 	public Publication getPublication() {
 		return publication;
 	}
-
 	public void setPublication(Publication publication) {
 		this.publication = publication;
 	}
+	
+	public Statue(String libele, String attribute, Date dateStatut, Publication publication) {
+		super(libele, attribute);
+		this.dateStatut = dateStatut;
+		this.publication = publication;
+	}
+	public Statue(String libele, String attribute) {
+		super(libele, attribute);
+	}
+
+	
+	
 	
 
 }

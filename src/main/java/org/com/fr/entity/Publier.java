@@ -23,26 +23,25 @@ public class Publier implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long IdPubliRef;
-	private Date date_publication;	
+	private Long idPubliRef;
+	private Date datePublication;	
 	@ManyToOne
-	@JoinColumn(name="idpublication")
+	@JoinColumn(name="idPublication")
 	private Publication publication ;	
 	@ManyToOne
-	@JoinColumn(name="id_utilisateur")
+	@JoinColumn(name="idUtilisateur")
 	private Utilisateur utilisateur;
-	
 	public Long getIdPubliRef() {
-		return IdPubliRef;
+		return idPubliRef;
 	}
 	public void setIdPubliRef(Long idPubliRef) {
-		IdPubliRef = idPubliRef;
+		this.idPubliRef = idPubliRef;
 	}
-	public Date getDate_publication() {
-		return date_publication;
+	public Date getDatePublication() {
+		return datePublication;
 	}
-	public void setDate_publication(Date date_publication) {
-		this.date_publication = date_publication;
+	public void setDatePublication(Date datePublication) {
+		this.datePublication = datePublication;
 	}
 	public Publication getPublication() {
 		return publication;
@@ -56,16 +55,19 @@ public class Publier implements Serializable {
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
 	}
-	public Publier(Long idPubliRef, Date date_publication, Publication publication, Utilisateur utilisateur) {
+	public Publier(Long idPubliRef, Date datePublication, Publication publication, Utilisateur utilisateur) {
 		super();
-		IdPubliRef = idPubliRef;
-		this.date_publication = date_publication;
+		this.idPubliRef = idPubliRef;
+		this.datePublication = datePublication;
 		this.publication = publication;
 		this.utilisateur = utilisateur;
 	}
 	public Publier() {
 		super();
 	}
+	
+	
+	
 	
 	
 	

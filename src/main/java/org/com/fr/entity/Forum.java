@@ -16,19 +16,44 @@ public class Forum implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id_forum;
+	private Long idForum;
 	@ManyToOne()
-	@JoinColumn(name="idpublication")
-	private Publication publicationform;
-	public Forum(Publication publicationform) {
+	@JoinColumn(name="idPublication")
+	private Publication publicationForum;
+	
+	
+	public Forum() {
 		super();
-		this.publicationform = publicationform;
 	}
-	public Publication getPublicationform() {
-		return publicationform;
+
+
+	public Forum(Long idForum, Publication publicationForum) {
+		super();
+		this.idForum = idForum;
+		this.publicationForum = publicationForum;
 	}
-	public void setPublicationform(Publication publicationform) {
-		this.publicationform = publicationform;
+
+
+	public Long getIdForum() {
+		return idForum;
 	}
+
+
+	public void setIdForum(Long idForum) {
+		this.idForum = idForum;
+	}
+
+
+	public Publication getPublicationForum() {
+		return publicationForum;
+	}
+
+
+	public void setPublicationForum(Publication publicationForum) {
+		this.publicationForum = publicationForum;
+	}
+	
+	
+	
 	
 }

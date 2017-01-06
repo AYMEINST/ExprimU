@@ -19,20 +19,24 @@ public class Contenu extends Element_publication implements Serializable {
 	private static final long serialVersionUID = 1L;
 	//	publication
 	@ManyToOne
-	@JoinColumn(name="id_publication")
+	@JoinColumn(name="idPublication")
 	private Publication publication;
 //	fichier
 	@OneToMany(mappedBy="contenu")
-	private List<Fichier> listfichiers;
+	private List<Fichier> listFichiers;
+	
+	
 	public Contenu(String libele, String attribute) {
 		super(libele, attribute);
 		// TODO Auto-generated constructor stub
 	}
-	public Contenu(String libele, String attribute, Publication publication, List<Fichier> listfichiers) {
+	public Contenu(String libele, String attribute, Publication publication, List<Fichier> listFichiers) {
 		super(libele, attribute);
 		this.publication = publication;
-		this.listfichiers = listfichiers;
+		this.listFichiers = listFichiers;
 	}
+	
+		
 	public Publication getPublication() {
 		return publication;
 	}
@@ -40,10 +44,10 @@ public class Contenu extends Element_publication implements Serializable {
 		this.publication = publication;
 	}
 	public List<Fichier> getListfichiers() {
-		return listfichiers;
+		return listFichiers;
 	}
 	public void setListfichiers(List<Fichier> listfichiers) {
-		this.listfichiers = listfichiers;
+		this.listFichiers = listfichiers;
 	}
 
 	

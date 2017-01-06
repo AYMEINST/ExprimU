@@ -16,7 +16,7 @@ public class Fichier extends Element_publication implements Serializable {
 	private String libelle;
 	
 	@ManyToOne
-	@JoinColumn(name="id_contenu")
+	@JoinColumn(name="idContenu")
 	private Contenu contenu;
 	
 	public Byte[] getFichier() {

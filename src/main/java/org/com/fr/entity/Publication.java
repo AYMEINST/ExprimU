@@ -19,69 +19,98 @@ public class Publication implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long idpublication;
-	private String contenu_pub;
-	private String titre_pub;
+	private Long idPublication;
+	private String contenuPublication;
+	private String titrePublication;
 //	publication coms
-	@OneToMany(mappedBy="publicationcoms")
-	private List<Commentaire> listcoms;
+	@OneToMany(mappedBy="publication")
+	private List<Commentaire> listCommmentaire;
 //	publication forum
-	@OneToMany(mappedBy="publicationform")
-	private List<Forum> lisforum;
+	@OneToMany(mappedBy="publicationForum")
+	private List<Forum> listForum;
 //	note publication
 	@OneToOne
-	@JoinColumn(name="note_publication")
-	private Note_publication note_pub;
+	@JoinColumn(name="notePublication")
+	private Note_publication notePublication;
 //	contenu
 	@OneToMany(mappedBy="publication")
-	private List<Contenu> listcontenu;
+	private List<Contenu> listContenu;
 //	statue
 	@OneToMany(mappedBy="publication")
-	private List<Statue> liststatue;
-	public Long getIdpublication() {
-		return idpublication;
+	private List<Statue> listStatue;
+	
+	
+	
+	public Long getIdPublication() {
+		return idPublication;
 	}
-	public void setIdpublication(Long idpublication) {
-		this.idpublication = idpublication;
+	public void setIdPublication(Long idPublication) {
+		this.idPublication = idPublication;
 	}
-	public String getContenu_pub() {
-		return contenu_pub;
+	public String getContenuPublication() {
+		return contenuPublication;
 	}
-	public void setContenu_pub(String contenu_pub) {
-		this.contenu_pub = contenu_pub;
+	public void setContenuPublication(String contenuPublication) {
+		this.contenuPublication = contenuPublication;
 	}
-	public String getTitre_pub() {
-		return titre_pub;
+	public String getTitrePublication() {
+		return titrePublication;
 	}
-	public void setTitre_pub(String titre_pub) {
-		this.titre_pub = titre_pub;
+	public void setTitrePublication(String titrePublication) {
+		this.titrePublication = titrePublication;
 	}
 	public List<Commentaire> getListcoms() {
-		return listcoms;
+		return listCommmentaire;
 	}
 	public void setListcoms(List<Commentaire> listcoms) {
-		this.listcoms = listcoms;
+		this.listCommmentaire = listcoms;
 	}
-	public Note_publication getNote_pub() {
-		return note_pub;
+	public List<Forum> getListForum() {
+		return listForum;
 	}
-	public void setNote_pub(Note_publication note_pub) {
-		this.note_pub = note_pub;
+	public void setListForum(List<Forum> listForum) {
+		this.listForum = listForum;
 	}
-	public List<Contenu> getListcontenu() {
-		return listcontenu;
+	public Note_publication getNotePublication() {
+		return notePublication;
 	}
-	public void setListcontenu(List<Contenu> listcontenu) {
-		this.listcontenu = listcontenu;
+	public void setNotePublication(Note_publication notePublication) {
+		this.notePublication = notePublication;
 	}
-	public List<Statue> getListstatue() {
-		return liststatue;
+	public List<Contenu> getListContenu() {
+		return listContenu;
 	}
-	public void setListstatue(List<Statue> liststatue) {
-		this.liststatue = liststatue;
+	public void setListContenu(List<Contenu> listContenu) {
+		this.listContenu = listContenu;
 	}
+	public List<Statue> getListStatue() {
+		return listStatue;
+	}
+	public void setListStatue(List<Statue> listStatue) {
+		this.listStatue = listStatue;
+	}
+	
+	
+	public Publication(Long idPublication, String contenuPublication, String titrePublication,
+			List<Commentaire> listcoms, List<Forum> listForum, Note_publication notePublication,
+			List<Contenu> listContenu, List<Statue> listStatue) {
+		super();
+		this.idPublication = idPublication;
+		this.contenuPublication = contenuPublication;
+		this.titrePublication = titrePublication;
+		this.listCommmentaire = listcoms;
+		this.listForum = listForum;
+		this.notePublication = notePublication;
+		this.listContenu = listContenu;
+		this.listStatue = listStatue;
+	}
+	
 	public Publication() {
 		super();
 	}
+	
+	
+	
+	
 
 }

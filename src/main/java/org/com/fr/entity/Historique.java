@@ -27,10 +27,10 @@ public class Historique implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long IdHistorique ;
 	private Date DateHistorique;
-	@OneToMany(mappedBy="id_forum")
+	@OneToMany(mappedBy="idForum")
 	private List<Forum>ListForum;
 	@ManyToOne
-	@JoinColumn(name="id_utilisateur")
+	@JoinColumn(name="idUtilisateur")
 	private Utilisateur utilisateur;
 	
 	
@@ -58,9 +58,6 @@ public class Historique implements Serializable {
 	}
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
-	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 	public Historique(Long idHistorique, Date dateHistorique, List<Forum> listForum, Utilisateur utilisateur) {
 		super();

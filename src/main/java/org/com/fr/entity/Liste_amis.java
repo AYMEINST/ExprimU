@@ -16,35 +16,41 @@ public class Liste_amis implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id_amisL;;
+	private int idListAmis;;
 	
 	@ManyToOne()
-	@JoinColumn(name="id_utilisateur")
+	@JoinColumn(name="idUtilisateur")
 	private Utilisateur utilisateur;
 	
 	public Liste_amis() {
 		super();
 	}
-
-	public int getId_amisL() {
-		return id_amisL;
+	
+	public Liste_amis(int idListAmis, Utilisateur utilisateur) {
+		super();
+		this.idListAmis = idListAmis;
+		this.utilisateur = utilisateur;
 	}
 
-	public void setId_amisL(int id_amisL) {
-		this.id_amisL = id_amisL;
+	public int getIdListAmis() {
+		return idListAmis;
+	}
+
+	public void setIdListAmis(int idListAmis) {
+		this.idListAmis = idListAmis;
 	}
 
 	public Utilisateur getUtilisateur() {
 		return utilisateur;
 	}
+
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
 	}
 
-	public Liste_amis(Utilisateur utilisateur) {
-		super();
-		this.utilisateur = utilisateur;
-	}
+	
+
+	
 	
 	
 }

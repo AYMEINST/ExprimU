@@ -18,24 +18,39 @@ public class Message implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long idmessage;
+	private Long idMessage;
 	
-	@ManyToMany(mappedBy="listMEssages")
-	private List<Utilisateur> utilisateurs;
+	@ManyToMany(mappedBy="listMessages")
+	private List<Utilisateur> utilisateur;
 	
+	
+	public Long getIdMessage() {
+		return idMessage;
+	}
+
+	public void setIdMessage(Long idMessage) {
+		this.idMessage = idMessage;
+	}
+
+	public List<Utilisateur> getUtilisateur() {
+		return utilisateur;
+	}
+
+	public void setUtilisateur(List<Utilisateur> utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
+	public Message(Long idMessage, List<Utilisateur> utilisateur) {
+		super();
+		this.idMessage = idMessage;
+		this.utilisateur = utilisateur;
+	}
+
 	public Message() {
 		super();
 	}
-	public Long getIdmessage() {
-		return idmessage;
-	}
-	public void setIdmessage(Long idmessage) {
-		this.idmessage = idmessage;
-	}
-	public Message(List<Utilisateur> utilisateurs) {
-		super();
-		this.utilisateurs = utilisateurs;
-	}
+
+
 	
 	
 }
