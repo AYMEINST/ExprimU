@@ -16,7 +16,7 @@ public class Forum implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id_forum;
+	private Long id_forum;
 	@ManyToOne()
 	@JoinColumn(name="idpublication")
 	private Publication publicationform;

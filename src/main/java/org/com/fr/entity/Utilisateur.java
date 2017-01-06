@@ -56,7 +56,7 @@ public class Utilisateur implements Serializable {
 		this.listMEssages = listMEssages;
 	}
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id_utilisateur;
 	private String Nom;
 	private String Prenom;
@@ -66,6 +66,9 @@ public class Utilisateur implements Serializable {
 	private String pays;
 	private String login;
 	private String motdepasse;
+	@ManyToOne
+	@JoinColumn(name="IdRole")
+	private Roles  role;
 	private boolean statue_compte;
 //	forum uniderctionnel
 	@ManyToOne
@@ -149,6 +152,15 @@ public class Utilisateur implements Serializable {
 	public void setStatue_compte(boolean statue_compte) {
 		this.statue_compte = statue_compte;
 	}
+	
+	
+	public Roles getRole() {
+		return role;
+	}
+	public void setRole(Roles role) {
+		this.role = role;
+	}
+	
 	public Utilisateur() {
 		super();
 	}
