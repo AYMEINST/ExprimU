@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>White | responsive bootstrap3 html5 one page template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
@@ -80,68 +80,91 @@
 
 		<!-- HEADER -->
 		<header>
-
-			<!-- MENU BLOCK -->
+		<!-- MENU BLOCK -->
 			<div class="menu_block">
-
+			
 				<!-- CONTAINER -->
-				<div class="container clearfix ">
-				
-					<div class="row">
-					  <!-- LOGO -->
-					  <div class="col-xs-12 col-md-4 logo pull-left" style="background-color:#FFE">
+				<div class="container clearfix">
+					
+					<!-- LOGO -->
+					<div class="logo pull-left">
 						<a href="index.html" ><span class="b1">Logo</span></a>
-					  </div>
-					  <!-- //LOGO -->
-					  <div class="col-xs-12 col-md-8" id="search-form" style="background-color:#000">
-						  <!-- SEARCH FORM  -->
-						  <div class="col-xs-9 col-md-9" id="search-form" style="background-color:#EFF">
-							<form method="get" action="#">
-								<input type="text" name="Search" style="width: 250px;" value="Taper votre recherche et appuyer sur entrÃ©e" onFocus="if (this.value == 'Search') this.value = '';" onBlur="if (this.value == '') this.value = 'Search';" />
-							</form>
-						  </div>
-						  <!-- //SEARCH FORM-->
-						  
-						  <!-- LANGUAGE -->
-						  <div class="col-xs-3 col-md-3 text-right" id="language-form" style="background-color:#FEF">
-							  <div class="input-group-btn">
-						        <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Langue<span class="caret"></span></button>
-						        <ul class="dropdown-menu dropdown-menu-left">
-						          <li><a href="#">FranÃ§ais</a></li>
-							      <li><a href="#">Anglais</a></li>
-							      <li><a href="#">Espagnol</a></li>
-		        				</ul>
-		      				  </div>
-						  </div>
-						  <!-- //LANGUAGE -->
-						</div>
-
-				</div>
-				<!-- //MENU BLOCK -->
-				
-				<!-- MENU -->
-<!-- 				<div class="pull-right"> -->
-<!-- 					<nav class="navmenu center"> -->
-<!-- 						<ul> -->
-<!-- 							<li class="first active scroll_btn"><a href="#accueil" >Accueil</a></li> -->
-<!-- 							<li class="scroll_btn"><a href="#editer" >Editer</a></li> -->
-<!-- 							<li class="scroll_btn"><a href="#publier" >Publier</a></li> -->
-<!-- 							<li class="scroll_btn"><a href="#actualites" >ActualitÃ©s</a></li> -->
-<!-- 							<li class="scroll_btn"><a href="#quiSommesNous" >Qui sommes nous ?</a></li> -->
-<!-- 							<li class="scroll_btn last"><a href="#Contact" >Contacts</a></li> -->
-<!-- 							<li class="sub-menu"> -->
-<!-- 								<a href="javascript:void(0);" >Pages</a> -->
-<!-- 								<ul> -->
-<!-- 									<li><a href="blog.html" >Blog</a></li> -->
-<!-- 									<li><a href="blog-post.html" >Blog Post</a></li> -->
-<!-- 									<li><a href="portfolio-post.html" >Portfolio Single Work</a></li> -->
-<!-- 								</ul> -->
-<!-- 							</li> -->
-<!-- 						</ul> -->
-<!-- 					</nav> -->
-<!-- 				</div> -->
-				<!-- //MENU -->
+					</div>
+					<!-- //LOGO -->
+					
+					<!--LANGUAGE -->
+						<div id="language-form"class="pull-right">
+							<button type="button" class="btn btn-default btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Langue<span class="caret"></span></button>
+						    <ul class="dropdown-menu">
+							    <li><a href="#">Anglais</a></li>
+							    <li><a href="#">Arabe</a></li>
+							    <li><a href="#">Français</a></li>								
+								<li><a href="#">Espagnol</a></li>								
+		        			</ul>
+		        		</div>
+		        	<!--//LANGUAGE -->
+					
+					<!-- SEARCH FORM -->
+					<div id="search-form" class="pull-right">
+						<form method="get" action="#">
+							<input type="text" name="Search" value="Recherche" onFocus="if (this.value == 'Search') this.value = '';" onBlur="if (this.value == '') this.value = 'Search';" />
+						</form>
+					</div>
+					<!-- SEARCH FORM -->
+					
+					<!-- MENU -->
+					<div class="pull-right">
+						<nav class="navmenu center">
+							<ul>
+								<li class="first active scroll_btn"><a href="#accueil" >Accueil</a></li>
+								<li class="scroll_btn"><a href="#editer" >Editer</a></li>
+								<li class="scroll_btn"><a href="#publier" >Publier</a></li>
+								<li class="scroll_btn"><a href="#actualites" >Actualités</a></li>
+								<li class="scroll_btn"><a href="#quiSommesNous" >Qui sommes nous ?</a></li>
+								<li class="scroll_btn last"><a href="#Contact" >Contacts</a></li>
+							</ul>
+						</nav>
+					</div><!-- //MENU -->
+				</div><!-- //MENU BLOCK -->
 			</div><!-- //CONTAINER -->
+
+ 			<!-- MENU BLOCK -->
+<!-- 			<div class="menu_block"> -->
+
+<!-- 				CONTAINER -->
+<!-- 				<div class="container clearfix" style="background-color:#FFF> -->
+				
+<!-- 					<div class="row"> -->
+<!-- 					  LOGO -->
+<!-- 					  <div class="col-xs-4 col-md-4 logo pull-left" style="background-color:#FFE"> -->
+<!-- 						<a href="index.html" ><span class="b1">Logo</span></a> -->
+<!-- 					  </div> -->
+<!-- 					  //LOGO -->
+<!-- 					  <div class="col-xs-8 col-md-8" id="search-form" style="vertical-align: center !important;background-color:#000"> -->
+<!-- 						  SEARCH FORM  -->
+<!-- 						  <div class="col-xs-9 col-md-9" id="search-form" style="background-color:#EFF"> -->
+<!-- 							<form method="get" action="#"> -->
+<!-- 								<input type="text" name="Search" style="width: 250px;" value="Taper votre recherche et appuyer sur entrée" onFocus="if (this.value == 'Search') this.value = '';" onBlur="if (this.value == '') this.value = 'Search';" /> -->
+<!-- 							</form> -->
+<!-- 						  </div> -->
+<!-- 						  //SEARCH FORM -->
+						  
+<!-- 						  LANGUAGE -->
+<!-- 						  <div class="col-xs-3 col-md-3 text-right" id="language-form" style="background-color:#FEF; margin: auto;"> -->
+<!-- 						        <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Langue<span class="caret"></span></button> -->
+<!-- 						        <ul class="dropdown-menu dropdown-menu-left"> -->
+<!-- 						          <li><a href="#">Français</a></li> -->
+<!-- 							      <li><a href="#">Anglais</a></li> -->
+<!-- 							      <li><a href="#">Espagnol</a></li> -->
+<!-- 		        				</ul> -->
+<!-- 						  </div> -->
+<!-- 						  //LANGUAGE -->
+<!-- 						</div> -->
+
+<!-- 				</div> -->
+<!-- 				//MENU BLOCK -->
+				
+				
 		</header><!-- //HEADER -->
 
 
