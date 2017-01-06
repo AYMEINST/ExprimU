@@ -17,8 +17,8 @@ public class Carte_BK implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id_carte;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id_carte;
 	private int numero_bk;
 	private Date date_experation;
 	
@@ -26,11 +26,11 @@ public class Carte_BK implements Serializable {
 	@JoinColumn(name="id_utilisateur")
 	private Utilisateur utilisateur_cbk;
 
-	public int getId_carte() {
+	public Long getId_carte() {
 		return id_carte;
 	}
 
-	public void setId_carte(int id_carte) {
+	public void setId_carte(Long id_carte) {
 		this.id_carte = id_carte;
 	}
 

@@ -15,15 +15,15 @@ public class Demande_ajout implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id_demande;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id_demande;
 	@ManyToOne
 	@JoinColumn(name="id_utilisateur")
 	private Utilisateur utilisateur;
-	public int getId_demande() {
+	public Long getId_demande() {
 		return id_demande;
 	}
-	public void setId_demande(int id_demande) {
+	public void setId_demande(Long id_demande) {
 		this.id_demande = id_demande;
 	}
 	public Utilisateur getUtilisateur() {

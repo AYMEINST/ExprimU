@@ -16,8 +16,6 @@ import javax.persistence.OneToOne;
 
 
 @Entity
-//@AssociationOverrides({@AssociationOverride(name="clecompose.idpublication", joinColumns=@JoinColumn(name="idpublication",referencedColumnName="FK.idpublication")),
-//@AssociationOverride(name="clecompose.id_utilisateur",joinColumns= @JoinColumn(name="id_utilisateur",referencedColumnName="FK.id_utilisateur"))})
 public class Publier implements Serializable {
 	/**
 	 * 

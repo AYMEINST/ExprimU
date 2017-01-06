@@ -17,8 +17,8 @@ public class Commentaire implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id_commentaire;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id_commentaire;
 	private String  contenu;
 	private Date date_coms;
 	@ManyToOne()
@@ -28,10 +28,10 @@ public class Commentaire implements Serializable {
 	@ManyToOne()
 	@JoinColumn(name="idpublication")
 	private Publication publicationcoms;
-	public int getId_commentaire() {
+	public Long getId_commentaire() {
 		return id_commentaire;
 	}
-	public void setId_commentaire(int id_commentaire) {
+	public void setId_commentaire(Long id_commentaire) {
 		this.id_commentaire = id_commentaire;
 	}
 	public String getContenu() {

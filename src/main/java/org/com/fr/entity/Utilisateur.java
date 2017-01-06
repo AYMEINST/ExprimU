@@ -57,7 +57,7 @@ public class Utilisateur implements Serializable {
 	}
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id_utilisateur;
+	private Long id_utilisateur;
 	private String Nom;
 	private String Prenom;
 	private Date date_naissance;
@@ -95,10 +95,10 @@ public class Utilisateur implements Serializable {
 			inverseJoinColumns=@JoinColumn(name="idmessage",referencedColumnName="idmessage"))
 	private List<Message> listMEssages;
 	
-	public int getId_utilisateur() {
+	public Long getId_utilisateur() {
 		return id_utilisateur;
 	}
-	public void setId_utilisateur(int id_utilisateur) {
+	public void setId_utilisateur(Long id_utilisateur) {
 		this.id_utilisateur = id_utilisateur;
 	}
 	public String getNom() {

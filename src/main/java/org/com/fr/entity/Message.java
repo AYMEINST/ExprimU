@@ -17,8 +17,8 @@ public class Message implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int idmessage;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long idmessage;
 	
 	@ManyToMany(mappedBy="listMEssages")
 	private List<Utilisateur> utilisateurs;
@@ -26,10 +26,10 @@ public class Message implements Serializable {
 	public Message() {
 		super();
 	}
-	public int getIdmessage() {
+	public Long getIdmessage() {
 		return idmessage;
 	}
-	public void setIdmessage(int idmessage) {
+	public void setIdmessage(Long idmessage) {
 		this.idmessage = idmessage;
 	}
 	public Message(List<Utilisateur> utilisateurs) {

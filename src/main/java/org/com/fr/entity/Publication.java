@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -17,8 +18,8 @@ public class Publication implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue
-	private int idpublication;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long idpublication;
 	private String contenu_pub;
 	private String titre_pub;
 //	publication coms
@@ -37,10 +38,10 @@ public class Publication implements Serializable {
 //	statue
 	@OneToMany(mappedBy="publication")
 	private List<Statue> liststatue;
-	public int getIdpublication() {
+	public Long getIdpublication() {
 		return idpublication;
 	}
-	public void setIdpublication(int idpublication) {
+	public void setIdpublication(Long idpublication) {
 		this.idpublication = idpublication;
 	}
 	public String getContenu_pub() {

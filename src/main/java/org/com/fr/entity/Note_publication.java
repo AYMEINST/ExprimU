@@ -16,18 +16,18 @@ public class Note_publication implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id_note;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id_note;
 	private Date date_appreciation;
 	private String note;
 	
 	@OneToOne(mappedBy="note_pub")
 	private Publication publication;
 	
-	public int getId_note() {
+	public Long getId_note() {
 		return id_note;
 	}
-	public void setId_note(int id_note) {
+	public void setId_note(Long id_note) {
 		this.id_note = id_note;
 	}
 	public Date getDate_appreciation() {
