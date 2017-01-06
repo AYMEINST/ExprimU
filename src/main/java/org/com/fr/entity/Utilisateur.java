@@ -77,6 +77,9 @@ public class Utilisateur implements Serializable {
 //	commentaire
 	@OneToMany(mappedBy="utilisateurcoms")
 	private List<Commentaire> listcoms;
+//	publication
+	@OneToMany(mappedBy="idpublication")
+	private List<Publication> listpublication;
 //	carte bancaire
 	@OneToMany(mappedBy="utilisateur_cbk")
 	private List<Carte_BK> listcarte_bk;
@@ -161,6 +164,14 @@ public class Utilisateur implements Serializable {
 		this.role = role;
 	}
 	
+	
+	
+	public List<Publication> getListpublication() {
+		return listpublication;
+	}
+	public void setListpublication(List<Publication> listpublication) {
+		this.listpublication = listpublication;
+	}
 	public Utilisateur() {
 		super();
 	}
