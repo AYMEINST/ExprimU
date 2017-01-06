@@ -1,4 +1,4 @@
-package org.com.metier;
+package org.com.fr.metier;
 
 public interface UtilisateurMetier {
 	
