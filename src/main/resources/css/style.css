@@ -1698,12 +1698,12 @@ input[type="color"]:focus {
 
 }
 
-@media (max-width: 999px) {
+@media (max-width: 1024px) {
 
 	
 }
-/* SUPER IMPORTANT POUR LA TAILLE DU MENU  */
-@media (min-width: 992px) and (max-width: 999px) {
+
+@media (min-width: 992px) and (max-width: 1199px) {
 	.parallax, .cleancode_block, #team {background-attachment:scroll !important; background-size:100% auto !important; -webkit-background-size:100% auto !important;}
 	
 	
@@ -1880,8 +1880,8 @@ input[type="color"]:focus {
 	.logo a {font-size:22px;}
 	
 	
-	#search-form input:focus {width:42px;}
-	#language-form input:focus {width:42px;}
+	#search-form  {display:none;}
+	#language-form {display:none;}
 	
 	
 /* __________ Menu __________ */
@@ -2009,7 +2009,7 @@ input[type="color"]:focus {
 	
 }
 
-@media (max-width: px) {
+@media (max-width: 479px) {
 
 	#search-form {display:none;}
 	#language-form {display:none;}
@@ -2073,7 +2073,16 @@ input[type="color"]:focus {
 
 }
 
-
+/*Modif AKRICH*/
+.logo a img{
+    outline: 0;
+    vertical-align: top;
+    border: 0;
+    max-width: 100.1%;
+    height: auto;
+    position: relative;
+    margin: 20px 20px 20px 19px;
+}
 
 
 
