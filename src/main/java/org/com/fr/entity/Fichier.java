@@ -17,7 +17,7 @@ public class Fichier extends Element_publication implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name="idContenu")
-	private Contenu contenu;
+	
 	
 	public Byte[] getFichier() {
 		return fichier;
@@ -35,11 +35,11 @@ public class Fichier extends Element_publication implements Serializable {
 		super(libele, attribute);
 		// TODO Auto-generated constructor stub
 	}
-	public Fichier(String libele, String attribute, Byte[] fichier, String libelle, Contenu contenu) {
+	public Fichier(String libele, String attribute, Byte[] fichier, String libelle) {
 		super(libele, attribute);
 		this.fichier = fichier;
 		this.libelle = libelle;
-		this.contenu = contenu;
+		
 	}
 
 }

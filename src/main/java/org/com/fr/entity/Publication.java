@@ -26,15 +26,13 @@ public class Publication implements Serializable {
 	@OneToMany(mappedBy="publication")
 	private List<Commentaire> listCommmentaire;
 //	publication forum
-	@OneToMany(mappedBy="publicationForum")
-	private List<Forum> listForum;
+//	@OneToMany(mappedBy="publicationForum")
+//	private List<Forum> listForum;
 //	note publication
 	@OneToOne
 	@JoinColumn(name="notePublication")
 	private Note_publication notePublication;
-//	contenu
-	@OneToMany(mappedBy="publication")
-	private List<Contenu> listContenu;
+
 //	statue
 	@OneToMany(mappedBy="publication")
 	private List<Statue> listStatue;
@@ -65,24 +63,13 @@ public class Publication implements Serializable {
 	public void setListcoms(List<Commentaire> listcoms) {
 		this.listCommmentaire = listcoms;
 	}
-	public List<Forum> getListForum() {
-		return listForum;
-	}
-	public void setListForum(List<Forum> listForum) {
-		this.listForum = listForum;
-	}
 	public Note_publication getNotePublication() {
 		return notePublication;
 	}
 	public void setNotePublication(Note_publication notePublication) {
 		this.notePublication = notePublication;
 	}
-	public List<Contenu> getListContenu() {
-		return listContenu;
-	}
-	public void setListContenu(List<Contenu> listContenu) {
-		this.listContenu = listContenu;
-	}
+	
 	public List<Statue> getListStatue() {
 		return listStatue;
 	}
@@ -93,15 +80,13 @@ public class Publication implements Serializable {
 	
 	public Publication(Long idPublication, String contenuPublication, String titrePublication,
 			List<Commentaire> listcoms, List<Forum> listForum, Note_publication notePublication,
-			List<Contenu> listContenu, List<Statue> listStatue) {
+			 List<Statue> listStatue) {
 		super();
 		this.idPublication = idPublication;
 		this.contenuPublication = contenuPublication;
 		this.titrePublication = titrePublication;
 		this.listCommmentaire = listcoms;
-		this.listForum = listForum;
 		this.notePublication = notePublication;
-		this.listContenu = listContenu;
 		this.listStatue = listStatue;
 	}
 	

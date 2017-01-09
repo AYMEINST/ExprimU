@@ -1,6 +1,8 @@
 package org.com.fr.entity;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 @Entity
 public class Forum implements Serializable {
 	/**
@@ -17,20 +20,23 @@ public class Forum implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idForum;
-	@ManyToOne()
-	@JoinColumn(name="idPublication")
-	private Publication publicationForum;
+	private Byte[] fichier;
+	private Date DateCreationForum;
+	@OneToMany(mappedBy="forum")
+	private List <CommentaireForum> commentairefurum;
 	
 	
-	public Forum() {
+	
+	public Forum(Byte[] fichier, Date dateCreationForum, List<CommentaireForum> commentairefurum) {
 		super();
+		this.fichier = fichier;
+		DateCreationForum = dateCreationForum;
+		this.commentairefurum = commentairefurum;
 	}
 
 
-	public Forum(Long idForum, Publication publicationForum) {
+	public Forum() {
 		super();
-		this.idForum = idForum;
-		this.publicationForum = publicationForum;
 	}
 
 
@@ -44,16 +50,39 @@ public class Forum implements Serializable {
 	}
 
 
-	public Publication getPublicationForum() {
-		return publicationForum;
+	public Byte[] getFichier() {
+		return fichier;
 	}
 
 
-	public void setPublicationForum(Publication publicationForum) {
-		this.publicationForum = publicationForum;
+	public void setFichier(Byte[] fichier) {
+		this.fichier = fichier;
+	}
+
+
+	public Date getDateCreationForum() {
+		return DateCreationForum;
+	}
+
+
+	public void setDateCreationForum(Date dateCreationForum) {
+		DateCreationForum = dateCreationForum;
+	}
+
+
+	public List<CommentaireForum> getCommentairefurum() {
+		return commentairefurum;
+	}
+
+
+	public void setCommentairefurum(List<CommentaireForum> commentairefurum) {
+		this.commentairefurum = commentairefurum;
 	}
 	
 	
+    
+
+
 	
 	
 }
