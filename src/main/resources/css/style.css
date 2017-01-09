@@ -347,10 +347,6 @@ header {
 
 
 
-
-
-
-
 /*-----------------------------------------------------------------------------------*/
 /*	SEARCH FORM TOP
 /*-----------------------------------------------------------------------------------*/
@@ -397,16 +393,14 @@ header {
 /*-----------------------------------------------------------------------------------*/
 /*	LANGUAGE FORM TOP
 /*-----------------------------------------------------------------------------------*/
-#language-form form {
+#language-form button {
 	position:relative;
 	height:40px;
 	margin:20px 0 20px 19px;
-	padding-left:49px;
 	border-left:1px solid #ccc;
 	font-family: FontAwesome;
 }
-#language-form form:before {
-	content: "\f002";
+#language-form button:before {
 	position:absolute;
 	left:29px;
 	top:-2px;
@@ -415,7 +409,6 @@ header {
 	font-size:15px;
 	color:#cccc;
 }
-
 #language-form input {
 	width:60px;
 	margin:0;
@@ -1705,12 +1698,12 @@ input[type="color"]:focus {
 
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 999px) {
 
 	
 }
-
-@media (min-width: 992px) and (max-width: 1199px) {
+/* SUPER IMPORTANT POUR LA TAILLE DU MENU  */
+@media (min-width: 992px) and (max-width: 999px) {
 	.parallax, .cleancode_block, #team {background-attachment:scroll !important; background-size:100% auto !important; -webkit-background-size:100% auto !important;}
 	
 	
@@ -2016,7 +2009,7 @@ input[type="color"]:focus {
 	
 }
 
-@media (max-width: 479px) {
+@media (max-width: px) {
 
 	#search-form {display:none;}
 	#language-form {display:none;}
