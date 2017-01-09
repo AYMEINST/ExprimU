@@ -1,8 +1,5 @@
 package org.com.fr.dao;
-
-import org.com.fr.entity.Utilisateur;
 import org.springframework.data.jpa.repository.JpaRepository;
-
+import org.com.fr.entity.Utilisateur;
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> {
-
 }
