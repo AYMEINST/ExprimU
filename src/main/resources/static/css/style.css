@@ -2065,7 +2065,7 @@ input[type="color"]:focus {
 @media (max-width: 344px) {
 	
 	#logo-max{display : none;} 
-	#logo-max{display : inline;}
+	#logo-min{display : inline;}
 	#search-form{display : none;}
 	#language-form{display : none;}
 }
