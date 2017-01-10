@@ -390,52 +390,20 @@ header {
 	padding: 11px 20px 11px 0;
 }
 
+
 /*-----------------------------------------------------------------------------------*/
 /*	LANGUAGE FORM TOP
 /*-----------------------------------------------------------------------------------*/
-#language-form button {
+#language-form input {
 	position:relative;
-	height:40px;
-	margin:20px 0 20px 19px;
+	height:30px;
+	width: 30px;
 	border-left:1px solid #ccc;
 	font-family: FontAwesome;
+	align:center;
+	margin-top: 25px;
+	margin-left: 10px;
 }
-#language-form button:before {
-	position:absolute;
-	left:29px;
-	top:-2px;
-	height:40px;
-	line-height:40px;
-	font-size:15px;
-	color:#cccc;
-}
-#language-form input {
-	width:60px;
-	margin:0;
-	padding:11px 0;
-	text-transform:none;
-	font-family: 'Roboto', sans-serif;
-	font-weight:300;
-	line-height:20px;
-	font-size: 13px;
-	color: #999;	
-	background: none;
-	border: 0;
-	box-shadow: none;	 
-	transition: all 0.3s ease-in-out; 
-	-webkit-transition: all 0.3s ease-in-out;
-}
-#language-form input:focus {
-	width:140px;
-	padding: 11px 20px 11px 0;
-}
-
-
-
-
-
-
-
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -1698,19 +1666,17 @@ input[type="color"]:focus {
 
 }
 
-@media (max-width: 1024px) {
-
-	
+@media (min-width: 1024px) {
+	#logo-min{display : none;}
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
 	.parallax, .cleancode_block, #team {background-attachment:scroll !important; background-size:100% auto !important; -webkit-background-size:100% auto !important;}
-	
-	
+	#logo-min{display : none;}
 	h2 {font-size:35px; line-height:35px;}
 
 /* __________ Menu __________ */
-	.navmenu ul li a {padding-left:15px; padding-right:15px;}
+	.navmenu ul li a {padding-left:8px; padding-right:8px;font-size: 12px;}/* change for the menu size*/
 
 /* __________ Index __________ */
 	.cleancode_block p.title {font-size:70px; line-height:70px;}
@@ -1775,15 +1741,13 @@ input[type="color"]:focus {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-	.logo a {font-size:22px;}
-	
+	#logo-max{display : none;}
 	
 	#search-form input:focus {width:42px;}
-	#language-form input:focus {width:42px;}
 	
 
 /* __________ Menu __________ */
-	.navmenu ul li a {padding-left:10px; padding-right:10px; font-size:12px;}
+	.navmenu ul li a {padding-left:9px; padding-right:9px; font-size:10px;}/* change for the menu size*/
 	
 	
 	
@@ -1871,6 +1835,7 @@ input[type="color"]:focus {
 }
 
 @media (max-width: 767px) {
+	#logo-min{display : none;}
 	.container {padding-left:15px; padding-right:15px;}
 	
 	
@@ -1880,15 +1845,14 @@ input[type="color"]:focus {
 	.logo a {font-size:22px;}
 	
 	
-	#search-form  {display:none;}
-	#language-form {display:none;}
+	#search-form input:focus {width:42px;}
 	
 	
 /* __________ Menu __________ */
 	a.menu_toggler {display:inline-block; float:right; margin: 20px 0 0 20px; width:40px; height:40px; text-align:center; line-height:38px; font-size:23px; color:#fff; background-color:#333;}
 	a.menu_toggler:hover {background-color:#333;}
 	
-	.navmenu {position:absolute; left:0; right:0; top:100px; background-color:#fff;}
+	.navmenu {position:absolute; left:0; right:0; top:80px; background-color:#fff;}
 	.navmenu ul {padding:10px 0;}
 	.navmenu ul li {display:block; text-align:left;}
 	.navmenu ul li a {padding:4px 20px;}
@@ -2010,9 +1974,6 @@ input[type="color"]:focus {
 }
 
 @media (max-width: 479px) {
-
-	#search-form {display:none;}
-	#language-form {display:none;}
 	
 	
 /* __________ Index __________ */
@@ -2073,6 +2034,7 @@ input[type="color"]:focus {
 
 }
 
+
 /*Modif AKRICH*/
 .logo a img{
     outline: 0;
@@ -2086,7 +2048,27 @@ input[type="color"]:focus {
 
 
 
+@media (max-width: 545px) {
+	
+	#logo-max{display : inline;}
+	
+}
 
+@media (max-width: 455px) {
+	
+	
+	#logo-max{display : none;}
+	#logo-min{display : inline;} 
+}
+
+
+@media (max-width: 344px) {
+	
+	#logo-max{display : none;} 
+	#logo-max{display : inline;}
+	#search-form{display : none;}
+	#language-form{display : none;}
+}
 
 
 

@@ -89,23 +89,24 @@
 					
 					<!-- LOGO -->
 					<div class="logo pull-left">
-						<a href="index.html" ><img src="../images/Logo-.png" width="157" height="44" alt="image"></a>
+						<div class="logo">
+							<div id="logo-max"><a href="index.html" ><img src="../images/Logo-.png" width="157" height="44" alt="image"></a></div>
+							<div id="logo-min"><a href="index.html" ><img src="../images/Logo-min.png" width="44" height="44" alt="image"></a></div>
+						</div>
 					</div>
 					
 					<!--LANGUAGE -->
 						<div id="language-form"class="pull-right text-center btn-group">
-							<button type="button" class="btn btn-default btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Langue<span class="caret"></span></button>
+						<input type="image"src="../images/FR.svg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						    <ul class="dropdown-menu">
-							    <li><a href="#">Anglais</a></li>
-							    <li><a href="#">Arabe</a></li>
-							    <li><a href="#">Français</a></li>								
-								<li><a href="#">Espagnol</a></li>								
+							    <li><a href="#"><img src="../images/GB.svg" style="height:30px;width: 30px;margin-top: -5px;" alt="Anglais"> English</a></li>
+							    <li><a href="#"><img src="../images/FR.svg" style="height:30px;width: 30px;margin-top: -5px;" alt="Français"> Français</a></li>															
 		        			</ul>
 		        		</div>
 		        	<!--//LANGUAGE -->
 					
 					<!-- SEARCH FORM -->
-					<div id="search-form" class="pull-right">
+					<div id="search-form" class="pull-right ">
 						<form method="get" action="#">
 							<input type="text" name="Search" value="Recherche" onFocus="if (this.value == 'Search') this.value = '';" onBlur="if (this.value == '') this.value = 'Search';" />
 						</form>
@@ -114,7 +115,7 @@
 					
 					<!-- MENU -->
 					<div class="pull-right">
-						<nav class="navmenu center">
+						<nav class="navmenu center row">
 							<ul>
 								<li class="first active scroll_btn"><a href="#accueil" >Accueil</a></li>
 								<li class="scroll_btn"><a href="#mesPublications" >Mes publications</a></li>
@@ -130,6 +131,14 @@
 		</header><!-- //HEADER -->
 
 
+		<!-- creationCompte -->
+<!-- 		<section id="creationCompte" class="padbot0"> -->
+<!-- 			  <div class="row"> -->
+<!--                 <div class="col-lg-10 col-md-9"> -->
+<!--                     <h1 class="titre-contact">Création d'un compte</h1> -->
+<!--                 </div> -->
+<!-- 		</section> -->
+		
 		<!-- HOME -->
 		<section id="home" class="padbot0">
 
@@ -722,24 +731,13 @@
 			<div class="row" data-appear-top-offset="-200" data-animated="fadeInUp">
 
 				<div class="col-lg-4 col-md-4 col-sm-6 padbot30">
-					<h4><b>Catégorie<b></h4>
+					<h4><b>Featured</b> posts</h4>
 					<div class="recent_posts_small clearfix">
 						<div class="post_item_img_small">
 							<img src="../images/blog/1.jpg" alt="" />
 						</div>
 						<div class="post_item_content_small">
-							<a class="title" href="blog.html" >Actualités</a>
-							<ul class="post_item_inf_small">
-								<li>10 January 2014</li>
-							</ul>
-						</div>
-					</div>
-					<div class="recent_posts_small clearfix">
-						<div class="post_item_img_small">
-							<img src="../images/blog/1.jpg" alt="" />
-						</div>
-						<div class="post_item_content_small">
-							<a class="title" href="blog.html" >Blogs</a>
+							<a class="title" href="blog.html" >As we have developed a unique layout template</a>
 							<ul class="post_item_inf_small">
 								<li>10 January 2014</li>
 							</ul>
@@ -750,19 +748,29 @@
 							<img src="../images/blog/2.jpg" alt="" />
 						</div>
 						<div class="post_item_content_small">
-							<a class="title" href="blog.html" >Videos et Images</a>
+							<a class="title" href="blog.html" >How much is to develop a design for the game?</a>
 							<ul class="post_item_inf_small">
 								<li>14 January 2014</li>
 							</ul>
 						</div>
 					</div>
-					
+					<div class="recent_posts_small clearfix">
+						<div class="post_item_img_small">
+							<img src="../images/blog/3.jpg" alt="" />
+						</div>
+						<div class="post_item_content_small">
+							<a class="title" href="blog.html" >How to pump designer</a>
+							<ul class="post_item_inf_small">
+								<li>21 December 2013</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 
 				<div class="col-lg-4 col-md-4 col-sm-6 padbot30 foot_about_block">
-					<h4><b>À propos de</b> Nous</h4>
+					<h4><b>About</b> us</h4>
 					<p>We value people over profits, quality over quantity, and keeping it real. As such, we deliver an unmatched working relationship with our clients.</p>
-					<h4><b>Suivez</b> Nous</h4>
+					<p>Our team is intentionally small, eclectic, and skilled; with our in-house expertise, we provide sharp and</p>
 					<ul class="social">
 						<li><a href="javascript:void(0);" ><i class="fa fa-twitter"></i></a></li>
 						<li><a href="javascript:void(0);" ><i class="fa fa-facebook"></i></a></li>
@@ -775,16 +783,16 @@
 				<div class="respond_clear"></div>
 
 				<div class="col-lg-4 col-md-4 padbot30">
-					<h4><b>Contactez</b> Nous</h4>
+					<h4><b>Contacts</b> Us</h4>
 
 					<!-- CONTACT FORM -->
 					<div class="span9 contact_form">
 						<div id="note"></div>
 						<div id="fields">
 							<form id="contact-form-face" class="clearfix" action="#">
-								<input type="text" name="name" value="Nom" onFocus="if (this.value == 'Name') this.value = '';" onBlur="if (this.value == '') this.value = 'Name';" />
+								<input type="text" name="name" value="Name" onFocus="if (this.value == 'Name') this.value = '';" onBlur="if (this.value == '') this.value = 'Name';" />
 								<textarea name="message" onFocus="if (this.value == 'Message') this.value = '';" onBlur="if (this.value == '') this.value = 'Message';">Message</textarea>
-								<input class="contact_btn" type="submit" value="Envoyer le message" />
+								<input class="contact_btn" type="submit" value="Send message" />
 							</form>
 						</div>
 					</div><!-- //CONTACT FORM -->
@@ -793,7 +801,7 @@
 			<div class="row copyright">
 				<div class="col-lg-12 text-center">
 
-				 <p>Art Your Mind et Einstitut 2017<i class="fa fa-geocode"></i>, <a href="http://designscrazed.org/" >Tous droits résérvés</a></p>
+				 <p>Crafted with <i class="fa fa-heart"></i>, <a href="http://designscrazed.org/" >Designscrazed</a></p>
 				</div>
 
 			</div><!-- //ROW -->
