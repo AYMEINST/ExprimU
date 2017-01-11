@@ -5,7 +5,7 @@ import org.com.fr.entity.Roles;
 public interface RolesMetierI {
 public Page<Roles> rolesPage(int page, int size);
 public List<Roles> rolesList();
-public Roles getRoles(Long id);
+public Roles getRoles(String Role);
 public Roles save(Roles roles);
-public void delete(Long id);
+public void delete(String Roles);
 }

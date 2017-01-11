@@ -1,46 +1,40 @@
 package org.com.fr.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Roles {
 
 	@Id
-	private Long IdRole;
-	private String libelleRole ;
+	private String Role ;
+	@ManyToMany(mappedBy="ListRoles")
+	private List<Utilisateur>utilisateur;
+	
+
+	public List<Utilisateur> getUtilisateur() {
+		return utilisateur;
+	}
+	public void setUtilisateur(List<Utilisateur> utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+	public String getRole() {
+		return Role;
+	}
+	public void setRole(String role) {
+		Role = role;
+	}
+	public Roles(String role, List<Utilisateur> utilisateur) {
+		super();
+		Role = role;
+		this.utilisateur = utilisateur;
+	}
 	
 	
-	public Roles(Long idRole, String libelleRole) {
-		super();
-		IdRole = idRole;
-		this.libelleRole = libelleRole;
-	}
-
-
-	public Roles() {
-		super();
-	}
-
-
-	public Long getIdRole() {
-		return IdRole;
-	}
-
-
-	public void setIdRole(Long idRole) {
-		IdRole = idRole;
-	}
-
-
-	public String getLibelleRole() {
-		return libelleRole;
-	}
-
-
-	public void setLibelleRole(String libelleRole) {
-		this.libelleRole = libelleRole;
-	}
+	
 	
 	
 	

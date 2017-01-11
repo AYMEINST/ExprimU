@@ -13,6 +13,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Utilisateur implements Serializable {
 	/**
@@ -30,22 +32,26 @@ public class Utilisateur implements Serializable {
 	private String pays;
 	private String login;
 	private String motdepasse;
+	private String Email;
 	@ManyToOne
-	@JoinColumn(name="IdRole")
+	@JoinColumn(name="Role")
 	private Roles  role;
 	private boolean statue_compte;
-//	forum uniderctionnel
-	@ManyToOne
-	@JoinColumn(name="id_forum")
-	private Forum forum;
+////	forum uniderctionnel
+//	@ManyToOne
+//	@JoinColumn(name="id_forum")
+//	private Forum forum;
 //	commentaire
-	@OneToMany(mappedBy="idCommentaire")
+	@OneToMany(mappedBy="idForum")
+	private List<Forum> listForum;
+//	commentaire
+	@OneToMany(mappedBy="utilisateur")
 	private List<Commentaire> listCommmentaire;
 //	publication
-	@OneToMany(mappedBy="idPublication")
+	@OneToMany(mappedBy="utilisateur")
 	private List<Publication> listPublication;
 //	carte bancaire
-	@OneToMany(mappedBy="numeroCarteBk")
+	@OneToMany(mappedBy="utilisateur")
 	private List<Carte_BK> listCarteBk;
 //	liste amis
 	@OneToMany(mappedBy="utilisateur")
@@ -58,10 +64,62 @@ public class Utilisateur implements Serializable {
 	@JoinTable(name="EnvoyerMSG",joinColumns=@JoinColumn(name="idUtilisateur",referencedColumnName="idUtilisateur"),
 			inverseJoinColumns=@JoinColumn(name="idMessage",referencedColumnName="idMessage"))
 	private List<Message> listMessages;
+	@ManyToMany
+	@JoinTable(name="utilisateurRoles",joinColumns=@JoinColumn(name="idUtilisateur",referencedColumnName="idUtilisateur"),
+			inverseJoinColumns=@JoinColumn(name="Role",referencedColumnName="Role"))
+	private List<Roles> ListRoles;
 	private static final long serialVersionUID = 1L;
 	
 	
 	
+	public List<Roles> getListRoles() {
+		return ListRoles;
+	}
+
+
+
+	public void setListRoles(List<Roles> listRoles) {
+		ListRoles = listRoles;
+	}
+
+
+
+	public String getEmail() {
+		return Email;
+	}
+
+
+
+	public void setEmail(String email) {
+		Email = email;
+	}
+
+
+
+	public List<Forum> getListForum() {
+		return listForum;
+	}
+
+
+
+	public void setListForum(List<Forum> listForum) {
+		this.listForum = listForum;
+	}
+
+
+
+	public List<Message> getListMessages() {
+		return listMessages;
+	}
+
+
+
+	public void setListMessages(List<Message> listMessages) {
+		this.listMessages = listMessages;
+	}
+
+
+
 	public Long getIdUtilisateur() {
 		return idUtilisateur;
 	}
@@ -194,16 +252,7 @@ public class Utilisateur implements Serializable {
 
 
 
-	public Forum getForum() {
-		return forum;
-	}
-
-
-
-	public void setForum(Forum forum) {
-		this.forum = forum;
-	}
-
+	
 
 
 	public List<Commentaire> getListCommmentaire() {
@@ -212,22 +261,19 @@ public class Utilisateur implements Serializable {
 
 
 
+	@JsonIgnore
 	public void setListCommmentaire(List<Commentaire> listCommmentaire) {
 		this.listCommmentaire = listCommmentaire;
 	}
-
-
 
 	public List<Publication> getListPublication() {
 		return listPublication;
 	}
 
-
-
+	@JsonIgnore
 	public void setListPublication(List<Publication> listPublication) {
 		this.listPublication = listPublication;
 	}
-
 
 
 	public List<Carte_BK> getListCarteBk() {
@@ -235,7 +281,7 @@ public class Utilisateur implements Serializable {
 	}
 
 
-
+	@JsonIgnore
 	public void setListCarteBk(List<Carte_BK> listCarteBk) {
 		this.listCarteBk = listCarteBk;
 	}
@@ -247,7 +293,7 @@ public class Utilisateur implements Serializable {
 	}
 
 
-
+	@JsonIgnore
 	public void setListeAmis(List<Liste_amis> listeAmis) {
 		this.listeAmis = listeAmis;
 	}
@@ -271,7 +317,7 @@ public class Utilisateur implements Serializable {
 	}
 
 
-
+	@JsonIgnore
 	public void setListMEssages(List<Message> listMEssages) {
 		this.listMessages = listMEssages;
 	}

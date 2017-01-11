@@ -22,8 +22,12 @@ public class Forum implements Serializable {
 	private Long idForum;
 	private Byte[] fichier;
 	private Date DateCreationForum;
+	@ManyToOne
+	@JoinColumn(name="idUtilisateur")
+	private Utilisateur UtilisateurForum; 
 	@OneToMany(mappedBy="forum")
 	private List <CommentaireForum> commentairefurum;
+	
 	
 	
 	

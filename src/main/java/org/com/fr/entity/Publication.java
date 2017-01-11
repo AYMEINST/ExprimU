@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -25,6 +26,9 @@ public class Publication implements Serializable {
 //	publication coms
 	@OneToMany(mappedBy="publication")
 	private List<Commentaire> listCommmentaire;
+	@ManyToOne
+	@JoinColumn(name="idUtilisateur")
+	private  Utilisateur utilisateur;
 //	publication forum
 //	@OneToMany(mappedBy="publicationForum")
 //	private List<Forum> listForum;
@@ -39,6 +43,18 @@ public class Publication implements Serializable {
 	
 	
 	
+	public List<Commentaire> getListCommmentaire() {
+		return listCommmentaire;
+	}
+	public void setListCommmentaire(List<Commentaire> listCommmentaire) {
+		this.listCommmentaire = listCommmentaire;
+	}
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
 	public Long getIdPublication() {
 		return idPublication;
 	}
@@ -78,18 +94,18 @@ public class Publication implements Serializable {
 	}
 	
 	
-	public Publication(Long idPublication, String contenuPublication, String titrePublication,
-			List<Commentaire> listcoms, List<Forum> listForum, Note_publication notePublication,
-			 List<Statue> listStatue) {
+	
+	
+	public Publication(String contenuPublication, String titrePublication, List<Commentaire> listCommmentaire,
+			Utilisateur utilisateur, Note_publication notePublication, List<Statue> listStatue) {
 		super();
-		this.idPublication = idPublication;
 		this.contenuPublication = contenuPublication;
 		this.titrePublication = titrePublication;
-		this.listCommmentaire = listcoms;
+		this.listCommmentaire = listCommmentaire;
+		this.utilisateur = utilisateur;
 		this.notePublication = notePublication;
 		this.listStatue = listStatue;
 	}
-	
 	public Publication() {
 		super();
 	}

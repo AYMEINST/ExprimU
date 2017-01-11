@@ -21,11 +21,7 @@ public class CommentaireForum {
 	@JoinColumn(name="idForum")
 	private Forum forum;
 	
-	
-	
-	
-	
-	
+
 	public CommentaireForum() {
 		super();
 	}
