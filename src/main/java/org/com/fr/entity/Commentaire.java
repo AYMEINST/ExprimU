@@ -17,56 +17,66 @@ public class Commentaire implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id_commentaire;
-	private String  contenu;
-	private Date date_coms;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long idCommentaire;
+	private String  contenuCommentaire;
+	private Date dateCommentaire;
 	@ManyToOne()
-	@JoinColumn(name="id_utilisateur")
-	private Utilisateur utilisateurcoms;
+	@JoinColumn(name="idUtilisateur")
+	private Utilisateur utilisateur;
 //	publication
 	@ManyToOne()
-	@JoinColumn(name="idpublication")
-	private Publication publicationcoms;
-	public int getId_commentaire() {
-		return id_commentaire;
+	@JoinColumn(name="idPublication")
+	private Publication publication;
+	
+	
+	public Long getIdCommentaire() {
+		return idCommentaire;
 	}
-	public void setId_commentaire(int id_commentaire) {
-		this.id_commentaire = id_commentaire;
+	public void setIdCommentaire(Long idCommentaire) {
+		this.idCommentaire = idCommentaire;
 	}
-	public String getContenu() {
-		return contenu;
+	public String getContenuCommentaire() {
+		return contenuCommentaire;
 	}
-	public void setContenu(String contenu) {
-		this.contenu = contenu;
+	public void setContenuCommentaire(String contenuCommentaire) {
+		this.contenuCommentaire = contenuCommentaire;
 	}
-	public Date getDate_coms() {
-		return date_coms;
+	public Date getDateCommentaire() {
+		return dateCommentaire;
 	}
-	public void setDate_coms(Date date_coms) {
-		this.date_coms = date_coms;
+	public void setDateCommentaire(Date dateCommentaire) {
+		this.dateCommentaire = dateCommentaire;
 	}
-	public Utilisateur getUtilisateurcoms() {
-		return utilisateurcoms;
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
 	}
-	public void setUtilisateurcoms(Utilisateur utilisateurcoms) {
-		this.utilisateurcoms = utilisateurcoms;
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
 	}
-	public Publication getPublicationcoms() {
-		return publicationcoms;
+	public Publication getPublication() {
+		return publication;
 	}
-	public void setPublicationcoms(Publication publicationcoms) {
-		this.publicationcoms = publicationcoms;
+	public void setPublication(Publication publication) {
+		this.publication = publication;
+	}
+	public Commentaire(Long idCommentaire, String contenuCommentaire, Date dateCommentaire, Utilisateur utilisateur,
+			Publication publication) {
+		super();
+		this.idCommentaire = idCommentaire;
+		this.contenuCommentaire = contenuCommentaire;
+		this.dateCommentaire = dateCommentaire;
+		this.utilisateur = utilisateur;
+		this.publication = publication;
 	}
 	public Commentaire() {
 		super();
 	}
-	public Commentaire(String contenu, Date date_coms, Utilisateur utilisateurcoms, Publication publicationcoms) {
-		super();
-		this.contenu = contenu;
-		this.date_coms = date_coms;
-		this.utilisateurcoms = utilisateurcoms;
-		this.publicationcoms = publicationcoms;
-	}
+	
+	
+	
+	
+	
+	
 
 }

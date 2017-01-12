@@ -14,11 +14,6 @@ public class Fichier extends Element_publication implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Byte[] fichier;
 	private String libelle;
-	
-	@ManyToOne
-	@JoinColumn(name="id_contenu")
-	private Contenu contenu;
-	
 	public Byte[] getFichier() {
 		return fichier;
 	}
@@ -31,15 +26,13 @@ public class Fichier extends Element_publication implements Serializable {
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
-	public Fichier(String libele, String attribute) {
-		super(libele, attribute);
-		// TODO Auto-generated constructor stub
-	}
-	public Fichier(String libele, String attribute, Byte[] fichier, String libelle, Contenu contenu) {
-		super(libele, attribute);
+	public Fichier(String libele, Byte[] fichier, String libelle) {
+		super(libele);
 		this.fichier = fichier;
 		this.libelle = libelle;
-		this.contenu = contenu;
 	}
+
+	
+	
 
 }

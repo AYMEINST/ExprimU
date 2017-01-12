@@ -5,31 +5,71 @@ import java.util.Date;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 
 @Entity
-//@AssociationOverrides({@AssociationOverride(name="clecompose.idpublication", joinColumns=@JoinColumn(name="idpublication",referencedColumnName="FK.idpublication")),
-//@AssociationOverride(name="clecompose.id_utilisateur",joinColumns= @JoinColumn(name="id_utilisateur",referencedColumnName="FK.id_utilisateur"))})
 public class Publier implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@EmbeddedId
-	private PublierPK clecompose ;
-	private Date date_publication;
-	public PublierPK getClecompose() {
-		return clecompose;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long idPubliRef;
+	private Date datePublication;	
+	@ManyToOne
+	@JoinColumn(name="idPublication")
+	private Publication publication ;	
+	@ManyToOne
+	@JoinColumn(name="idUtilisateur")
+	private Utilisateur utilisateur;
+	public Long getIdPubliRef() {
+		return idPubliRef;
 	}
-	public void setClecompose(PublierPK clecompose) {
-		this.clecompose = clecompose;
+	public void setIdPubliRef(Long idPubliRef) {
+		this.idPubliRef = idPubliRef;
 	}
-	public Date getDate_publication() {
-		return date_publication;
+	public Date getDatePublication() {
+		return datePublication;
 	}
-	public void setDate_publication(Date date_publication) {
-		this.date_publication = date_publication;
+	public void setDatePublication(Date datePublication) {
+		this.datePublication = datePublication;
 	}
+	public Publication getPublication() {
+		return publication;
+	}
+	public void setPublication(Publication publication) {
+		this.publication = publication;
+	}
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+	public Publier(Long idPubliRef, Date datePublication, Publication publication, Utilisateur utilisateur) {
+		super();
+		this.idPubliRef = idPubliRef;
+		this.datePublication = datePublication;
+		this.publication = publication;
+		this.utilisateur = utilisateur;
+	}
+	public Publier() {
+		super();
+	}
+	
+	
+	
+	
+	
+	
 	
 }

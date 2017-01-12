@@ -10,13 +10,19 @@ public class Msg_txt extends Message implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public String contenu_txt;
-	public String getContenu() {
-		return contenu_txt;
+	public String contenuText;
+	
+	
+	public String getContenuText() {
+		return contenuText;
 	}
-	public void setContenu(String contenu) {
-		this.contenu_txt = contenu;
+
+
+	public void setContenuText(String contenuText) {
+		this.contenuText = contenuText;
 	}
+
+
 	public Msg_txt() {
 		super();
 	}

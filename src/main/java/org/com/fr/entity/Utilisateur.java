@@ -13,51 +13,17 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Utilisateur implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	public Forum getForum() {
-		return forum;
-	}
-	public void setForum(Forum forum) {
-		this.forum = forum;
-	}
-	public List<Commentaire> getListcoms() {
-		return listcoms;
-	}
-	public void setListcoms(List<Commentaire> listcoms) {
-		this.listcoms = listcoms;
-	}
-	public List<Carte_BK> getListcarte_bk() {
-		return listcarte_bk;
-	}
-	public void setListcarte_bk(List<Carte_BK> listcarte_bk) {
-		this.listcarte_bk = listcarte_bk;
-	}
-	public List<Liste_amis> getListeamis() {
-		return listeamis;
-	}
-	public void setListeamis(List<Liste_amis> listeamis) {
-		this.listeamis = listeamis;
-	}
-	public List<Demande_ajout> getDemande_ajt() {
-		return demande_ajt;
-	}
-	public void setDemande_ajt(List<Demande_ajout> demande_ajt) {
-		this.demande_ajt = demande_ajt;
-	}
-	public List<Message> getListMEssages() {
-		return listMEssages;
-	}
-	public void setListMEssages(List<Message> listMEssages) {
-		this.listMEssages = listMEssages;
-	}
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id_utilisateur;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long idUtilisateur;
 	private String Nom;
 	private String Prenom;
 	private Date date_naissance;
@@ -66,89 +32,298 @@ public class Utilisateur implements Serializable {
 	private String pays;
 	private String login;
 	private String motdepasse;
-	private boolean statue_compte;
-//	forum uniderctionnel
+	private String Email;
 	@ManyToOne
-	@JoinColumn(name="id_forum")
-	private Forum forum;
+	@JoinColumn(name="Role")
+	private Roles  role;
+	private boolean statue_compte;
+////	forum uniderctionnel
+//	@ManyToOne
+//	@JoinColumn(name="id_forum")
+//	private Forum forum;
 //	commentaire
-	@OneToMany(mappedBy="utilisateurcoms")
-	private List<Commentaire> listcoms;
+	@OneToMany(mappedBy="idForum")
+	private List<Forum> listForum;
+//	commentaire
+	@OneToMany(mappedBy="utilisateur")
+	private List<Commentaire> listCommmentaire;
+//	publication
+	@OneToMany(mappedBy="utilisateur")
+	private List<Publication> listPublication;
 //	carte bancaire
-	@OneToMany(mappedBy="utilisateur_cbk")
-	private List<Carte_BK> listcarte_bk;
+	@OneToMany(mappedBy="utilisateur")
+	private List<Carte_BK> listCarteBk;
 //	liste amis
 	@OneToMany(mappedBy="utilisateur")
-	private List<Liste_amis> listeamis;
+	private List<Liste_amis> listeAmis;
 //	demande d'ajout
 	@OneToMany(mappedBy="utilisateur")
-	private List<Demande_ajout> demande_ajt;
+	private List<Demande_ajout> demandeAjout;
 //	message
 	@ManyToMany
-	@JoinTable(name="EnvoyerMSG",joinColumns=@JoinColumn(name="id_utilisateur",referencedColumnName="id_utilisateur"),
-			inverseJoinColumns=@JoinColumn(name="idmessage",referencedColumnName="idmessage"))
-	private List<Message> listMEssages;
+	@JoinTable(name="EnvoyerMSG",joinColumns=@JoinColumn(name="idUtilisateur",referencedColumnName="idUtilisateur"),
+			inverseJoinColumns=@JoinColumn(name="idMessage",referencedColumnName="idMessage"))
+	private List<Message> listMessages;
+	@ManyToMany
+	@JoinTable(name="utilisateurRoles",joinColumns=@JoinColumn(name="idUtilisateur",referencedColumnName="idUtilisateur"),
+			inverseJoinColumns=@JoinColumn(name="Role",referencedColumnName="Role"))
+	private List<Roles> ListRoles;
+	private static final long serialVersionUID = 1L;
 	
-	public int getId_utilisateur() {
-		return id_utilisateur;
+	
+	
+	public List<Roles> getListRoles() {
+		return ListRoles;
 	}
-	public void setId_utilisateur(int id_utilisateur) {
-		this.id_utilisateur = id_utilisateur;
+
+
+
+	public void setListRoles(List<Roles> listRoles) {
+		ListRoles = listRoles;
 	}
+
+
+
+	public String getEmail() {
+		return Email;
+	}
+
+
+
+	public void setEmail(String email) {
+		Email = email;
+	}
+
+
+
+	public List<Forum> getListForum() {
+		return listForum;
+	}
+
+
+
+	public void setListForum(List<Forum> listForum) {
+		this.listForum = listForum;
+	}
+
+
+
+	public List<Message> getListMessages() {
+		return listMessages;
+	}
+
+
+
+	public void setListMessages(List<Message> listMessages) {
+		this.listMessages = listMessages;
+	}
+
+
+
+	public Long getIdUtilisateur() {
+		return idUtilisateur;
+	}
+
+
+
+	public void setIdUtilisateur(Long idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
+	}
+
+
+
 	public String getNom() {
 		return Nom;
 	}
+
+
+
 	public void setNom(String nom) {
 		Nom = nom;
 	}
+
+
+
 	public String getPrenom() {
 		return Prenom;
 	}
+
+
+
 	public void setPrenom(String prenom) {
 		Prenom = prenom;
 	}
+
+
+
 	public Date getDate_naissance() {
 		return date_naissance;
 	}
+
+
+
 	public void setDate_naissance(Date date_naissance) {
 		this.date_naissance = date_naissance;
 	}
+
+
+
 	public String getAdresse() {
 		return adresse;
 	}
+
+
+
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
+
+
+
 	public String getCode_postale() {
 		return code_postale;
 	}
+
+
+
 	public void setCode_postale(String code_postale) {
 		this.code_postale = code_postale;
 	}
+
+
+
 	public String getPays() {
 		return pays;
 	}
+
+
+
 	public void setPays(String pays) {
 		this.pays = pays;
 	}
+
+
+
 	public String getLogin() {
 		return login;
 	}
+
+
+
 	public void setLogin(String login) {
 		this.login = login;
 	}
+
+
+
 	public String getMotdepasse() {
 		return motdepasse;
 	}
+
+
+
 	public void setMotdepasse(String motdepasse) {
 		this.motdepasse = motdepasse;
 	}
+
+
+
+	public Roles getRole() {
+		return role;
+	}
+
+
+
+	public void setRole(Roles role) {
+		this.role = role;
+	}
+
+
+
 	public boolean isStatue_compte() {
 		return statue_compte;
 	}
+
+
+
 	public void setStatue_compte(boolean statue_compte) {
 		this.statue_compte = statue_compte;
 	}
+
+
+
+	
+
+
+	public List<Commentaire> getListCommmentaire() {
+		return listCommmentaire;
+	}
+
+
+
+	@JsonIgnore
+	public void setListCommmentaire(List<Commentaire> listCommmentaire) {
+		this.listCommmentaire = listCommmentaire;
+	}
+
+	public List<Publication> getListPublication() {
+		return listPublication;
+	}
+
+	@JsonIgnore
+	public void setListPublication(List<Publication> listPublication) {
+		this.listPublication = listPublication;
+	}
+
+
+	public List<Carte_BK> getListCarteBk() {
+		return listCarteBk;
+	}
+
+
+	@JsonIgnore
+	public void setListCarteBk(List<Carte_BK> listCarteBk) {
+		this.listCarteBk = listCarteBk;
+	}
+
+
+
+	public List<Liste_amis> getListeAmis() {
+		return listeAmis;
+	}
+
+
+	@JsonIgnore
+	public void setListeAmis(List<Liste_amis> listeAmis) {
+		this.listeAmis = listeAmis;
+	}
+
+
+
+	public List<Demande_ajout> getDemandeAjout() {
+		return demandeAjout;
+	}
+
+
+
+	public void setDemandeAjout(List<Demande_ajout> demandeAjout) {
+		this.demandeAjout = demandeAjout;
+	}
+
+
+
+	public List<Message> getListMEssages() {
+		return listMessages;
+	}
+
+
+	@JsonIgnore
+	public void setListMEssages(List<Message> listMEssages) {
+		this.listMessages = listMEssages;
+	}
+
+
+
 	public Utilisateur() {
 		super();
 	}

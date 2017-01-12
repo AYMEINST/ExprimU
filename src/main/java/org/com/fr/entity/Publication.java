@@ -1,12 +1,16 @@
 package org.com.fr.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -17,70 +21,101 @@ public class Publication implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue
-	private int idpublication;
-	private String contenu_pub;
-	private String titre_pub;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long idPublication;
+	private String titrePublication;
+	private Date datePublication;
 //	publication coms
-	@OneToMany(mappedBy="publicationcoms")
-	private List<Commentaire> listcoms;
-//	publication forum
-	@OneToMany(mappedBy="publicationform")
-	private List<Forum> lisforum;
-//	note publication
-	@OneToOne
-	@JoinColumn(name="note_publication")
-	private Note_publication note_pub;
-//	contenu
 	@OneToMany(mappedBy="publication")
-	private List<Contenu> listcontenu;
-//	statue
-	@OneToMany(mappedBy="publication")
-	private List<Statue> liststatue;
-	public int getIdpublication() {
-		return idpublication;
+	private List<Commentaire> listCommmentaire;
+	@ManyToOne
+	@JoinColumn(name="idUtilisateur")
+	private  Utilisateur utilisateur;
+
+//	element
+	@OneToMany(mappedBy="publication" ,cascade=CascadeType.ALL)
+	private List<Element_publication> listElement;
+	
+
+
+
+	//	element
+	@OneToMany(mappedBy="publication" ,cascade=CascadeType.ALL)
+	private List<Note_publication> listNote;
+	
+	public Date getDatePublication() {
+		return datePublication;
 	}
-	public void setIdpublication(int idpublication) {
-		this.idpublication = idpublication;
+	public void setDatePublication(Date datePublication) {
+		this.datePublication = datePublication;
 	}
-	public String getContenu_pub() {
-		return contenu_pub;
+	public List<Element_publication> getListElement() {
+		return listElement;
 	}
-	public void setContenu_pub(String contenu_pub) {
-		this.contenu_pub = contenu_pub;
+	public void setListElement(List<Element_publication> listElement) {
+		this.listElement = listElement;
 	}
-	public String getTitre_pub() {
-		return titre_pub;
+	public List<Commentaire> getListCommmentaire() {
+		return listCommmentaire;
 	}
-	public void setTitre_pub(String titre_pub) {
-		this.titre_pub = titre_pub;
+	public void setListCommmentaire(List<Commentaire> listCommmentaire) {
+		this.listCommmentaire = listCommmentaire;
+	}
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+	public Long getIdPublication() {
+		return idPublication;
+	}
+	public void setIdPublication(Long idPublication) {
+		this.idPublication = idPublication;
+	}
+	
+	public String getTitrePublication() {
+		return titrePublication;
+	}
+	public void setTitrePublication(String titrePublication) {
+		this.titrePublication = titrePublication;
 	}
 	public List<Commentaire> getListcoms() {
-		return listcoms;
+		return listCommmentaire;
 	}
 	public void setListcoms(List<Commentaire> listcoms) {
-		this.listcoms = listcoms;
+		this.listCommmentaire = listcoms;
 	}
-	public Note_publication getNote_pub() {
-		return note_pub;
+	
+	public List<Note_publication> getListNote() {
+		return listNote;
 	}
-	public void setNote_pub(Note_publication note_pub) {
-		this.note_pub = note_pub;
+	public void setListNote(List<Note_publication> listNote) {
+		this.listNote = listNote;
 	}
-	public List<Contenu> getListcontenu() {
-		return listcontenu;
-	}
-	public void setListcontenu(List<Contenu> listcontenu) {
-		this.listcontenu = listcontenu;
-	}
-	public List<Statue> getListstatue() {
-		return liststatue;
-	}
-	public void setListstatue(List<Statue> liststatue) {
-		this.liststatue = liststatue;
-	}
+
+
+	
+	
 	public Publication() {
 		super();
 	}
+	public Publication(Long idPublication, String titrePublication, Date datePublication,
+			List<Commentaire> listCommmentaire, Utilisateur utilisateur, List<Element_publication> listElement,
+			List<Note_publication> listNote) {
+		super();
+		this.idPublication = idPublication;
+		this.titrePublication = titrePublication;
+		this.datePublication = datePublication;
+		this.listCommmentaire = listCommmentaire;
+		this.utilisateur = utilisateur;
+		this.listElement = listElement;
+		this.listNote = listNote;
+	}
+	
+	
+	
+	
+	
 
 }

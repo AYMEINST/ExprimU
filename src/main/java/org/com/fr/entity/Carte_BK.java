@@ -17,56 +17,77 @@ public class Carte_BK implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id_carte;
-	private int numero_bk;
-	private Date date_experation;
-	
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long idCarte;
+	private int numeroCarteBk;
+	private Date dateExperation;	
 	@ManyToOne
-	@JoinColumn(name="id_utilisateur")
-	private Utilisateur utilisateur_cbk;
+	@JoinColumn(name="idUtilisateur")
+	private Utilisateur utilisateur;
 
-	public int getId_carte() {
-		return id_carte;
-	}
+	
 
-	public void setId_carte(int id_carte) {
-		this.id_carte = id_carte;
-	}
-
-	public int getNumero_bk() {
-		return numero_bk;
-	}
-
-	public void setNumero_bk(int numero_bk) {
-		this.numero_bk = numero_bk;
-	}
-
-	public Date getDate_experation() {
-		return date_experation;
-	}
-
-	public void setDate_experation(Date date_experation) {
-		this.date_experation = date_experation;
-	}
-
-	public Utilisateur getUtilisateur_cbk() {
-		return utilisateur_cbk;
-	}
-
-	public void setUtilisateur_cbk(Utilisateur utilisateur_cbk) {
-		this.utilisateur_cbk = utilisateur_cbk;
-	}
-
-	public Carte_BK(int numero_bk, Date date_experation, Utilisateur utilisateur_cbk) {
+	public Carte_BK(Long idCarte, int numeroCarteBk, Date dateExperation, Utilisateur utilisateur) {
 		super();
-		this.numero_bk = numero_bk;
-		this.date_experation = date_experation;
-		this.utilisateur_cbk = utilisateur_cbk;
+		this.idCarte = idCarte;
+		this.numeroCarteBk = numeroCarteBk;
+		this.dateExperation = dateExperation;
+		this.utilisateur = utilisateur;
 	}
+
+
 
 	public Carte_BK() {
 		super();
+	}
+
+
+
+	
+	public Long getIdCarte() {
+		return idCarte;
+	}
+
+
+
+	public void setIdCarte(Long idCarte) {
+		this.idCarte = idCarte;
+	}
+
+
+
+	public int getNumeroCarteBk() {
+		return numeroCarteBk;
+	}
+
+
+
+	public void setNumeroCarteBk(int numeroCarteBk) {
+		this.numeroCarteBk = numeroCarteBk;
+	}
+
+
+
+	public Date getDateExperation() {
+		return dateExperation;
+	}
+
+
+
+	public void setDateExperation(Date dateExperation) {
+		this.dateExperation = dateExperation;
+	}
+
+
+
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
 	}
 	
 
