@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -21,21 +23,12 @@ public class Note_publication implements Serializable {
 	private Date dateAppreciation;
 	private String note;
 	
-	@OneToOne(mappedBy="notePublication")
+	
+	@ManyToOne
+	@JoinColumn(name="idPublication")
 	private Publication publication;
 	
 	
-
-	public Note_publication(Long idNote, Date dateAppreciation, String note, Publication publication) {
-		super();
-		this.idNote = idNote;
-		this.dateAppreciation = dateAppreciation;
-		this.note = note;
-		this.publication = publication;
-	}
-
-
-
 
 	public Note_publication() {
 		super();
@@ -92,6 +85,15 @@ public class Note_publication implements Serializable {
 
 
 	public void setPublication(Publication publication) {
+		this.publication = publication;
+	}
+
+
+	public Note_publication(Long idNote, Date dateAppreciation, String note, Publication publication) {
+		super();
+		this.idNote = idNote;
+		this.dateAppreciation = dateAppreciation;
+		this.note = note;
 		this.publication = publication;
 	}
 

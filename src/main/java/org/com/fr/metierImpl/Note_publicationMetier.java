@@ -2,6 +2,8 @@ package org.com.fr.metierImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+
+import java.util.Date;
 import java.util.List;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -30,12 +32,15 @@ public class Note_publicationMetier implements Note_publicationMetierI {
 	}
 
 	@Override
-	public Note_publication save(Note_publication note_publication) {
-		return note_publicationRepository.save(note_publication);
-	}
-
-	@Override
 	public void delete(Long id) {
 		note_publicationRepository.delete(note_publicationRepository.findOne(id));
 	}
+
+	@Override
+	public Note_publication save(Note_publication note_publication) {
+		note_publication.setDateAppreciation(new Date());
+		return note_publicationRepository.save(note_publication);
+	}
+
 }
+ 

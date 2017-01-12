@@ -12,11 +12,11 @@ public class SecurityController {
 	@Autowired
 	private UtilisateurMetierI utilisateurMetier;
 
-	@RequestMapping(value = "/login")
-	public String AppLogin() {
-		return "login";
-	}
-	
+//	@RequestMapping(value = "/login")
+//	public String AppLogin() {
+//		return "login";
+//	}
+//	
 
 	
 
