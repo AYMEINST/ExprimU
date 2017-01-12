@@ -2076,25 +2076,45 @@ input[type="color"]:focus {
 	#language-form{display : none;}
 }
 
+/*-----------------------------------------------------------------------------------*/
+/*	CREATIONCOMPTE
+/*-----------------------------------------------------------------------------------*/
 
-.input-group input{
-	border : 0px important;
+#creationCompte h1{
+	margin: 40px 0px 40px 0px;
 }
 
+#creationCompte .input-group{
+	margin: 20px 0px 20px 0px;
+	 border: 1px solid rgb(204,204,204);
+	 border-radius: 4px;
+}
 
+#creationCompte input[type="text"]{
+	 border: 1px solid rgb(204,204,204);
+	 border-radius: 4px;
+}
 
+#creationCompte span{
+	 border: 1px solid rgb(204,204,204);
+	 border-radius: 4px;
+}
 
+#creationCompte .boutonEnvoyer{
+	text-align:right;
+	margin: 0px 0px 0px 20px;
+	
+}
 
+/*-----------------------------------------------------------------------------------*/
+/*	Modal
+/*-----------------------------------------------------------------------------------*/
 
-
-
-
-
-
-
-
-
-
+#myModal {
+top:5%;
+right:50%;
+outline: none;
+}
 
 
 
