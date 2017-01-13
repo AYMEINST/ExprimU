@@ -85,6 +85,23 @@
 <!-- //PRELOADER -->
 <div class="preloader_hide">
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h4 class="modal-title">Connexion</h4>
+	</div>
+	<form>
+    <input type="text" name="user" placeholder="Username">
+    <input type="password" name="pass" placeholder="Password">
+    <input type="submit" name="login" class="login login-submit" value="login">
+    </form>
+    <div class="login-help">
+    	<a href="creationcompte.html">S'inscrire</a> • <a href="motdepasseperdu.html">Mot de passe oublié ?</a><a href="modificationmotdepasse.html">Changer de mot de passe</a>
+    </div>
+</div>
+<!-- //Modal -->	
+
 	<!-- PAGE -->
 	<div id="page">
 
@@ -132,16 +149,13 @@
 								<li class="scroll_btn"><a href="#home" >Publier</a></li>								
 								<li class="scroll_btn"><a href="#home" >Actualités</a></li>
 								<li class="scroll_btn"><a href="#home" >Qui sommes nous ?</a></li>
-								<li class="scroll_btn last"=^ù><span class="glyphicon glyphicon-user" aria-hidden="true" ></span> Mon profil</li>
+								<li class="scroll_btn last" data-toggle="modal" data-target="#myModal"><a href="#monProfil" ><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mon profil</a></li>
 							</ul>
 						</nav>
 					</div><!-- //MENU -->
 				</div><!-- //MENU BLOCK -->
 			</div><!-- //CONTAINER -->				
 		</header><!-- //HEADER -->
-
-		
-
 
 		<!-- HOME -->
 		<section id="home" class="padbot0">
@@ -805,7 +819,7 @@
 			<div class="row copyright">
 				<div class="col-lg-12 text-center">
 
-				 <p>Art Your Mind et Einstitut 2017<i class="fa fa-geocode"></i>, <a href="http://designscrazed.org/" >Tous droits résérvés</a></p>
+				 <p>ExprimU<i class="fa fa-geocode"></i>, <a href="http://designscrazed.org/" >Tous droits résérvés</a></p>
 				</div>
 
 			</div><!-- //ROW -->

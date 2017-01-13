@@ -150,6 +150,7 @@
 								<li class="scroll_btn"><a href="#home" >Actualités</a></li>
 								<li class="scroll_btn"><a href="#home" >Qui sommes nous ?</a></li>
 								<li class="scroll_btn last" data-toggle="modal" data-target="#myModal"><a href="#monProfil" ><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mon profil</a></li>
+								</li>
 							</ul>
 						</nav>
 					</div><!-- //MENU -->
@@ -157,92 +158,63 @@
 			</div><!-- //CONTAINER -->				
 		</header><!-- //HEADER -->
 
+		<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+	      </div>
+	      <div class="modal-body">
+	        TEst2
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        TESt3
+	        <button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
 
-		<section id="creationCompte">
+		<section id="motdepasse">
 			<div class="container" >
-				<h1 class="titre-contact">Création d'un compte</h1>
+				<h1 class="titre-contact">Changement de mot de passe</h1>
+				<p> Entrez votre mail, votre ancien mot de passe et votre nouveau mot de passe</p>
 				<form method="post" action="cible.php">
-					<div class="col-lg-12">
-						<div class="col-lg-4">
+					<div class="col-lg-6">
 						 <div class="input-group">
-							 <span class="input-group-addon" id="basic-addon1">Nom</span>
-							 <input type="text" class="form-control" placeholder="Entrez votre nom" aria-describedby="basic-addon1">
+							 <span class="input-group-addon" id="basic-addon1">Adresse mail</span>
+							 <input type="mail" class="form-control" placeholder="Entrez votre adresse mail" aria-describedby="basic-addon1">
 						 </div>
 						</div>
-						<div class="col-lg-4">
-							<div class="input-group">
-								<span class="input-group-addon" id="basic-addon1">Prénom</span>
-								<input type="text" class="form-control" placeholder="Entrez votre prénom" aria-describedby="basic-addon1">
-							</div>
-						 </div>
-						 <div class="col-lg-4">
-							<div class="input-group">
-								<span class="input-group-addon" id="basic-addon1">Date de naissance</span>
-								<input type="date" class="form-control" aria-describedby="basic-addon1">
-							</div>
-						 </div>
-					</div>
-					<div class="col-lg-12">
-						<div class="col-lg-4">
-						 <div class="input-group">
-							 <span class="input-group-addon" id="basic-addon1">Adresse</span>
-							 <input type="text" class="form-control" placeholder="Entrez votre adresse" aria-describedby="basic-addon1">
-						 </div>
-						</div>
-						<div class="col-lg-4">
-							<div class="input-group">
-								<span class="input-group-addon" id="basic-addon1">Code postal</span>
-								<input type="text" class="form-control" placeholder="Entrez votre code postal" aria-describedby="basic-addon1">
-							</div>
-						 </div>
-						 <div class="col-lg-4">
-							<div class="input-group">
-								<span class="input-group-addon" id="basic-addon1">Pays</span>
-								<input type="text" class="form-control" placeholder="Entrez votre pays" aria-describedby="basic-addon1">
-							</div>
-						 </div>
-					</div>
-					<div class="col-lg-12">
-						<div class="col-lg-6">
-						<div class="input-group">
-							<span class="input-group-addon" id="basic-addon1">Adresse mail</span>
-							<input type="mail" class="form-control" placeholder="Entrez votre adresse mail" aria-describedby="basic-addon1">
-						</div>
-					 </div>
-						<div class="col-lg-6">
-						 <div class="input-group">
-							 <span class="input-group-addon" id="basic-addon1">Pseudo</span>
-							 <input type="text" class="form-control" placeholder="Entrez votre pseudo" aria-describedby="basic-addon1">
-						 </div>
-						</div>
-					</div>
-					<div class="col-lg-12">
 						<div class="col-lg-6">
 							<div class="input-group">
-								<span class="input-group-addon" id="basic-addon1">Mot de passe</span>
-								<input type="password" class="form-control" placeholder="Entrez votre mot de passe" aria-describedby="basic-addon1">
+								<span class="input-group-addon" id="basic-addon1">Ancien mot de passe</span>
+								<input type="password" class="form-control" placeholder="Entrez votre ancien mot de passe" aria-describedby="basic-addon1">
 							</div>
 						 </div>
 						 <div class="col-lg-6">
 							<div class="input-group">
-								<span class="input-group-addon" id="basic-addon1">Retaper le mot de passe</span>
-								<input type="password" class="form-control" placeholder="Entrez votre mot de passe" aria-describedby="basic-addon1">
+								<span class="input-group-addon" id="basic-addon1">Nouveau mot de passe</span>
+								<input type="password" class="form-control" placeholder="Entrez votre nouveau mot de passe" aria-describedby="basic-addon1">
 							</div>
 						 </div>
-					</div>
+						<div class="col-lg-6">
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1">Retaper votre nouveau mot de passe</span>
+								<input type="password" class="form-control" placeholder="Entrez votre nouveau mot de passe" aria-describedby="basic-addon1">
+							</div>
+						 </div>
 					<div class="col-sm-offset-5 col-sm-2 text-center">
             				<button type="button" class="btn btn-default btn-sm" id="boutonEnvoyer">Envoyer</button>
    			 		</div>
 				</form>
             </div>
 		</section>
-		</div><!-- page -->
-
-	<!-- CONTACTS -->
-	<section id="contacts">
-	</section><!-- //CONTACTS -->
-
+	</div><!-- //PAGE -->
 	<footer>
 
 		<!-- CONTAINER -->

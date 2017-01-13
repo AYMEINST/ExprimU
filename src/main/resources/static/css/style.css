@@ -2077,45 +2077,44 @@ input[type="color"]:focus {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/*	CREATIONCOMPTE, MOTDEPASSEPERDU
+/*	CREATIONCOMPTE, MOTDEPASSE
 /*-----------------------------------------------------------------------------------*/
 
-#creationCompte h1,#motDePassePerdu h1,#motDePassePerdu h2,#motDePassePerdu p{
+#creationCompte ,#motdepasse{padding:75px 0 50px;}
+	
+}
+
+#creationCompte h1,#motdepasse h1,#motdepasse h2,#motdepasse p{
 	margin: 40px 0px 40px 0px;
 	text-align: center;
 }
 
-#creationCompte .input-group,#motDePassePerdu .input-group{
+#creationCompte .input-group,#motdepasse .input-group{
 	margin: 20px 0px 20px 0px;
 	 border: 1px solid rgb(204,204,204);
 	 border-radius: 4px;
 }
 
-#creationCompte input[type="text"],#motDePassePerdu input[type="text"]{
+#creationCompte input[type="text"],#motdepasse input[type="text"]{
 	 border: 1px solid rgb(204,204,204);
 	 border-radius: 4px;
 }
 
-#creationCompte span,#motDePassePerdu span{
+#creationCompte span,#motdepasse span{
 	 border: 1px solid rgb(204,204,204);
 	 border-radius: 4px;
 }
 
-#creationCompte .boutonEnvoyer,#motDePassePerdu .boutonEnvoyer{
+#creationCompte .boutonEnvoyer,#motdepasse .boutonEnvoyer{
 	text-align:right;
 	margin: 0px 0px 0px 20px;
-
-
+}
 
 /*-----------------------------------------------------------------------------------*/
 /*	Modal
 /*-----------------------------------------------------------------------------------*/
 
-#myModal {
-top:5%;
-right:50%;
-outline: none;
-}
+
 
 
 #boutonEnvoyer{
@@ -2124,3 +2123,100 @@ outline: none;
 }
 
 
+
+#myModal {
+  padding: 40px;
+  width: 340px;
+  height: 340px;
+  top: 5%;
+  background-color: #F7F7F7;
+  margin: 0 auto 10px;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+#myModal h1 {
+  font-weight: 100;
+  text-align: center;
+  font-size: 2.3em;
+}
+
+#myModal input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#myModal input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#myModal input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.login {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.login-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  background-color: #4d90fe;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.login-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+#myModal a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+#myModal a:hover {
+  opacity: 1;
+}
+
+.login-help {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
