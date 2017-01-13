@@ -2077,34 +2077,35 @@ input[type="color"]:focus {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/*	CREATIONCOMPTE
+/*	CREATIONCOMPTE, MOTDEPASSEPERDU
 /*-----------------------------------------------------------------------------------*/
 
-#creationCompte h1{
+#creationCompte h1,#motDePassePerdu h1,#motDePassePerdu h2,#motDePassePerdu p{
 	margin: 40px 0px 40px 0px;
+	text-align: center;
 }
 
-#creationCompte .input-group{
+#creationCompte .input-group,#motDePassePerdu .input-group{
 	margin: 20px 0px 20px 0px;
 	 border: 1px solid rgb(204,204,204);
 	 border-radius: 4px;
 }
 
-#creationCompte input[type="text"]{
+#creationCompte input[type="text"],#motDePassePerdu input[type="text"]{
 	 border: 1px solid rgb(204,204,204);
 	 border-radius: 4px;
 }
 
-#creationCompte span{
+#creationCompte span,#motDePassePerdu span{
 	 border: 1px solid rgb(204,204,204);
 	 border-radius: 4px;
 }
 
-#creationCompte .boutonEnvoyer{
+#creationCompte .boutonEnvoyer,#motDePassePerdu .boutonEnvoyer{
 	text-align:right;
 	margin: 0px 0px 0px 20px;
-	
-}
+
+
 
 /*-----------------------------------------------------------------------------------*/
 /*	Modal
@@ -2117,10 +2118,9 @@ outline: none;
 }
 
 
-
-
-
-
-
+#boutonEnvoyer{
+	display: block;
+  margin : auto;
+}
 
 
