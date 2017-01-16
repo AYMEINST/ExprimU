@@ -41,8 +41,11 @@ function calculateScroll() {
 	var rangeTop    =   200;
 	var rangeBottom =   500;
 	$('.navmenu').find('.scroll_btn a').each(function(){
-		contentTop.push( $( $(this).attr('href') ).offset().top );
-		contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
+		contentTop.push( $( $(this).attr('href') ).offset() );
+		contentBottom.push( $( $(this).attr('href') ).offset() + $( $(this).attr('href') ).height() );
+// IF NAVMENU PROBLEM DELETE COMMENTAIRE
+//		contentTop.push( $( $(this).attr('href') ).offset().top );
+//		contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
 	})
 	$.each( contentTop, function(i){
 		if ( winTop > contentTop[i] - rangeTop && winTop < contentBottom[i] - rangeBottom ){
@@ -71,7 +74,7 @@ jQuery(document).ready(function() {
 			calculateScroll();
 		});
 		$('.navmenu ul li a, .mobile_menu ul li a, .btn_down').click(function() {  
-			$('html, body').animate({scrollTop: $(this.hash).offset().top - 80}, 1000);
+			$('html, body').animate({scrollBottop: $(this.hash).offset().top - 80}, 1000);
 			return false;
 		});
 	};
