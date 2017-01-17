@@ -2,16 +2,16 @@ package org.com.fr.metierInterface;
 
 import java.util.List;
 import org.springframework.data.domain.Page;
-import org.com.fr.entity.Note_publication;
+import org.com.fr.entity.NotePublication;
 
 public interface Note_publicationMetierI {
-	public Page<Note_publication> note_publicationPage(int page, int size);
+	public Page<NotePublication> note_publicationPage(int page, int size);
 
-	public List<Note_publication> note_publicationList();
+	public List<NotePublication> note_publicationList();
 
-	public Note_publication getNote_Publication(Long id);
+	public NotePublication getNote_Publication(Long id);
 
-	public Note_publication save(Note_publication note_publication);
+	public NotePublication save(NotePublication note_publication);
 
 	public void delete(Long id);
 }

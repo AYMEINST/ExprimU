@@ -12,59 +12,67 @@ import javax.persistence.ManyToOne;
 @Entity
 public class CommentaireForum {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long IdCommentaireForum;
-	private String ContenueCommentaire;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idCommentaireForum;
+	private String contenueCommentaire;
 	private Byte[] fichierCommentaire;
-	private Date  DatetimeCommentaire;
+	private Date datetimeCommentaire;
 	@ManyToOne
-	@JoinColumn(name="idForum")
+	@JoinColumn(name = "idForum")
 	private Forum forum;
-	
+
+	public Long getIdCommentaireForum() {
+		return idCommentaireForum;
+	}
+
+	public void setIdCommentaireForum(Long idCommentaireForum) {
+		this.idCommentaireForum = idCommentaireForum;
+	}
+
+	public String getContenueCommentaire() {
+		return contenueCommentaire;
+	}
+
+	public void setContenueCommentaire(String contenueCommentaire) {
+		this.contenueCommentaire = contenueCommentaire;
+	}
+
+	public Byte[] getFichierCommentaire() {
+		return fichierCommentaire;
+	}
+
+	public void setFichierCommentaire(Byte[] fichierCommentaire) {
+		this.fichierCommentaire = fichierCommentaire;
+	}
+
+	public Date getDatetimeCommentaire() {
+		return datetimeCommentaire;
+	}
+
+	public void setDatetimeCommentaire(Date datetimeCommentaire) {
+		this.datetimeCommentaire = datetimeCommentaire;
+	}
+
+	public Forum getForum() {
+		return forum;
+	}
+
+	public void setForum(Forum forum) {
+		this.forum = forum;
+	}
+
+	public CommentaireForum(Long idCommentaireForum, String contenueCommentaire, Byte[] fichierCommentaire,
+			Date datetimeCommentaire, Forum forum) {
+		super();
+		this.idCommentaireForum = idCommentaireForum;
+		this.contenueCommentaire = contenueCommentaire;
+		this.fichierCommentaire = fichierCommentaire;
+		this.datetimeCommentaire = datetimeCommentaire;
+		this.forum = forum;
+	}
 
 	public CommentaireForum() {
 		super();
 	}
-	public CommentaireForum(String contenueCommentaire, Byte[] fichierCommentaire, Date datetimeCommentaire,
-			Forum forum) {
-		super();
-		ContenueCommentaire = contenueCommentaire;
-		this.fichierCommentaire = fichierCommentaire;
-		DatetimeCommentaire = datetimeCommentaire;
-		this.forum = forum;
-	}
-	public Long getIdCommentaireForum() {
-		return IdCommentaireForum;
-	}
-	public void setIdCommentaireForum(Long idCommentaireForum) {
-		IdCommentaireForum = idCommentaireForum;
-	}
-	public String getContenueCommentaire() {
-		return ContenueCommentaire;
-	}
-	public void setContenueCommentaire(String contenueCommentaire) {
-		ContenueCommentaire = contenueCommentaire;
-	}
-	public Byte[] getFichierCommentaire() {
-		return fichierCommentaire;
-	}
-	public void setFichierCommentaire(Byte[] fichierCommentaire) {
-		this.fichierCommentaire = fichierCommentaire;
-	}
-	public Date getDatetimeCommentaire() {
-		return DatetimeCommentaire;
-	}
-	public void setDatetimeCommentaire(Date datetimeCommentaire) {
-		DatetimeCommentaire = datetimeCommentaire;
-	}
-	public Forum getForum() {
-		return forum;
-	}
-	public void setForum(Forum forum) {
-		this.forum = forum;
-	}
-	
-	
-	
 
 }

@@ -20,19 +20,19 @@ public class Utilisateur implements Serializable {
 	/**
 	 * 
 	 */
-
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idUtilisateur;
-	private String Nom;
-	private String Prenom;
+	private String nomUtilisateur;
+	private String prenomUtilisateur;
 	private Date date_naissance;
-	private String adresse;
-	private String code_postale;
-	private String pays;
-	private String login;
+	private String adresseUtilisateur;
+	private String codePostalUtilisateur;
+	private Long photoUtilisateur;
+	private String ProfessionUtilisateur;
 	private String motdepasse;
-	private String Email;
+	private String EmailUtilisateur;
 	@ManyToOne
 	@JoinColumn(name="Role")
 	private Roles  role;
@@ -42,7 +42,7 @@ public class Utilisateur implements Serializable {
 //	@JoinColumn(name="id_forum")
 //	private Forum forum;
 //	commentaire
-	@OneToMany(mappedBy="idForum")
+	@OneToMany(mappedBy="utilisateurForum")
 	private List<Forum> listForum;
 //	commentaire
 	@OneToMany(mappedBy="utilisateur")
@@ -52,280 +52,150 @@ public class Utilisateur implements Serializable {
 	private List<Publication> listPublication;
 //	carte bancaire
 	@OneToMany(mappedBy="utilisateur")
-	private List<Carte_BK> listCarteBk;
-//	liste amis
-	@OneToMany(mappedBy="utilisateur")
-	private List<Liste_amis> listeAmis;
-//	demande d'ajout
-	@OneToMany(mappedBy="utilisateur")
-	private List<Demande_ajout> demandeAjout;
-//	message
-	@ManyToMany
-	@JoinTable(name="EnvoyerMSG",joinColumns=@JoinColumn(name="idUtilisateur",referencedColumnName="idUtilisateur"),
-			inverseJoinColumns=@JoinColumn(name="idMessage",referencedColumnName="idMessage"))
-	private List<Message> listMessages;
+	private List<CarteBK> listCarteBk;
+	
+	@ManyToOne()
+	@JoinColumn(name="id_notePublication")
+	private Publication idNotPublication;
+	
+	@OneToMany(mappedBy="utilisateurR")
+	private List<Message> listMessagesR;
+	
+	@OneToMany(mappedBy="utilisateurE")
+	private List<Message> listMessagesE;
+	
+	@ManyToOne
+	@JoinColumn(name="idListAmis")
+    private  Amis amislist; 
+	
 	@ManyToMany
 	@JoinTable(name="utilisateurRoles",joinColumns=@JoinColumn(name="idUtilisateur",referencedColumnName="idUtilisateur"),
-			inverseJoinColumns=@JoinColumn(name="Role",referencedColumnName="Role"))
+			inverseJoinColumns=@JoinColumn(name="idRole",referencedColumnName="idRole"))
 	private List<Roles> ListRoles;
-	private static final long serialVersionUID = 1L;
+	public Long getIdUtilisateur() {
+		return idUtilisateur;
+	}
+	public void setIdUtilisateur(Long idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
+	}
+	public String getNomUtilisateur() {
+		return nomUtilisateur;
+	}
+	public void setNomUtilisateur(String nomUtilisateur) {
+		this.nomUtilisateur = nomUtilisateur;
+	}
+	public String getPrenomUtilisateur() {
+		return prenomUtilisateur;
+	}
+	public void setPrenomUtilisateur(String prenomUtilisateur) {
+		this.prenomUtilisateur = prenomUtilisateur;
+	}
+	public Date getDate_naissance() {
+		return date_naissance;
+	}
+	public void setDate_naissance(Date date_naissance) {
+		this.date_naissance = date_naissance;
+	}
+	public String getAdresseUtilisateur() {
+		return adresseUtilisateur;
+	}
+	public void setAdresseUtilisateur(String adresseUtilisateur) {
+		this.adresseUtilisateur = adresseUtilisateur;
+	}
+	public String getCodePostalUtilisateur() {
+		return codePostalUtilisateur;
+	}
+	public void setCodePostalUtilisateur(String codePostalUtilisateur) {
+		this.codePostalUtilisateur = codePostalUtilisateur;
+	}
+	public Long getPhotoUtilisateur() {
+		return photoUtilisateur;
+	}
+	public void setPhotoUtilisateur(Long photoUtilisateur) {
+		this.photoUtilisateur = photoUtilisateur;
+	}
+	public String getProfessionUtilisateur() {
+		return ProfessionUtilisateur;
+	}
+	public void setProfessionUtilisateur(String professionUtilisateur) {
+		ProfessionUtilisateur = professionUtilisateur;
+	}
+	public String getMotdepasse() {
+		return motdepasse;
+	}
+	public void setMotdepasse(String motdepasse) {
+		this.motdepasse = motdepasse;
+	}
+	public String getEmailUtilisateur() {
+		return EmailUtilisateur;
+	}
+	public void setEmailUtilisateur(String emailUtilisateur) {
+		EmailUtilisateur = emailUtilisateur;
+	}
+	public Roles getRole() {
+		return role;
+	}
+	public void setRole(Roles role) {
+		this.role = role;
+	}
+	public boolean isStatue_compte() {
+		return statue_compte;
+	}
+	public void setStatue_compte(boolean statue_compte) {
+		this.statue_compte = statue_compte;
+	}
+	public List<Forum> getListForum() {
+		return listForum;
+	}
+	public void setListForum(List<Forum> listForum) {
+		this.listForum = listForum;
+	}
+	public List<Commentaire> getListCommmentaire() {
+		return listCommmentaire;
+	}
+	public void setListCommmentaire(List<Commentaire> listCommmentaire) {
+		this.listCommmentaire = listCommmentaire;
+	}
+	public List<Publication> getListPublication() {
+		return listPublication;
+	}
+	public void setListPublication(List<Publication> listPublication) {
+		this.listPublication = listPublication;
+	}
+	public List<CarteBK> getListCarteBk() {
+		return listCarteBk;
+	}
+	public void setListCarteBk(List<CarteBK> listCarteBk) {
+		this.listCarteBk = listCarteBk;
+	}
 	
-	
-	
+	public List<Message> getListMessagesR() {
+		return listMessagesR;
+	}
+	public void setListMessagesR(List<Message> listMessagesR) {
+		this.listMessagesR = listMessagesR;
+	}
+	public List<Message> getListMessagesE() {
+		return listMessagesE;
+	}
+	public void setListMessagesE(List<Message> listMessagesE) {
+		this.listMessagesE = listMessagesE;
+	}
+	public Amis getAmislist() {
+		return amislist;
+	}
+	public void setAmislist(Amis amislist) {
+		this.amislist = amislist;
+	}
 	public List<Roles> getListRoles() {
 		return ListRoles;
 	}
-
-
-
 	public void setListRoles(List<Roles> listRoles) {
 		ListRoles = listRoles;
 	}
 
-
-
-	public String getEmail() {
-		return Email;
-	}
-
-
-
-	public void setEmail(String email) {
-		Email = email;
-	}
-
-
-
-	public List<Forum> getListForum() {
-		return listForum;
-	}
-
-
-
-	public void setListForum(List<Forum> listForum) {
-		this.listForum = listForum;
-	}
-
-
-
-	public List<Message> getListMessages() {
-		return listMessages;
-	}
-
-
-
-	public void setListMessages(List<Message> listMessages) {
-		this.listMessages = listMessages;
-	}
-
-
-
-	public Long getIdUtilisateur() {
-		return idUtilisateur;
-	}
-
-
-
-	public void setIdUtilisateur(Long idUtilisateur) {
-		this.idUtilisateur = idUtilisateur;
-	}
-
-
-
-	public String getNom() {
-		return Nom;
-	}
-
-
-
-	public void setNom(String nom) {
-		Nom = nom;
-	}
-
-
-
-	public String getPrenom() {
-		return Prenom;
-	}
-
-
-
-	public void setPrenom(String prenom) {
-		Prenom = prenom;
-	}
-
-
-
-	public Date getDate_naissance() {
-		return date_naissance;
-	}
-
-
-
-	public void setDate_naissance(Date date_naissance) {
-		this.date_naissance = date_naissance;
-	}
-
-
-
-	public String getAdresse() {
-		return adresse;
-	}
-
-
-
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
-	}
-
-
-
-	public String getCode_postale() {
-		return code_postale;
-	}
-
-
-
-	public void setCode_postale(String code_postale) {
-		this.code_postale = code_postale;
-	}
-
-
-
-	public String getPays() {
-		return pays;
-	}
-
-
-
-	public void setPays(String pays) {
-		this.pays = pays;
-	}
-
-
-
-	public String getLogin() {
-		return login;
-	}
-
-
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-
-
-	public String getMotdepasse() {
-		return motdepasse;
-	}
-
-
-
-	public void setMotdepasse(String motdepasse) {
-		this.motdepasse = motdepasse;
-	}
-
-
-
-	public Roles getRole() {
-		return role;
-	}
-
-
-
-	public void setRole(Roles role) {
-		this.role = role;
-	}
-
-
-
-	public boolean isStatue_compte() {
-		return statue_compte;
-	}
-
-
-
-	public void setStatue_compte(boolean statue_compte) {
-		this.statue_compte = statue_compte;
-	}
-
-
-
+	
+	
 	
 
-
-	public List<Commentaire> getListCommmentaire() {
-		return listCommmentaire;
-	}
-
-
-
-	@JsonIgnore
-	public void setListCommmentaire(List<Commentaire> listCommmentaire) {
-		this.listCommmentaire = listCommmentaire;
-	}
-
-	public List<Publication> getListPublication() {
-		return listPublication;
-	}
-
-	@JsonIgnore
-	public void setListPublication(List<Publication> listPublication) {
-		this.listPublication = listPublication;
-	}
-
-
-	public List<Carte_BK> getListCarteBk() {
-		return listCarteBk;
-	}
-
-
-	@JsonIgnore
-	public void setListCarteBk(List<Carte_BK> listCarteBk) {
-		this.listCarteBk = listCarteBk;
-	}
-
-
-
-	public List<Liste_amis> getListeAmis() {
-		return listeAmis;
-	}
-
-
-	@JsonIgnore
-	public void setListeAmis(List<Liste_amis> listeAmis) {
-		this.listeAmis = listeAmis;
-	}
-
-
-
-	public List<Demande_ajout> getDemandeAjout() {
-		return demandeAjout;
-	}
-
-
-
-	public void setDemandeAjout(List<Demande_ajout> demandeAjout) {
-		this.demandeAjout = demandeAjout;
-	}
-
-
-
-	public List<Message> getListMEssages() {
-		return listMessages;
-	}
-
-
-	@JsonIgnore
-	public void setListMEssages(List<Message> listMEssages) {
-		this.listMessages = listMEssages;
-	}
-
-
-
-	public Utilisateur() {
-		super();
-	}
-	
 }

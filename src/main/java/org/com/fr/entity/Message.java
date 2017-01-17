@@ -9,21 +9,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
-@Inheritance(strategy=InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Message implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idMessage;
-	
-	@ManyToMany(mappedBy="listMessages")
-	private List<Utilisateur> utilisateur;
-	
-	
+	private String objet;
+	private String contenueMessage;
+	@ManyToOne
+	@JoinColumn(name = "idUtilisateurE")
+	private Utilisateur utilisateurE;
+	@ManyToOne
+	@JoinColumn(name = "idUtilisateurR")
+	private Utilisateur utilisateurR;
+
 	public Long getIdMessage() {
 		return idMessage;
 	}
@@ -32,25 +38,50 @@ public class Message implements Serializable {
 		this.idMessage = idMessage;
 	}
 
-	public List<Utilisateur> getUtilisateur() {
-		return utilisateur;
+	public String getObjet() {
+		return objet;
 	}
 
-	public void setUtilisateur(List<Utilisateur> utilisateur) {
-		this.utilisateur = utilisateur;
+	public void setObjet(String objet) {
+		this.objet = objet;
 	}
 
-	public Message(Long idMessage, List<Utilisateur> utilisateur) {
+	public String getContenueMessage() {
+		return contenueMessage;
+	}
+
+	public void setContenueMessage(String contenueMessage) {
+		this.contenueMessage = contenueMessage;
+	}
+
+	public Utilisateur getUtilisateurE() {
+		return utilisateurE;
+	}
+
+	public void setUtilisateurE(Utilisateur utilisateurE) {
+		this.utilisateurE = utilisateurE;
+	}
+
+	public Utilisateur getUtilisateurR() {
+		return utilisateurR;
+	}
+
+	public void setUtilisateurR(Utilisateur utilisateurR) {
+		this.utilisateurR = utilisateurR;
+	}
+
+	public Message(Long idMessage, String objet, String contenueMessage, Utilisateur utilisateurE,
+			Utilisateur utilisateurR) {
 		super();
 		this.idMessage = idMessage;
-		this.utilisateur = utilisateur;
+		this.objet = objet;
+		this.contenueMessage = contenueMessage;
+		this.utilisateurE = utilisateurE;
+		this.utilisateurR = utilisateurR;
 	}
 
 	public Message() {
 		super();
 	}
 
-
-	
-	
 }
