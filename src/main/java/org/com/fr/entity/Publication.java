@@ -21,39 +21,46 @@ public class Publication implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idPublication;
 	private String titrePublication;
+	private String statuePublication;
 	private Date datePublication;
-//	publication coms
-	@OneToMany(mappedBy="publication")
+	@OneToMany(mappedBy = "publication")
 	private List<Commentaire> listCommmentaire;
 	@ManyToOne
-	@JoinColumn(name="idUtilisateur")
-	private  Utilisateur utilisateur;
-
-//	element
-	@OneToMany(mappedBy="publication" ,cascade=CascadeType.ALL)
-	private List<Element_publication> listElement;
+	@JoinColumn(name = "idUtilisateur")
+	private Utilisateur utilisateur;
 	
-
-
-
-	//	element
-	@OneToMany(mappedBy="publication" ,cascade=CascadeType.ALL)
-	private List<Note_publication> listNote;
+	@OneToMany(mappedBy = "idPublication", cascade = CascadeType.ALL)
+	private List<NotePublication> listNotePublication;
 	
+	@OneToMany(mappedBy="publication")
+	private List<Document> listdocument;
+	
+	public Long getIdPublication() {
+		return idPublication;
+	}
+	public void setIdPublication(Long idPublication) {
+		this.idPublication = idPublication;
+	}
+	public String getTitrePublication() {
+		return titrePublication;
+	}
+	public void setTitrePublication(String titrePublication) {
+		this.titrePublication = titrePublication;
+	}
+	public String getStatuePublication() {
+		return statuePublication;
+	}
+	public void setStatuePublication(String statuePublication) {
+		this.statuePublication = statuePublication;
+	}
 	public Date getDatePublication() {
 		return datePublication;
 	}
 	public void setDatePublication(Date datePublication) {
 		this.datePublication = datePublication;
-	}
-	public List<Element_publication> getListElement() {
-		return listElement;
-	}
-	public void setListElement(List<Element_publication> listElement) {
-		this.listElement = listElement;
 	}
 	public List<Commentaire> getListCommmentaire() {
 		return listCommmentaire;
@@ -67,54 +74,33 @@ public class Publication implements Serializable {
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
 	}
-	public Long getIdPublication() {
-		return idPublication;
-	}
-	public void setIdPublication(Long idPublication) {
-		this.idPublication = idPublication;
-	}
-	
-	public String getTitrePublication() {
-		return titrePublication;
-	}
-	public void setTitrePublication(String titrePublication) {
-		this.titrePublication = titrePublication;
-	}
-	public List<Commentaire> getListcoms() {
-		return listCommmentaire;
-	}
-	public void setListcoms(List<Commentaire> listcoms) {
-		this.listCommmentaire = listcoms;
-	}
-	
-	public List<Note_publication> getListNote() {
-		return listNote;
-	}
-	public void setListNote(List<Note_publication> listNote) {
-		this.listNote = listNote;
-	}
 
-
-	
-	
-	public Publication() {
-		super();
+	public List<NotePublication> getListNotePublication() {
+		return listNotePublication;
 	}
-	public Publication(Long idPublication, String titrePublication, Date datePublication,
-			List<Commentaire> listCommmentaire, Utilisateur utilisateur, List<Element_publication> listElement,
-			List<Note_publication> listNote) {
+	public void setListNotePublication(List<NotePublication> listNotePublication) {
+		this.listNotePublication = listNotePublication;
+	}
+	public List<Document> getListdocument() {
+		return listdocument;
+	}
+	public void setListdocument(List<Document> listdocument) {
+		this.listdocument = listdocument;
+	}
+	public Publication(Long idPublication, String titrePublication, String statuePublication, Date datePublication,
+			List<Commentaire> listCommmentaire, Utilisateur utilisateur, List<NotePublication> listNote) {
 		super();
 		this.idPublication = idPublication;
 		this.titrePublication = titrePublication;
+		this.statuePublication = statuePublication;
 		this.datePublication = datePublication;
 		this.listCommmentaire = listCommmentaire;
 		this.utilisateur = utilisateur;
-		this.listElement = listElement;
-		this.listNote = listNote;
 	}
-	
-	
-	
+	public Publication() {
+		super();
+	}
+
 	
 	
 
