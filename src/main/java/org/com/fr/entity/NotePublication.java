@@ -2,6 +2,7 @@ package org.com.fr.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,10 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Note_publication implements Serializable {
+public class NotePublication implements Serializable {
 	/**
 	 * 
 	 */
@@ -21,83 +23,51 @@ public class Note_publication implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idNote;
 	private Date dateAppreciation;
-	private String note;
-	
-	
+	private Integer note;
 	@ManyToOne
 	@JoinColumn(name="idPublication")
-	private Publication publication;
+	private Publication idPublication;
 	
-	
-
-	public Note_publication() {
-		super();
-	}
-	
+	@OneToMany(mappedBy="idNotPublication")
+	private List<Utilisateur> listutilisateur;
 	
 	public Long getIdNote() {
 		return idNote;
 	}
-
-
-
-
 	public void setIdNote(Long idNote) {
 		this.idNote = idNote;
 	}
-
-
-
-
 	public Date getDateAppreciation() {
 		return dateAppreciation;
 	}
-
-
-
-
 	public void setDateAppreciation(Date dateAppreciation) {
 		this.dateAppreciation = dateAppreciation;
 	}
-
-
-
-
-	public String getNote() {
+	public Integer getNote() {
 		return note;
 	}
-
-
-
-
-	public void setNote(String note) {
+	public void setNote(Integer note) {
 		this.note = note;
 	}
 
 
-
-
-	public Publication getPublication() {
-		return publication;
+	public Publication getIdPublication() {
+		return idPublication;
+	}
+	public void setIdPublication(Publication idPublication) {
+		this.idPublication = idPublication;
 	}
 
-
-
-
-	public void setPublication(Publication publication) {
-		this.publication = publication;
+	public List<Utilisateur> getListutilisateur() {
+		return listutilisateur;
 	}
-
-
-	public Note_publication(Long idNote, Date dateAppreciation, String note, Publication publication) {
+	public void setListutilisateur(List<Utilisateur> listutilisateur) {
+		this.listutilisateur = listutilisateur;
+	}
+	public NotePublication() {
 		super();
-		this.idNote = idNote;
-		this.dateAppreciation = dateAppreciation;
-		this.note = note;
-		this.publication = publication;
 	}
-
-
-
+	
+	
 
 }

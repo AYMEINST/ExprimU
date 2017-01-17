@@ -10,32 +10,44 @@ import javax.persistence.ManyToMany;
 public class Roles {
 
 	@Id
-	private String Role ;
-	@ManyToMany(mappedBy="ListRoles")
-	private List<Utilisateur>utilisateur;
-	
+	private Long idRole;
+	private String libelleRole;
+	@ManyToMany(mappedBy = "ListRoles")
+	private List<Utilisateur> utilisateur;
+
+	public Long getIdRole() {
+		return idRole;
+	}
+
+	public void setIdRole(Long idRole) {
+		this.idRole = idRole;
+	}
+
+	public String getLibelleRole() {
+		return libelleRole;
+	}
+
+	public void setLibelleRole(String libelleRole) {
+		this.libelleRole = libelleRole;
+	}
 
 	public List<Utilisateur> getUtilisateur() {
 		return utilisateur;
 	}
+
 	public void setUtilisateur(List<Utilisateur> utilisateur) {
 		this.utilisateur = utilisateur;
 	}
-	public String getRole() {
-		return Role;
-	}
-	public void setRole(String role) {
-		Role = role;
-	}
-	public Roles(String role, List<Utilisateur> utilisateur) {
+
+	public Roles(Long idRole, String libelleRole, List<Utilisateur> utilisateur) {
 		super();
-		Role = role;
+		this.idRole = idRole;
+		this.libelleRole = libelleRole;
 		this.utilisateur = utilisateur;
 	}
-	
-	
-	
-	
-	
-	
+
+	public Roles() {
+		super();
+	}
+
 }

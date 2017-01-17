@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Carte_BK implements Serializable {
+public class CarteBK implements Serializable {
 	/**
 	 * 
 	 */
@@ -27,7 +27,7 @@ public class Carte_BK implements Serializable {
 
 	
 
-	public Carte_BK(Long idCarte, int numeroCarteBk, Date dateExperation, Utilisateur utilisateur) {
+	public CarteBK(Long idCarte, int numeroCarteBk, Date dateExperation, Utilisateur utilisateur) {
 		super();
 		this.idCarte = idCarte;
 		this.numeroCarteBk = numeroCarteBk;
@@ -37,7 +37,7 @@ public class Carte_BK implements Serializable {
 
 
 
-	public Carte_BK() {
+	public CarteBK() {
 		super();
 	}
 

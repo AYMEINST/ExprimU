@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.com.fr.dao.Note_publicationRepository;
-import org.com.fr.entity.Note_publication;
+import org.com.fr.entity.NotePublication;
 import org.com.fr.metierInterface.Note_publicationMetierI;
 
 @Service
@@ -17,17 +17,17 @@ public class Note_publicationMetier implements Note_publicationMetierI {
 	private Note_publicationRepository note_publicationRepository;
 
 	@Override
-	public Page<Note_publication> note_publicationPage(int page, int size) {
+	public Page<NotePublication> note_publicationPage(int page, int size) {
 		return note_publicationRepository.findAll(new PageRequest(page, size));
 	}
 
 	@Override
-	public List<Note_publication> note_publicationList() {
+	public List<NotePublication> note_publicationList() {
 		return note_publicationRepository.findAll();
 	}
 
 	@Override
-	public Note_publication getNote_Publication(Long id) {
+	public NotePublication getNote_Publication(Long id) {
 		return note_publicationRepository.findOne(id);
 	}
 
@@ -37,7 +37,7 @@ public class Note_publicationMetier implements Note_publicationMetierI {
 	}
 
 	@Override
-	public Note_publication save(Note_publication note_publication) {
+	public NotePublication save(NotePublication note_publication) {
 		note_publication.setDateAppreciation(new Date());
 		return note_publicationRepository.save(note_publication);
 	}
