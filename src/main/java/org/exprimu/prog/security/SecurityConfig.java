@@ -21,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// auth.inMemoryAuthentication().withUser("Admin").password("123456").roles("admin");
 		auth.jdbcAuthentication()
 		.dataSource(dataSource)
-		.usersByUsernameQuery("SELECT  login as  principal, motdepasse as  credentials ,statue_compte FROM utilisateur WHERE login=?")//user query
+		.usersByUsernameQuery("SELECT  email_utilisateur as  principal, motdepasse as  credentials ,statue_compte FROM utilisateur WHERE login=?")//user query
 		.authoritiesByUsernameQuery("SELECT  login as  principal, role as role   FROM utilisateur WHERE login=?")
 		.rolePrefix("roleP_") // role  prefix 
 		.passwordEncoder(new Md5PasswordEncoder());// role  query
@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable().authorizeRequests()
 		.antMatchers("/css/**","/js/**","/images/**").permitAll()
 		.anyRequest().authenticated().and()
-		.formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/Index/Forum")
+		.formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/index/Forum")
 		.and()
 		.logout().invalidateHttpSession(true).logoutUrl("/logout")
 		.permitAll()
