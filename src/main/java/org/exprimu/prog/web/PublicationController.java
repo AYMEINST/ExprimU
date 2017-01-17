@@ -2,10 +2,12 @@ package org.exprimu.prog.web;
 
 import java.util.List;
 
+import org.exprimu.prog.entity.Document;
 import org.exprimu.prog.entity.Publication;
 import org.exprimu.prog.metierImp.PublicationMetierImp;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -25,8 +27,9 @@ public class PublicationController {
 		return publicationMetierI.getPublication(id);
 	}
 
-	public Publication save(Publication publication) {
-		return publicationMetierI.save(publication);
+    @RequestMapping( name="/Poblication/save" ,method=RequestMethod.POST )
+	public Publication save(Publication publication, Document document) {
+		return publicationMetierI.save(publication, document);
 	}
 
 	public void delete(Long id) {
