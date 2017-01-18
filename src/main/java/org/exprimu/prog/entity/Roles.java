@@ -1,6 +1,7 @@
 package org.exprimu.prog.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -14,7 +15,7 @@ public class Roles implements Serializable{
 	private Long idRole;
 	private String libelleRole;
 	@ManyToMany(mappedBy = "ListRoles")
-	private List<Utilisateur> utilisateur;
+	private List<Utilisateur> utilisateur = new ArrayList<Utilisateur>();
 
 	public Long getIdRole() {
 		return idRole;
@@ -47,6 +48,11 @@ public class Roles implements Serializable{
 		this.utilisateur = utilisateur;
 	}
 
+	public Roles(Long idRole, String libelleRole) {
+		super();
+		this.idRole = idRole;
+		this.libelleRole = libelleRole;
+	}
 	public Roles() {
 		super();
 	}
