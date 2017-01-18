@@ -1,9 +1,11 @@
 package org.exprimu.prog.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -64,8 +66,8 @@ public class Utilisateur implements Serializable {
 	private Amis amislist;
 
 	@ManyToMany
-	@JoinTable(name = "Roles", joinColumns = @JoinColumn(name = "idUtilisateur", referencedColumnName = "idUtilisateur"), inverseJoinColumns = @JoinColumn(name = "idRole", referencedColumnName = "idRole"))
-	private List<Roles> ListRoles;
+	@JoinTable(name = "Role_utilisateur", joinColumns = @JoinColumn(name = "idUtilisateur", referencedColumnName = "idUtilisateur"), inverseJoinColumns = @JoinColumn(name = "idRole", referencedColumnName = "idRole"))
+	private List<Roles> ListRoles = new ArrayList<Roles>();
 
 	public Long getIdUtilisateur() {
 		return idUtilisateur;
