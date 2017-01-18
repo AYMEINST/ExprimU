@@ -23,7 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.dataSource(dataSource)
 		.usersByUsernameQuery("SELECT  email_utilisateur as  principal, motdepasse as  credentials ,statue_compte FROM utilisateur WHERE email_utilisateur=?")//user query
 		.authoritiesByUsernameQuery("SELECT  u.email_utilisateur as  principal,u.role ,r.id_role , r.libelle_role as role   FROM utilisateur u , roles r   WHERE r.id_role=u.role and u.email_utilisateur=? ")
-		.rolePrefix("roleP_") // role  prefix 
+		.rolePrefix("ROLE_") // role  prefix 
 		.passwordEncoder(new Md5PasswordEncoder());// role  query
 	}
 

@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,6 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Utilisateur implements Serializable {
 	/**
@@ -22,180 +24,257 @@ public class Utilisateur implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idUtilisateur;
-	private String nomUtilisateur;
-	private String prenomUtilisateur;
-	private Date date_naissance;
-	private String adresseUtilisateur;
-	private String codePostalUtilisateur;
-	private Long photoUtilisateur;
-	private String ProfessionUtilisateur;
-	private String motdepasse;
-	private String EmailUtilisateur;
-	@ManyToOne
-	@JoinColumn(name="Role")
-	private Roles  role;
+	private String nom;
+	private String prenom;
+	private Date dateNaissance;
+	private String adresse;
+	private String codePostal;
+	private Long photo;
+	private String profession;
+	private String password;
+	private String email;
 	private boolean statue_compte;
-////	forum uniderctionnel
-//	@ManyToOne
-//	@JoinColumn(name="id_forum")
-//	private Forum forum;
-//	commentaire
-	@OneToMany(mappedBy="utilisateurForum")
-	private List<Forum> listForum;
-//	commentaire
-	@OneToMany(mappedBy="utilisateur")
+
+	@OneToMany(mappedBy = "idUtilisateur", fetch = FetchType.LAZY)
+	private List<Forum> forums;
+
+	@OneToMany(mappedBy = "utilisateur")
 	private List<Commentaire> listCommmentaire;
-//	publication
-	@OneToMany(mappedBy="utilisateur")
+
+	@OneToMany(mappedBy = "utilisateur")
 	private List<Publication> listPublication;
-//	carte bancaire
-	@OneToMany(mappedBy="utilisateur")
+
+	@OneToMany(mappedBy = "utilisateur")
 	private List<CarteBK> listCarteBk;
-	
+
 	@ManyToOne()
-	@JoinColumn(name="id_notePublication")
+	@JoinColumn(name = "id_notePublication")
 	private Publication idNotPublication;
-	
-	@OneToMany(mappedBy="utilisateurR")
+
+	@OneToMany(mappedBy = "utilisateurR")
 	private List<Message> listMessagesR;
-	
-	@OneToMany(mappedBy="utilisateurE")
+
+	@OneToMany(mappedBy = "utilisateurE")
 	private List<Message> listMessagesE;
-	
+
 	@ManyToOne
-	@JoinColumn(name="idListAmis")
-    private  Amis amislist; 
-	
+	@JoinColumn(name = "idListAmis")
+	private Amis amislist;
+
 	@ManyToMany
-	@JoinTable(name="utilisateurRoles",joinColumns=@JoinColumn(name="idUtilisateur",referencedColumnName="idUtilisateur"),
-			inverseJoinColumns=@JoinColumn(name="idRole",referencedColumnName="idRole"))
+	@JoinTable(name = "Roles", joinColumns = @JoinColumn(name = "idUtilisateur", referencedColumnName = "idUtilisateur"), inverseJoinColumns = @JoinColumn(name = "idRole", referencedColumnName = "idRole"))
 	private List<Roles> ListRoles;
+
 	public Long getIdUtilisateur() {
 		return idUtilisateur;
 	}
+
 	public void setIdUtilisateur(Long idUtilisateur) {
 		this.idUtilisateur = idUtilisateur;
 	}
-	public String getNomUtilisateur() {
-		return nomUtilisateur;
+
+	public String getNom() {
+		return nom;
 	}
-	public void setNomUtilisateur(String nomUtilisateur) {
-		this.nomUtilisateur = nomUtilisateur;
+
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
-	public String getPrenomUtilisateur() {
-		return prenomUtilisateur;
+
+	public String getPrenom() {
+		return prenom;
 	}
-	public void setPrenomUtilisateur(String prenomUtilisateur) {
-		this.prenomUtilisateur = prenomUtilisateur;
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
-	public Date getDate_naissance() {
-		return date_naissance;
+
+	public Date getDateNaissance() {
+		return dateNaissance;
 	}
-	public void setDate_naissance(Date date_naissance) {
-		this.date_naissance = date_naissance;
+
+	public void setDateNaissance(Date dateNaissance) {
+		this.dateNaissance = dateNaissance;
 	}
-	public String getAdresseUtilisateur() {
-		return adresseUtilisateur;
+
+	public String getAdresse() {
+		return adresse;
 	}
-	public void setAdresseUtilisateur(String adresseUtilisateur) {
-		this.adresseUtilisateur = adresseUtilisateur;
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
 	}
-	public String getCodePostalUtilisateur() {
-		return codePostalUtilisateur;
+
+	public String getCodePostal() {
+		return codePostal;
 	}
-	public void setCodePostalUtilisateur(String codePostalUtilisateur) {
-		this.codePostalUtilisateur = codePostalUtilisateur;
+
+	public void setCodePostal(String codePostal) {
+		this.codePostal = codePostal;
 	}
-	public Long getPhotoUtilisateur() {
-		return photoUtilisateur;
+
+	public Long getPhoto() {
+		return photo;
 	}
-	public void setPhotoUtilisateur(Long photoUtilisateur) {
-		this.photoUtilisateur = photoUtilisateur;
+
+	public void setPhoto(Long photo) {
+		this.photo = photo;
 	}
-	public String getProfessionUtilisateur() {
-		return ProfessionUtilisateur;
+
+	public String getProfession() {
+		return profession;
 	}
-	public void setProfessionUtilisateur(String professionUtilisateur) {
-		ProfessionUtilisateur = professionUtilisateur;
+
+	public void setProfession(String profession) {
+		this.profession = profession;
 	}
-	public String getMotdepasse() {
-		return motdepasse;
+
+	public String getPassword() {
+		return password;
 	}
-	public void setMotdepasse(String motdepasse) {
-		this.motdepasse = motdepasse;
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public String getEmailUtilisateur() {
-		return EmailUtilisateur;
+
+	public String getEmail() {
+		return email;
 	}
-	public void setEmailUtilisateur(String emailUtilisateur) {
-		EmailUtilisateur = emailUtilisateur;
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public Roles getRole() {
-		return role;
-	}
-	public void setRole(Roles role) {
-		this.role = role;
-	}
+
 	public boolean isStatue_compte() {
 		return statue_compte;
 	}
+
 	public void setStatue_compte(boolean statue_compte) {
 		this.statue_compte = statue_compte;
 	}
-	public List<Forum> getListForum() {
-		return listForum;
+
+	public List<Forum> getForums() {
+		return forums;
 	}
-	public void setListForum(List<Forum> listForum) {
-		this.listForum = listForum;
+
+	public void setForums(List<Forum> forums) {
+		this.forums = forums;
 	}
+
 	public List<Commentaire> getListCommmentaire() {
 		return listCommmentaire;
 	}
+
 	public void setListCommmentaire(List<Commentaire> listCommmentaire) {
 		this.listCommmentaire = listCommmentaire;
 	}
+
 	public List<Publication> getListPublication() {
 		return listPublication;
 	}
+
 	public void setListPublication(List<Publication> listPublication) {
 		this.listPublication = listPublication;
 	}
+
 	public List<CarteBK> getListCarteBk() {
 		return listCarteBk;
 	}
+
 	public void setListCarteBk(List<CarteBK> listCarteBk) {
 		this.listCarteBk = listCarteBk;
 	}
-	
+
+	public Publication getIdNotPublication() {
+		return idNotPublication;
+	}
+
+	public void setIdNotPublication(Publication idNotPublication) {
+		this.idNotPublication = idNotPublication;
+	}
+
 	public List<Message> getListMessagesR() {
 		return listMessagesR;
 	}
+
 	public void setListMessagesR(List<Message> listMessagesR) {
 		this.listMessagesR = listMessagesR;
 	}
+
 	public List<Message> getListMessagesE() {
 		return listMessagesE;
 	}
+
 	public void setListMessagesE(List<Message> listMessagesE) {
 		this.listMessagesE = listMessagesE;
 	}
+
 	public Amis getAmislist() {
 		return amislist;
 	}
+
 	public void setAmislist(Amis amislist) {
 		this.amislist = amislist;
 	}
+
 	public List<Roles> getListRoles() {
 		return ListRoles;
 	}
+
 	public void setListRoles(List<Roles> listRoles) {
 		ListRoles = listRoles;
 	}
 
-	
-	
-	
+	public Utilisateur() {
+		super();
+	}
 
+	public Utilisateur(String nom, String prenom, Date dateNaissance, String adresse, String codePostal, Long photo,
+			String profession, String password, String email, boolean statue_compte, List<Forum> forums,
+			List<Commentaire> listCommmentaire, List<Publication> listPublication, List<CarteBK> listCarteBk,
+			Publication idNotPublication, List<Message> listMessagesR, List<Message> listMessagesE, Amis amislist,
+			List<Roles> listRoles) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.adresse = adresse;
+		this.codePostal = codePostal;
+		this.photo = photo;
+		this.profession = profession;
+		this.password = password;
+		this.email = email;
+		this.statue_compte = statue_compte;
+		this.forums = forums;
+		this.listCommmentaire = listCommmentaire;
+		this.listPublication = listPublication;
+		this.listCarteBk = listCarteBk;
+		this.idNotPublication = idNotPublication;
+		this.listMessagesR = listMessagesR;
+		this.listMessagesE = listMessagesE;
+		this.amislist = amislist;
+		ListRoles = listRoles;
+	}
+
+	public Utilisateur( String nom, String prenom, Date dateNaissance, String adresse,
+			String codePostal, Long photo, String profession, String password, String email, boolean statue_compte) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.adresse = adresse;
+		this.codePostal = codePostal;
+		this.photo = photo;
+		this.profession = profession;
+		this.password = password;
+		this.email = email;
+		this.statue_compte = statue_compte;
+	}
+
+	
+	
+	
+	
 }

@@ -9,4 +9,5 @@ public List<Publication> publicationList();
 public Publication getPublication(Long id);
 public Publication save(Publication publication , Document document);
 public void delete(Long id);
+public void updatePublication (Long id);
 }

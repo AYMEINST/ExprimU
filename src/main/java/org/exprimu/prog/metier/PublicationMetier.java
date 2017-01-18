@@ -2,6 +2,8 @@ package org.exprimu.prog.metier;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+
+import java.util.Date;
 import java.util.List;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -38,9 +40,21 @@ public class PublicationMetier implements PublicationMetierImp {
 
 	@Override
 	public Publication save(Publication publication, Document document) {
-		 
-		publication.getListdocument().add(document);
+		publication.setDatePublication(new Date());
+		document.setDateCreation(new Date());
 		document.setPublication(publication);
+		publication.getListdocument().add(document);
+		publicationRepository.save(publication);
 		return null;
 	}
+
+	@Override
+	public void updatePublication(Long id) {
+     Publication P = getPublication(id);
+     
+		
+	}
+	
+	
+	
 }
