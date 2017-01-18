@@ -21,9 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Utilisateur implements Serializable {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -61,9 +59,8 @@ public class Utilisateur implements Serializable {
 	@OneToMany(mappedBy = "utilisateurE")
 	private List<Message> listMessagesE;
 
-	@ManyToOne
-	@JoinColumn(name = "idListAmis")
-	private Amis amislist;
+	@OneToMany(mappedBy = "utilisateurP")
+	private List<Amis> amislist;
 
 	@ManyToMany
 	@JoinTable(name = "Role_utilisateur", joinColumns = @JoinColumn(name = "idUtilisateur", referencedColumnName = "idUtilisateur"), inverseJoinColumns = @JoinColumn(name = "idRole", referencedColumnName = "idRole"))
@@ -213,14 +210,6 @@ public class Utilisateur implements Serializable {
 		this.listMessagesE = listMessagesE;
 	}
 
-	public Amis getAmislist() {
-		return amislist;
-	}
-
-	public void setAmislist(Amis amislist) {
-		this.amislist = amislist;
-	}
-
 	public List<Roles> getListRoles() {
 		return ListRoles;
 	}
@@ -231,33 +220,6 @@ public class Utilisateur implements Serializable {
 
 	public Utilisateur() {
 		super();
-	}
-
-	public Utilisateur(String nom, String prenom, Date dateNaissance, String adresse, String codePostal, Long photo,
-			String profession, String password, String email, boolean statue_compte, List<Forum> forums,
-			List<Commentaire> listCommmentaire, List<Publication> listPublication, List<CarteBK> listCarteBk,
-			Publication idNotPublication, List<Message> listMessagesR, List<Message> listMessagesE, Amis amislist,
-			List<Roles> listRoles) {
-		super();
-		this.nom = nom;
-		this.prenom = prenom;
-		this.dateNaissance = dateNaissance;
-		this.adresse = adresse;
-		this.codePostal = codePostal;
-		this.photo = photo;
-		this.profession = profession;
-		this.password = password;
-		this.email = email;
-		this.statue_compte = statue_compte;
-		this.forums = forums;
-		this.listCommmentaire = listCommmentaire;
-		this.listPublication = listPublication;
-		this.listCarteBk = listCarteBk;
-		this.idNotPublication = idNotPublication;
-		this.listMessagesR = listMessagesR;
-		this.listMessagesE = listMessagesE;
-		this.amislist = amislist;
-		ListRoles = listRoles;
 	}
 
 	public Utilisateur( String nom, String prenom, Date dateNaissance, String adresse,
@@ -273,6 +235,14 @@ public class Utilisateur implements Serializable {
 		this.password = password;
 		this.email = email;
 		this.statue_compte = statue_compte;
+	}
+
+	public List<Amis> getAmislist() {
+		return amislist;
+	}
+
+	public void setAmislist(List<Amis> amislist) {
+		this.amislist = amislist;
 	}
 
 	

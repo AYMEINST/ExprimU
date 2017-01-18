@@ -23,6 +23,7 @@ public class Amis implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idAmisList;
+	
 	private Date dateCreation;
 
 	@ManyToOne
