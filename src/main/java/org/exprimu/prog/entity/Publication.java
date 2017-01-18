@@ -35,7 +35,7 @@ public class Publication implements Serializable {
 	@OneToMany(mappedBy = "idPublication", cascade = CascadeType.ALL)
 	private List<NotePublication> listNotePublication;
 	
-	@OneToMany(mappedBy="publication")
+	@OneToMany(mappedBy="publication",cascade = CascadeType.ALL)
 	private List<Document> listdocument;
 	
 	public Long getIdPublication() {
