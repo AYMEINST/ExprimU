@@ -358,3 +358,33 @@ img {
     background-color: #5b5b5b;
     border-color: #282828;
 }
+
+tr i{
+	color: #B9B9B9;
+}
+
+.alert-infoFacebook {
+    color: #3c589e;
+    background-color: #e5edff;
+    border-color: #e5edff;
+}
+
+.alert-infoTwitter {
+    color: #1da0f2;
+    background-color: #e5f5ff;
+    border-color: #e5f5ff;
+}
+
+.alert-infoLinkedin {
+    color: #006699;
+    background-color: #e6f7ff;
+    border-color: #e6f7ff;
+}
+
+.alert-normal  b{
+	font-size: 20px;
+}
+
+.alert-big  b{
+	font-size: 30px;
+}
