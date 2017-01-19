@@ -10603,7 +10603,8 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+//			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "Affichage des élément compris entre _START_ et _END_ sur _TOTAL_",
 	
 	
 			/**
