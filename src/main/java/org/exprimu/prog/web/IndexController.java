@@ -12,8 +12,15 @@ public class IndexController {
 		return "etudiants";
 	}
 
-	@RequestMapping(value = "/Forum")
-	public String form(Model model) {
-		return "forum";
+//	@RequestMapping(value = "/Forum")
+//	public String form(Model model) {
+//		return "creationcomptetampon";
+//	}
+	
+	@RequestMapping(value = "/utilisateurt")
+	public String utilisateurt(Model model) {
+		return "utilisateurt";
 	}
+
+	
 }

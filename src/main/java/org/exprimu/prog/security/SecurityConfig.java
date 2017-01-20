@@ -17,14 +17,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private DataSource dataSource;
 	
 	@Override // authetification test
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		// auth.inMemoryAuthentication().withUser("Admin").password("123456").roles("admin");
-		auth.jdbcAuthentication()
-		.dataSource(dataSource)
-		.usersByUsernameQuery("SELECT  email_utilisateur as  principal, motdepasse as  credentials ,statue_compte FROM utilisateur WHERE email_utilisateur=?")//user query
-		.authoritiesByUsernameQuery("SELECT  u.email_utilisateur as  principal,u.role ,r.id_role , r.libelle_role as role   FROM utilisateur u , roles r   WHERE r.id_role=u.role and u.email_utilisateur=? ")
-		.rolePrefix("ROLE_") // role  prefix 
-		.passwordEncoder(new Md5PasswordEncoder());// role  query
+		protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+			// auth.inMemoryAuthentication().withUser("Admin").password("123456").roles("admin");
+			auth.jdbcAuthentication()
+			.dataSource(dataSource)
+			.usersByUsernameQuery("SELECT  email as  principal, password as  credentials ,statue_compte FROM utilisateur WHERE email=?")//user query
+			.authoritiesByUsernameQuery("SELECT u.email as principal, r.libelle_role role ,r.id_role FROM role_utilisateur ru JOIN utilisateur u ON u.id_utilisateur = ru.id_utilisateur JOIN roles r ON r.id_role = ru.id_role WHERE u.email=? ")
+			.rolePrefix("ROLE_") // role  prefix 
+			//.passwordEncoder(new Md5PasswordEncoder())
+			;// role  query
 	}
 
 	@Override
@@ -32,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable().authorizeRequests()
 		.antMatchers("/css/**","/js/**","/images/**").permitAll()
 		.anyRequest().authenticated().and()
-		.formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/Index/Forum")
+		.formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/Index/utilisateurt")
 		.and()
 		.logout().invalidateHttpSession(true).logoutUrl("/logout")
 		.permitAll()
