@@ -31,8 +31,8 @@ limitations under the License.*/
 
  #wrapper {
     width: 100%;
-    margin-top: 55px!important; 
-    background-color:#282828; 
+    margin-top: 55px!important;
+    background-color:#282828;
 }
 
 #page-wrapper {
@@ -43,7 +43,7 @@ limitations under the License.*/
 
 
 
-    
+
 
 .navbar-static-side ul li {
     border-bottom:1px solid #5b5b5b !important;
@@ -387,4 +387,22 @@ tr i{
 
 .alert-big  b{
 	font-size: 30px;
+}
+
+.alert-normal{
+  height : 125px;
+}
+.alert-big{
+  height : 125px;
+}
+
+.user-info a{
+  font-size: 14px;
+}
+
+.listeUtilisateur{
+  background-color: blue;
+}
+.tchat{
+  background-color: yellow;
 }
