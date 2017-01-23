@@ -2,6 +2,8 @@ package org.exprimu.prog.metier;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+
+import java.util.Date;
 import java.util.List;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -35,9 +37,7 @@ public class DocumentMetier implements DocumentMetierImp {
 
 	@Override
 	public Document save(Document document) {
-		
-		
-		
+		document.setDateCreation(new Date());
 		return documentRepository.save(document);
 	}
 
@@ -46,19 +46,6 @@ public class DocumentMetier implements DocumentMetierImp {
 		documentRepository.delete(documentRepository.findOne(id));
 	}
 
-	// get  userId  connect 
-	@Override
-	public Long getUserConnect() {
-		Long userId;
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-				Utilisateur  customUser = (Utilisateur)authentication.getPrincipal();
-				if (!(authentication instanceof AnonymousAuthenticationToken)) {
-					 userId = customUser.getIdUtilisateur();	
-					 return userId;
-				}else{
-					return null; // redirection 
-				}
-		
-	}
+	
 
 }

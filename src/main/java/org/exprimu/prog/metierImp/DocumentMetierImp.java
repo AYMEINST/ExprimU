@@ -8,5 +8,5 @@ public List<Document> documentList();
 public Document getDocument(Long id);
 public Document save(Document document);
 public void delete(Long id);
-public Long getUserConnect();
+//public Long getUserConnect();
 }

@@ -7,7 +7,7 @@ public interface PublicationMetierImp {
 public Page<Publication> publicationPage(int page, int size);
 public List<Publication> publicationList();
 public Publication getPublication(Long id);
-public Publication save(Publication publication , Document document);
+public Publication save(Publication publication );
 public void delete(Long id);
-public void updatePublication (Long id);
+public void updatePublication (Long idPublication ,String statue,String tritrePublication, String DescriptifDocument ,Long idFichier );
 }

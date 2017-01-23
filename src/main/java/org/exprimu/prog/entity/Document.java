@@ -68,19 +68,15 @@ public class Document implements Serializable {
 		return publication;
 	}
 
-
 	public void setPublication(Publication publication) {
 		this.publication = publication;
 	}
 
-
-	public Document(String descriptionFichier, Long idFichier, Date dateCreation,
-			Publication publication) {
+	public Document(String descriptionFichier, Long idFichier, Date dateCreation) {
 		super();
 		this.descriptionFichier = descriptionFichier;
 		this.idFichier = idFichier;
 		this.dateCreation = dateCreation;
-		this.publication = publication;
 	}
 
 

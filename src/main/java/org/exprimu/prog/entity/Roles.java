@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Roles implements Serializable{
 
@@ -32,7 +34,7 @@ public class Roles implements Serializable{
 	public void setLibelleRole(String libelleRole) {
 		this.libelleRole = libelleRole;
 	}
-
+	@JsonIgnore
 	public List<Utilisateur> getUtilisateur() {
 		return utilisateur;
 	}

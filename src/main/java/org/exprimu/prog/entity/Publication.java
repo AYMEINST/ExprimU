@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Publication implements Serializable {
@@ -32,10 +35,10 @@ public class Publication implements Serializable {
 	@JoinColumn(name = "idUtilisateur")
 	private Utilisateur utilisateur;
 	
-	@OneToMany(mappedBy = "idPublication", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "idPublication",  fetch = FetchType.LAZY)
 	private List<NotePublication> listNotePublication;
 	
-	@OneToMany(mappedBy="publication",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="publication", fetch = FetchType.LAZY)
 	private List<Document> listdocument;
 	
 	public Long getIdPublication() {
@@ -62,6 +65,7 @@ public class Publication implements Serializable {
 	public void setDatePublication(Date datePublication) {
 		this.datePublication = datePublication;
 	}
+	@JsonIgnore
 	public List<Commentaire> getListCommmentaire() {
 		return listCommmentaire;
 	}
@@ -74,13 +78,14 @@ public class Publication implements Serializable {
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
 	}
-
+	@JsonIgnore
 	public List<NotePublication> getListNotePublication() {
 		return listNotePublication;
 	}
 	public void setListNotePublication(List<NotePublication> listNotePublication) {
 		this.listNotePublication = listNotePublication;
 	}
+	@JsonIgnore
 	public List<Document> getListdocument() {
 		return listdocument;
 	}
@@ -99,6 +104,21 @@ public class Publication implements Serializable {
 	}
 	public Publication() {
 		super();
+	}
+	public Publication(String titrePublication, String statuePublication, Utilisateur utilisateur,
+			List<Document> listdocument) {
+		super();
+		this.titrePublication = titrePublication;
+		this.statuePublication = statuePublication;
+		this.utilisateur = utilisateur;
+		this.listdocument = listdocument;
+	}
+	
+	public Publication(String titrePublication, String statuePublication, Date datePublication) {
+		super();
+		this.titrePublication = titrePublication;
+		this.statuePublication = statuePublication;
+		this.datePublication = datePublication;
 	}
 
 	

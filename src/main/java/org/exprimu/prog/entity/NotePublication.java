@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class NotePublication implements Serializable {
 	/**
@@ -57,7 +59,7 @@ public class NotePublication implements Serializable {
 	public void setIdPublication(Publication idPublication) {
 		this.idPublication = idPublication;
 	}
-
+	@JsonIgnore
 	public List<Utilisateur> getListutilisateur() {
 		return listutilisateur;
 	}
