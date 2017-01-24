@@ -1,22 +1,17 @@
 package org.exprimu.prog.web;
-
-
-import java.io.IOException;
 import java.util.List;
-
-import javax.servlet.http.HttpServletResponse;
 
 import org.exprimu.prog.entity.UtilisateurTemp;
 import org.exprimu.prog.metier.UtilisateurTempMetier;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping(value="/utilisateur")
+@Controller
+@RequestMapping(value="/utilisateurt")
 public class UtilisateurTempController {
 	@Autowired
 	private UtilisateurTempMetier utilisateurTempMetierImp;
@@ -26,10 +21,16 @@ public class UtilisateurTempController {
 //	    response.sendRedirect("creationcomptetampon");
 //	  }
 	
+	@RequestMapping(value="/formut",method=RequestMethod.GET)
+	public String saveulisateurtemp(Model model){
+		return "utilisateurt";	
+	}
+	
 	@RequestMapping(value="/saveut",method=RequestMethod.POST)
-	public UtilisateurTemp saveulisateurtemp(@RequestBody UtilisateurTemp uttmp){
-		
-		return utilisateurTempMetierImp.save(uttmp);	
+	public String saveulisateurtemp(UtilisateurTemp utmp){
+		System.out.println("utilisateur temp");
+		utilisateurTempMetierImp.save(utmp);
+		return "utilisateurt";	
 	}
 	
 	@RequestMapping(value="/supputilisateurt",method=RequestMethod.DELETE)

@@ -150,10 +150,10 @@ and open the template in the editor.
 <div id="list"></div>
 <div id="element">
 
-<section id="creationCompte">
+
 			<div class="container" >
 				<h1 class="titre-contact">Création d'un compte</h1>
-				<form>
+				<form  th:action="@{saveut}" method="post" th:object="${etudiant}">
 					<div class="col-lg-12">
 							<div class="col-lg-6">
 							 <div class="input-group">
@@ -191,11 +191,11 @@ and open the template in the editor.
 						 </div>
 					</div>
 					<div class="col-sm-offset-5 col-sm-2 text-center">
-            				<button type="button" onclick="return saveElement();" class="btn btn-default btn-sm" id="boutonEnvoyer">Envoyer</button>
+            				<input type="submit" onclick="return saveElement();" class="btn btn-default btn-sm" id="boutonEnvoyer">Envoyer</input>
    			 		</div>
 				</form>
             </div>
-		</section>
+
 		
 		<footer>
 
@@ -240,7 +240,6 @@ and open the template in the editor.
 							</ul>
 						</div>
 					</div>
-					
 				</div>
 
 				<div class="col-lg-4 col-md-4 col-sm-6 padbot30 foot_about_block">

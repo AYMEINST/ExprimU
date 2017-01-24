@@ -38,6 +38,7 @@ public class UtilisateurController {
 		utilisateur.setPrenom(utp.getPrenomUtilisateurTemp());
 		utilisateur.setEmail(utp.getEmailUtilisateurTemp());
 		utilisateur.setPassword(utp.getMotdepasse());
+		utilisateur.setStatue_compte(true);
 		utilisateurTempMetier.delete(id);
 		return utilisateurMetier.save(utilisateur);
 	}
