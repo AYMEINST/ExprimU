@@ -399,10 +399,17 @@ tr i{
 .user-info a{
   font-size: 14px;
 }
-
-.listeUtilisateur{
-  background-color: blue;
+.modal-texte{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.tchat{
-  background-color: yellow;
+.contenueArticle{
+    height: 300px;
+    overflow: scroll;
+}
+
+th{
+  text-align: center;
+  vertical-align:middle;
 }
