@@ -326,7 +326,7 @@
             <div class="row">
                 <!-- Page Header -->
                 <div class="col-lg-12">
-                    <h1 class="page-header">Gestion des utilisateurs tampon</h1>
+                    <h1 class="page-header">Gestion des publications</h1>
                 </div>
                 <div class="col-lg-12">
                     <!-- Advanced Tables -->
@@ -336,90 +336,170 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Nom</th>
-                                            <th>Prenom</th>
-                                            <th>Adresse mail</th>
-                                            <th>Admission</th>
+                                            <th>Pseudo</th>
+                                            <th>Nom de l'oeuvre</th>
+                                            <th>Type de publication</th>
+                                            <th>date de publication</th>
+                                            <th>Options</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Francis </td>
-                                            <td>Corin</td>
-                                            <td>FrancisCorin@gmail.com</td>
-                                            <td><i class="fa fa-check-circle-o fa-2x" title="Accepter l'utilisateur"></i>    <i class="fa fa-times-circle-o fa-2x" title="Refuser l'utilisateur"></i></td>
+                                            <td>Francis_eau_de_Gamma</td>
+                                            <td>Images G</td>
+                                            <td>Album</td>
+                                            <td>25/01/2017</td>
+                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalImages" title="Aperçu"></i>  <i class="fa fa-trash-o fa-2x" title="Supprimer"></i>  <i class="fa fa-calendar-o fa-2x" title="Rendre temporairement indisponible"></i></td>
+                                            <!-- Modal Album-->
+                                            <div class="modal fade" id="myModalImages" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                              <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Exemple Aperçu Album</h4>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <div class="row grid-divider">
+                                                      <div class="col-sm-3">
+                                                        <div class="col-padding" title="Description de l'image">
+                                                          <img src="../../static/images/works/1.jpg" alt=""/>
+                                                          <p>Description de l'image </p>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-sm-3">
+                                                        <div class="col-padding" title="Description de l'image très longue afin de testé si il n'y a pas de débordement ou autre effet non désirable">
+                                                          <img src="../../static/images/works/2.jpg" alt=""/>
+                                                          <p class="modal-texte" >Description de l'image très longue afin de testé si il n'y a pas de débordement ou autre effet non désirable </p>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-sm-3">
+                                                        <div class="col-padding" title="Description de l'image">
+                                                          <img src="../../static/images/works/3.jpg" alt=""/>
+                                                          <p>Description de l'image </p>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-sm-3">
+                                                        <div class="col-padding" title="Description de l'image">
+                                                          <img src="../../static/images/works/4.jpg" alt=""/>
+                                                          <p>Description de l'image </p>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-sm-3">
+                                                        <div class="col-padding" title="Description de l'image">
+                                                          <img src="../../static/images/works/5.jpg" alt=""/>
+                                                          <p>Description de l'image </p>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    Album ajouté le 25/01/2017 à 14h30 par Francis-eau-de_Gamma
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
                                         </tr>
                                         <tr>
-                                            <td>Hrodger</td>
-                                            <td>Arminius</td>
-                                            <td>ArminiusHrodger@gmail.com</td>
-                                            <td><i class="fa fa-check-circle-o fa-2x" title="Accepter l'utilisateur"></i>    <i class="fa fa-times-circle-o fa-2x" title="Refuser l'utilisateur"></i></td>
+                                            <td>Jean Emar</td>
+                                            <td>Video de chat</td>
+                                            <td>Video</td>
+                                            <td>26/01/2017</td>
+                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalVideo" title="Aperçu"></i>  <i class="fa fa-trash-o fa-2x" title="Supprimer"></i>  <i class="fa fa-calendar-o fa-2x" title="Rendre temporairement indisponible"></i></td>
+                                            <!-- Modal Video-->
+                                            <div class="modal fade" id="myModalVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                              <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content" style="height=600px">
+                                                  <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Exemple Aperçu Album</h4>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <div class="row grid-divider">
+                                                      <div class="col-xs-offset-1 col-xs-10">
+                                                        <div class="row grid-divider">
+                                                          <div class="col-padding taillevideo" title="Description de la video">
+                                                            <iframe width="100%" height="100%"src="https://www.youtube.com/embed/AmJSp7fRFaE" frameborder="0" allowfullscreen></iframe>
+                                                            <p>Description de la video</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    Vidéo ajouté le 26/01/2017 à 9h49 par Jean Emar
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
                                         </tr>
                                         <tr>
-                                            <td>Onyekachi</td>
-                                            <td>Mamadou</td>
-                                            <td>OnyekachiMamadou@gmail.com</td>
-                                            <td><i class="fa fa-check-circle-o fa-2x" title="Accepter l'utilisateur"></i>    <i class="fa fa-times-circle-o fa-2x" title="Refuser l'utilisateur"></i></td>
+                                            <td>Francis_eau_de_Gamma</td>
+                                            <td>Texte G</td>
+                                            <td>Article</td>
+                                            <td>25/01/2017</td>
+                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalArticle" title="Aperçu"></i>  <i class="fa fa-trash-o fa-2x" title="Supprimer"></i>  <i class="fa fa-calendar-o fa-2x" title="Rendre temporairement indisponible"></i></td>
+                                            <!-- Modal article-->
+                                            <div class="modal fade" id="myModalArticle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                              <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Exemple Aperçu Article</h4>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <div class="row grid-divider">
+                                                      <div class="col-sm-12">
+                                                          <p class="modal-texte" >Description de l'article très longue afin de testé si il n'y a pas de débordement ou autre effet non désirable </p>
+                                                          <p class="contenueArticle">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut blandit ligula, nec posuere ex. Suspendisse potenti. Nullam lorem purus, finibus sed lacinia eu, consequat et mauris. Mauris maximus accumsan rutrum. Vestibulum sit amet hendrerit ligula. Phasellus pretium ligula dolor, sit amet faucibus purus rhoncus eget. Mauris lobortis, felis at elementum commodo, quam diam ultricies metus, ut blandit est ipsum id lacus. Nunc sit amet commodo nisi, nec viverra diam. Aliquam eget euismod nibh, quis sagittis eros. Quisque eget luctus sapien, sit amet molestie purus. Sed tincidunt, tellus in feugiat egestas, nisl metus accumsan quam, sit amet elementum lorem eros id tellus.
+                                                            Donec sollicitudin efficitur feugiat. Etiam ac dolor nec nisi blandit imperdiet non non odio. Cras vestibulum viverra elit, ac maximus sem bibendum vitae. Nunc sit amet odio sed eros feugiat scelerisque tristique et metus. Nam sodales turpis in massa placerat vestibulum. Curabitur posuere eget felis ac consequat. Ut ex felis, rhoncus nec magna vitae, hendrerit porta sapien. Aenean eu sapien quis ante luctus tempus non ac velit. Nulla eu malesuada tellus, quis lacinia dolor. Donec eget pellentesque lacus. Nullam dignissim est sed mauris rhoncus sodales. Phasellus at lorem fringilla arcu dapibus accumsan ut quis sapien.
+                                                            In laoreet, nibh sit amet efficitur egestas, elit odio pretium justo, ut aliquam velit libero a dui. Duis a mattis diam. Suspendisse potenti. Suspendisse potenti. Duis auctor, justo eu mattis fringilla, est turpis imperdiet nisi, et sodales sem nibh ac orci. Nulla quis dui non nunc luctus vehicula. Maecenas porttitor felis a dolor auctor dapibus. Suspendisse eget massa eget quam accumsan blandit. Proin eu pretium mi. Vestibulum sagittis mi dolor, sit amet malesuada risus suscipit in. Sed ex sapien, finibus ut suscipit fermentum, eleifend nec mauris. Pellentesque et porta dolor. Maecenas euismod, justo gravida vehicula elementum, neque ex rutrum justo, a viverra dui nisi vel ligula. Fusce dignissim quam non ornare laoreet.
+                                                            Sed eleifend nulla odio, nec finibus urna consequat a. Quisque lacinia convallis odio, non facilisis orci consectetur vitae. Ut aliquet risus id fermentum tincidunt. Maecenas felis orci, congue non neque eget, condimentum ultrices nisl. Vivamus cursus scelerisque dui, eget lobortis dui blandit id. Donec vitae justo non neque ullamcorper pulvinar eu id est. Maecenas sodales nisl sit amet tristique consequat. Suspendisse vulputate odio ac arcu dapibus commodo. Maecenas gravida risus a imperdiet mattis. Nam ac nisl vitae tortor molestie consectetur eu sed dolor. Suspendisse auctor, quam vel pulvinar facilisis, nibh augue fringilla magna, facilisis gravida felis massa mattis lacus. Vestibulum non risus eu quam interdum vulputate. Ut felis tortor, faucibus a leo vel, posuere ullamcorper arcu.
+                                                            Mauris et dapibus urna. Vivamus convallis tempus feugiat. Maecenas eget felis efficitur, tincidunt purus eget, porttitor nulla. Aenean in mauris iaculis, pretium leo volutpat, malesuada justo. In vitae odio vel nisi fermentum pellentesque. Sed ligula dolor, congue vitae nulla quis, consectetur facilisis odio. Proin pellentesque semper sem, ut sollicitudin diam tempor sit amet. Aliquam erat volutpat. Fusce mollis pellentesque velit sed dictum. Curabitur varius quam ut lorem dictum, vel venenatis sapien hendrerit. Maecenas porttitor augue et leo egestas, a condimentum felis pharetra. Pellentesque quis metus odio.
+                                                            Proin et neque non lorem blandit fringilla. Fusce at elementum justo. Aenean porttitor nisl sapien, vel congue lorem feugiat eget. Nullam tempus, risus at varius pharetra, elit tortor posuere sapien, vitae fringilla lorem sapien non purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pretium venenatis metus sit amet porttitor. Nunc vehicula vitae dolor ut sodales. Nam ut dolor ut libero ullamcorper dignissim et vitae nibh. Mauris suscipit, lectus non suscipit aliquam, purus augue blandit ex, id volutpat ipsum nunc id velit. Cras pulvinar, mauris auctor tristique fringilla, est nulla faucibus risus, id ultricies metus nibh eu diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec viverra volutpat lobortis. Duis lobortis turpis dolor, a hendrerit massa porta id.
+                                                            Vivamus elementum aliquam vestibulum. Morbi id pulvinar odio. Quisque quis consequat eros, non pharetra lorem. Nunc odio nisl, pharetra vel mi vel, facilisis commodo dui. Sed id nulla in tortor consectetur pretium id id arcu. Vivamus ex justo, consequat non dui sed, vestibulum pulvinar lectus. Nam ornare purus ac scelerisque hendrerit. Quisque dignissim nisl at est consectetur pretium. Donec ac risus eros.
+                                                            Nam finibus placerat massa, sit amet molestie turpis accumsan et. Cras sodales commodo enim, a fringilla est vestibulum eu. Pellentesque posuere nisi ac venenatis interdum. Fusce malesuada mauris vitae aliquam ullamcorper. Donec nec hendrerit est. Etiam eros neque, fringilla aliquet viverra posuere.
+                                                          </p>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    Album ajouté le 25/01/2017 à 14h30 par Francis-eau-de_Gamma
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
                                         </tr>
                                         <tr>
-                                            <td>Józefina</td>
-                                            <td>Nina</td>
-                                            <td>JozefinaNina@gmail.com</td>
-                                            <td><i class="fa fa-check-circle-o fa-2x" title="Accepter l'utilisateur"></i>    <i class="fa fa-times-circle-o fa-2x" title="Refuser l'utilisateur"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Maha</td>
-                                            <td>Rasha</td>
-                                            <td>MahaRasha@gmail.com</td>
-                                            <td><i class="fa fa-check-circle-o fa-2x" title="Accepter l'utilisateur"></i>    <i class="fa fa-times-circle-o fa-2x" title="Refuser l'utilisateur"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Rabab</td>
-                                            <td>Muhsina</td>
-                                            <td>RababMuhsina@gmail.com</td>
-                                            <td><i class="fa fa-check-circle-o fa-2x" title="Accepter l'utilisateur"></i>    <i class="fa fa-times-circle-o fa-2x" title="Refuser l'utilisateur"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jamil</td>
-                                            <td>Habibullah</td>
-                                            <td>JamilHabibullah@gmail.com</td>
-                                            <td><i class="fa fa-check-circle-o fa-2x" title="Accepter l'utilisateur"></i>    <i class="fa fa-times-circle-o fa-2x" title="Refuser l'utilisateur"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Farhan</td>
-                                            <td>Mahmoud</td>
-                                            <td>MahmoudFarhan@gmail.com</td>
-                                            <td><i class="fa fa-check-circle-o fa-2x" title="Accepter l'utilisateur"></i>    <i class="fa fa-times-circle-o fa-2x" title="Refuser l'utilisateur"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Léopold</td>
-                                            <td>Gautier</td>
-                                            <td>LéopoldGautier@gmail.com</td>
-                                            <td><i class="fa fa-check-circle-o fa-2x" title="Accepter l'utilisateur"></i>    <i class="fa fa-times-circle-o fa-2x" title="Refuser l'utilisateur"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Erwann</td>
-                                            <td>Erwan</td>
-                                            <td>ErwannErwan@gmail.com</td>
-                                            <td><i class="fa fa-check-circle-o fa-2x" title="Accepter l'utilisateur"></i>    <i class="fa fa-times-circle-o fa-2x" title="Refuser l'utilisateur"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sigismund</td>
-                                            <td>Patrick</td>
-                                            <td>SigismundPatrick@gmail.com</td>
-                                            <td><i class="fa fa-check-circle-o fa-2x" title="Accepter l'utilisateur"></i>    <i class="fa fa-times-circle-o fa-2x" title="Refuser l'utilisateur"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Simon</td>
-                                            <td>Ernest</td>
-                                            <td>SimonErnest@gmail.com</td>
-                                            <td><i class="fa fa-check-circle-o fa-2x" title="Accepter l'utilisateur"></i>    <i class="fa fa-times-circle-o fa-2x" title="Refuser l'utilisateur"></i></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Nicoline</td>
-                                            <td>Ninette</td>
-                                            <td>NicolineNinette@gmail.com</td>
-                                            <td><i class="fa fa-check-circle-o fa-2x" title="Accepter l'utilisateur"></i>    <i class="fa fa-times-circle-o fa-2x" title="Refuser l'utilisateur"></i></td>
+                                            <td>Francis_eau_de_Gamma</td>
+                                            <td>Musiques super G</td>
+                                            <td>Musiques</td>
+                                            <td>22/01/2017</td>
+                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalMusique" title="Aperçu"></i>  <i class="fa fa-trash-o fa-2x" title="Supprimer"></i>  <i class="fa fa-calendar-o fa-2x" title="Rendre temporairement indisponible"></i></td>
+                                            <!-- Modal article-->
+                                            <div class="modal fade" id="myModalMusique" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                              <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Exemple Aperçu Musique</h4>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <div class="row grid-divider">
+                                                      <div class="col-sm-12">
+                                                        <audio src="../../static/musiques/good_enough.mp3" controls>	<p>Fallback content goes here.</p></audio>
+                                                          <p class="modal-texte" >Description de la musique très longue afin de testé si il n'y a pas de débordement ou autre effet non désirable </p>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    Album ajouté le 22/01/2017 à 14h30 par Francis-eau-de_Gamma
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
                                         </tr>
                                     </tbody>
                                 </table>

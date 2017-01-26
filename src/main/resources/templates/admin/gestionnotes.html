@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExprimU - Administration</title>
+    <link rel="shortcut icon" href="../../static/images/favicon.ico">
+    <!-- Core CSS - Include with every page -->
+    <link href="../../static/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="../../static/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../static/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+    <link href="../../static/css/admin-style.css" rel="stylesheet" />
+      <link href="../../static/css/admin-main-style.css" rel="stylesheet" />
+
+	<!-- Page-Level CSS -->
+    <link href="../../static/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <!--  wrapper -->
+    <div id="wrapper">
+        <!-- navbar top -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+            <!-- navbar-header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="../../static/images/Logo-.png" alt="" />
+                </a>
+            </div>
+            <!-- end navbar-header -->
+            <!-- navbar-top-links -->
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- main dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="top-label label label-danger">3</span><i class="fa fa-envelope fa-3x"></i>
+                    </a>
+                    <!-- dropdown-messages -->
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong><span class=" label label-danger">Andrew Smith</span></strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong><span class=" label label-info">Jonney Depp</span></strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong><span class=" label label-success">Jonney Depp</span></strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- end dropdown-messages -->
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="top-label label label-success">4</span>  <i class="fa fa-tasks fa-3x"></i>
+                    </a>
+                    <!-- dropdown tasks -->
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- end dropdown-tasks -->
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="top-label label label-warning">5</span>  <i class="fa fa-bell fa-3x"></i>
+                    </a>
+                    <!-- dropdown alerts-->
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i>New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i>3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i>Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i>New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i>Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- end dropdown-alerts -->
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-3x"></i>
+                    </a>
+                    <!-- dropdown user-->
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                        </li>
+                    </ul>
+                    <!-- end dropdown-user -->
+                </li>
+                <!-- end main dropdown -->
+            </ul>
+            <!-- end navbar-top-links -->
+
+        </nav>
+        <!-- end navbar top -->
+
+        <!-- navbar side -->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <!-- sidebar-collapse -->
+            <div class="sidebar-collapse">
+                <!-- side-menu -->
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <!-- user image section-->
+                        <div class="user-section">
+                            <div class="user-section-inner">
+                                <img src="../../static/images/user.jpg" alt="">
+                            </div>
+                            <div class="user-info">
+                                <div>Jonny <strong>Deen</strong></div>
+                                <div class="user-text-online">
+                                    <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                                </div>
+                                <a href="login.html"></i>Déconnexion</a>
+                            </div>
+                        </div>
+                        <!--end user image section-->
+                    </li>
+                    <li class="sidebar-search">
+                        <!-- search section-->
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <!--end search section-->
+                    </li>
+                    <li class="">
+                        <a href="statistique.html"><i class="fa fa-users fa-fw"></i>Statistiques</a>
+                    </li>
+                    <li class="">
+                        <a href="gestionutilisateurs.html"><i class="fa fa-users fa-fw"></i>Gestion des utilisateurs</a>
+                    </li>
+                    <li class="">
+                        <a href="gestionutilisateurstampon.html"><i class="fa fa-user fa-fw"></i>Gestion des utilisateurs tampon</a>
+                    </li>
+                    <li class="">
+                        <a href="gestionforums.html"><i class="fa fa-comments-o fa-fw"></i>Gestion du Forums</a>
+                    </li>
+                    <li class="">
+                        <a href="gestionpublications.html"><i class="fa fa-file-o fa-fw"></i>Gestion des publications</a>
+                    </li>
+                    <li class="">
+                        <a href="gestionnotes.html"><i class="fa fa-star fa-fw"></i>Gestion des notes</a>
+                    </li>
+                    <li class="">
+                        <a href="gestionpagedaccueil.html"><i class="fa fa-home fa-fw"></i>Gestion de la page d'accueil</a>
+                    </li>
+                    <li class="">
+                        <a href="gestionarticlessignales.html"><i class="fa fa-exclamation-triangle fa-fw"></i>Gestion des articles signalés</a>
+                    </li>
+
+                </ul>
+                <!-- end side-menu -->
+            </div>
+            <!-- end sidebar-collapse -->
+        </nav>
+        <!-- end navbar side -->
+        <!--  page-wrapper -->
+        <div id="page-wrapper">
+
+            <div class="row">
+                <!-- Page Header -->
+                <div class="col-lg-12">
+                    <h1 class="page-header">Gestion des notes</h1>
+                </div>
+                <div class="col-lg-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Pseudo</th>
+                                            <th>Nom de l'oeuvre</th>
+                                            <th>Type de publication</th>
+                                            <th>date de publication</th>
+                                            <th>Notes</th>
+                                            <th>Nombres de votes</th>
+                                            <th>Aperçu</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Francis_eau_de_Gamma</td>
+                                            <td>Images G</td>
+                                            <td>Album</td>
+                                            <td>25/01/2017</td>
+                                            <td><i class="fa fa-star fa-2x"</i><i class="fa fa-star"</i><i class="fa fa-star"</i><i class="fa fa-star-o"</i><i class="fa fa-star-o"</i></td>
+                                            <td>27</td>
+                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalImages" title="Aperçu"></i></td>
+                                            <!-- Modal Album-->
+                                            <div class="modal fade" id="myModalImages" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                              <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Exemple Aperçu Album</h4>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <div class="row grid-divider">
+                                                      <div class="col-sm-3">
+                                                        <div class="col-padding" title="Description de l'image">
+                                                          <img src="../../static/images/works/1.jpg" alt=""/>
+                                                          <p>Description de l'image </p>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-sm-3">
+                                                        <div class="col-padding" title="Description de l'image très longue afin de testé si il n'y a pas de débordement ou autre effet non désirable">
+                                                          <img src="../../static/images/works/2.jpg" alt=""/>
+                                                          <p class="modal-texte" >Description de l'image très longue afin de testé si il n'y a pas de débordement ou autre effet non désirable </p>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-sm-3">
+                                                        <div class="col-padding" title="Description de l'image">
+                                                          <img src="../../static/images/works/3.jpg" alt=""/>
+                                                          <p>Description de l'image </p>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-sm-3">
+                                                        <div class="col-padding" title="Description de l'image">
+                                                          <img src="../../static/images/works/4.jpg" alt=""/>
+                                                          <p>Description de l'image </p>
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-sm-3">
+                                                        <div class="col-padding" title="Description de l'image">
+                                                          <img src="../../static/images/works/5.jpg" alt=""/>
+                                                          <p>Description de l'image </p>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    Album ajouté le 25/01/2017 à 14h30 par Francis-eau-de_Gamma
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </tr>
+                                        <tr>
+                                            <td>Jean Emar</td>
+                                            <td>Video de chat</td>
+                                            <td>Video</td>
+                                            <td>26/01/2017</td>
+                                            <td><i class="fa fa-star fa-2x"</i><i class="fa fa-star"</i><i class="fa fa-star"</i><i class="fa fa-star-half-o"</i><i class="fa fa-star-o"</i></td>
+                                            <td>231</td>
+                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalVideo" title="Aperçu"></i></td>
+                                            <!-- Modal Video-->
+                                            <div class="modal fade" id="myModalVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                              <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content" style="height=600px">
+                                                  <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Exemple Aperçu Album</h4>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <div class="row grid-divider">
+                                                      <div class="col-xs-offset-1 col-xs-10">
+                                                        <div class="row grid-divider">
+                                                          <div class="col-padding taillevideo" title="Description de la video">
+                                                            <iframe width="100%" height="100%"src="https://www.youtube.com/embed/AmJSp7fRFaE" frameborder="0" allowfullscreen></iframe>
+                                                            <p>Description de la video</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    Vidéo ajouté le 26/01/2017 à 9h49 par Jean Emar
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </tr>
+                                        <tr>
+                                            <td>Francis_eau_de_Gamma</td>
+                                            <td>Texte G</td>
+                                            <td>Article</td>
+                                            <td>25/01/2017</td>
+                                            <td><i class="fa fa-star fa-2x"</i><i class="fa fa-star"</i><i class="fa fa-star-half-o"</i><i class="fa fa-star-o"</i><i class="fa fa-star-o"</i></td>
+                                            <td>12</td>
+                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalArticle" title="Aperçu"></i></td>
+                                            <!-- Modal article-->
+                                            <div class="modal fade" id="myModalArticle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                              <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Exemple Aperçu Article</h4>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <div class="row grid-divider">
+                                                      <div class="col-sm-12">
+                                                          <p class="modal-texte" >Description de l'article très longue afin de testé si il n'y a pas de débordement ou autre effet non désirable </p>
+                                                          <p class="contenueArticle">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut blandit ligula, nec posuere ex. Suspendisse potenti. Nullam lorem purus, finibus sed lacinia eu, consequat et mauris. Mauris maximus accumsan rutrum. Vestibulum sit amet hendrerit ligula. Phasellus pretium ligula dolor, sit amet faucibus purus rhoncus eget. Mauris lobortis, felis at elementum commodo, quam diam ultricies metus, ut blandit est ipsum id lacus. Nunc sit amet commodo nisi, nec viverra diam. Aliquam eget euismod nibh, quis sagittis eros. Quisque eget luctus sapien, sit amet molestie purus. Sed tincidunt, tellus in feugiat egestas, nisl metus accumsan quam, sit amet elementum lorem eros id tellus.
+                                                            Donec sollicitudin efficitur feugiat. Etiam ac dolor nec nisi blandit imperdiet non non odio. Cras vestibulum viverra elit, ac maximus sem bibendum vitae. Nunc sit amet odio sed eros feugiat scelerisque tristique et metus. Nam sodales turpis in massa placerat vestibulum. Curabitur posuere eget felis ac consequat. Ut ex felis, rhoncus nec magna vitae, hendrerit porta sapien. Aenean eu sapien quis ante luctus tempus non ac velit. Nulla eu malesuada tellus, quis lacinia dolor. Donec eget pellentesque lacus. Nullam dignissim est sed mauris rhoncus sodales. Phasellus at lorem fringilla arcu dapibus accumsan ut quis sapien.
+                                                            In laoreet, nibh sit amet efficitur egestas, elit odio pretium justo, ut aliquam velit libero a dui. Duis a mattis diam. Suspendisse potenti. Suspendisse potenti. Duis auctor, justo eu mattis fringilla, est turpis imperdiet nisi, et sodales sem nibh ac orci. Nulla quis dui non nunc luctus vehicula. Maecenas porttitor felis a dolor auctor dapibus. Suspendisse eget massa eget quam accumsan blandit. Proin eu pretium mi. Vestibulum sagittis mi dolor, sit amet malesuada risus suscipit in. Sed ex sapien, finibus ut suscipit fermentum, eleifend nec mauris. Pellentesque et porta dolor. Maecenas euismod, justo gravida vehicula elementum, neque ex rutrum justo, a viverra dui nisi vel ligula. Fusce dignissim quam non ornare laoreet.
+                                                            Sed eleifend nulla odio, nec finibus urna consequat a. Quisque lacinia convallis odio, non facilisis orci consectetur vitae. Ut aliquet risus id fermentum tincidunt. Maecenas felis orci, congue non neque eget, condimentum ultrices nisl. Vivamus cursus scelerisque dui, eget lobortis dui blandit id. Donec vitae justo non neque ullamcorper pulvinar eu id est. Maecenas sodales nisl sit amet tristique consequat. Suspendisse vulputate odio ac arcu dapibus commodo. Maecenas gravida risus a imperdiet mattis. Nam ac nisl vitae tortor molestie consectetur eu sed dolor. Suspendisse auctor, quam vel pulvinar facilisis, nibh augue fringilla magna, facilisis gravida felis massa mattis lacus. Vestibulum non risus eu quam interdum vulputate. Ut felis tortor, faucibus a leo vel, posuere ullamcorper arcu.
+                                                            Mauris et dapibus urna. Vivamus convallis tempus feugiat. Maecenas eget felis efficitur, tincidunt purus eget, porttitor nulla. Aenean in mauris iaculis, pretium leo volutpat, malesuada justo. In vitae odio vel nisi fermentum pellentesque. Sed ligula dolor, congue vitae nulla quis, consectetur facilisis odio. Proin pellentesque semper sem, ut sollicitudin diam tempor sit amet. Aliquam erat volutpat. Fusce mollis pellentesque velit sed dictum. Curabitur varius quam ut lorem dictum, vel venenatis sapien hendrerit. Maecenas porttitor augue et leo egestas, a condimentum felis pharetra. Pellentesque quis metus odio.
+                                                            Proin et neque non lorem blandit fringilla. Fusce at elementum justo. Aenean porttitor nisl sapien, vel congue lorem feugiat eget. Nullam tempus, risus at varius pharetra, elit tortor posuere sapien, vitae fringilla lorem sapien non purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pretium venenatis metus sit amet porttitor. Nunc vehicula vitae dolor ut sodales. Nam ut dolor ut libero ullamcorper dignissim et vitae nibh. Mauris suscipit, lectus non suscipit aliquam, purus augue blandit ex, id volutpat ipsum nunc id velit. Cras pulvinar, mauris auctor tristique fringilla, est nulla faucibus risus, id ultricies metus nibh eu diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec viverra volutpat lobortis. Duis lobortis turpis dolor, a hendrerit massa porta id.
+                                                            Vivamus elementum aliquam vestibulum. Morbi id pulvinar odio. Quisque quis consequat eros, non pharetra lorem. Nunc odio nisl, pharetra vel mi vel, facilisis commodo dui. Sed id nulla in tortor consectetur pretium id id arcu. Vivamus ex justo, consequat non dui sed, vestibulum pulvinar lectus. Nam ornare purus ac scelerisque hendrerit. Quisque dignissim nisl at est consectetur pretium. Donec ac risus eros.
+                                                            Nam finibus placerat massa, sit amet molestie turpis accumsan et. Cras sodales commodo enim, a fringilla est vestibulum eu. Pellentesque posuere nisi ac venenatis interdum. Fusce malesuada mauris vitae aliquam ullamcorper. Donec nec hendrerit est. Etiam eros neque, fringilla aliquet viverra posuere.
+                                                          </p>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    Album ajouté le 25/01/2017 à 14h30 par Francis-eau-de_Gamma
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </tr>
+                                        <tr>
+                                            <td>Francis_eau_de_Gamma</td>
+                                            <td>Musiques super G</td>
+                                            <td>Musiques</td>
+                                            <td>22/01/2017</td>
+                                            <td><i class="fa fa-star fa-2x"</i><i class="fa fa-star"</i><i class="fa fa-star-half-o"</i><i class="fa fa-star-o"</i><i class="fa fa-star-o"</i></td>
+                                            <td>29</td>
+                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalMusique" title="Aperçu"></i></td>
+                                            <!-- Modal article-->
+                                            <div class="modal fade" id="myModalMusique" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                              <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Exemple Aperçu Musique</h4>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <div class="row grid-divider">
+                                                      <div class="col-sm-12">
+                                                        <audio src="../../static/musiques/good_enough.mp3" controls>	<p>Fallback content goes here.</p></audio>
+                                                          <p class="modal-texte" >Description de la musique très longue afin de testé si il n'y a pas de débordement ou autre effet non désirable </p>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    Album ajouté le 22/01/2017 à 14h30 par Francis-eau-de_Gamma
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+                <!--End Page Header -->
+            </div>
+
+
+
+        </div>
+        <!-- end page-wrapper -->
+
+    </div>
+    <!-- end wrapper -->
+
+    <!-- Core Scripts - Include with every page -->
+    <script src="../../static/plugins/jquery-1.10.2.js"></script>
+    <script src="../../static/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="../../static/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../../static/plugins/pace/pace.js"></script>
+    <script src="../../static/js/siminta.js"></script>
+    <!-- Page-Level Plugin Scripts-->
+    <script src="../../static/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="../../static/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable();
+        });
+    </script>
+
+</body>
+
+</html>
