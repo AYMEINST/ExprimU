@@ -326,7 +326,7 @@
             <div class="row">
                 <!-- Page Header -->
                 <div class="col-lg-12">
-                    <h1 class="page-header">Gestion des publications</h1>
+                    <h1 class="page-header">Gestion des articles signalés</h1>
                 </div>
                 <div class="col-lg-12">
                     <!-- Advanced Tables -->
@@ -360,7 +360,7 @@
                                             <td>Daisy Draté</td>
                                             <td>Nudités</td>
                                             <td>26/01/2017</td>
-                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalImages" title="Aperçu"></i>  <i class="fa fa-trash-o fa-2x" title="Supprimer"></i>  <i class="fa fa-calendar-o fa-2x" title="Rendre temporairement indisponible"></i>  <i class="fa fa-undo fa-2x" title="Annuler le signalement"></i></td>
+                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalImages" title="Aperçu"></i>  <i class="fa fa-trash-o fa-2x" title="Supprimer"></i>  <i class="fa fa-calendar-o fa-2x" data-toggle="modal" data-target="#myModalIndisponible" title="Rendre temporairement indisponible"></i>  <i class="fa fa-undo fa-2x" title="Annuler le signalement"></i></td>
                                             <!-- Modal Album-->
                                             <div class="modal fade" id="myModalImages" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                               <div class="modal-dialog modal-lg" role="document">
@@ -418,7 +418,7 @@
                                             <td>Éva Nouie</td>
                                             <td>Violence Animale</td>
                                             <td>27/01/2017</td>
-                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalVideo" title="Aperçu"></i>  <i class="fa fa-trash-o fa-2x" title="Supprimer"></i>  <i class="fa fa-calendar-o fa-2x" title="Rendre temporairement indisponible"></i>  <i class="fa fa-undo fa-2x" title="Annuler le signalement"></i></td>
+                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalVideo" title="Aperçu"></i>  <i class="fa fa-trash-o fa-2x" title="Supprimer"></i>  <i class="fa fa-calendar-o fa-2x" data-toggle="modal" data-target="#myModalIndisponible" title="Rendre temporairement indisponible"></i>  <i class="fa fa-undo fa-2x" title="Annuler le signalement"></i></td>
                                             <!-- Modal Video-->
                                             <div class="modal fade" id="myModalVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                               <div class="modal-dialog modal-lg" role="document">
@@ -454,7 +454,7 @@
                                             <td>Gaspard Alizan</td>
                                             <td>Propos diphamatoires</td>
                                             <td>27/01/2017</td>
-                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalArticle" title="Aperçu"></i>  <i class="fa fa-trash-o fa-2x" title="Supprimer"></i>  <i class="fa fa-calendar-o fa-2x" title="Rendre temporairement indisponible"></i>  <i class="fa fa-undo fa-2x" title="Annuler le signalement"></i></td>
+                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalArticle" title="Aperçu"></i>  <i class="fa fa-trash-o fa-2x" title="Supprimer"></i>  <i class="fa fa-calendar-o fa-2x" data-toggle="modal" data-target="#myModalIndisponible" title="Rendre temporairement indisponible"></i>  <i class="fa fa-undo fa-2x" title="Annuler le signalement"></i></td>
                                             <!-- Modal article-->
                                             <div class="modal fade" id="myModalArticle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                               <div class="modal-dialog modal-lg" role="document">
@@ -496,7 +496,7 @@
                                             <td>Harry Cover</td>
                                             <td>Copyright</td>
                                             <td>23/01/2017</td>
-                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalMusique" title="Aperçu"></i>  <i class="fa fa-trash-o fa-2x" title="Supprimer"></i>  <i class="fa fa-calendar-o fa-2x" title="Rendre temporairement indisponible"></i>  <i class="fa fa-undo fa-2x" title="Annuler le signalement"></i></td>
+                                            <td><i class="fa fa-eye fa-2x" aria-hidden="true" data-toggle="modal" data-target="#myModalMusique" title="Aperçu"></i>  <i class="fa fa-trash-o fa-2x" title="Supprimer"></i>  <i class="fa fa-calendar-o fa-2x" data-toggle="modal" data-target="#myModalIndisponible" title="Rendre temporairement indisponible"></i>  <i class="fa fa-undo fa-2x" title="Annuler le signalement"></i></td>
                                             <!-- Modal article-->
                                             <div class="modal fade" id="myModalMusique" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                               <div class="modal-dialog modal-lg" role="document">
@@ -528,6 +528,52 @@
                         </div>
                     </div>
                     <!--End Advanced Tables -->
+                    <!-- Modal Album-->
+                    <div class="modal fade" id="myModalIndisponible" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Rendre indisponibles la publication</h4>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row grid-divider">
+                              <div class="col-xs-12">
+                                <div class="col-padding">
+                                  <div class="dropdown">
+                                    <div class="col-xs-4">
+                                    Temps d'indisponibilité de la publication
+                                    </div>
+                                    <div class="col-xs-2">
+                                      <input type="number" value="0" min="0" class="form-control" aria-describedby="basic-addon2">
+                                    </div>
+                                    <div class="col-xs-2">
+                                      <select class="form-control" id="sel1">
+                                        <option>Heures</option>
+                                        <option>Semaines</option>
+                                        <option>Mois</option>
+                                        <option>Années</option>
+                                        <option>Indéfiniment</option>
+                                      </select>
+                                  </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-12">
+                                <label class="checkbox-inline"><input type="checkbox" value="">Envoyer un message au propriétaire de la publication</label>
+                              </div>
+                              <div class="col-xs-12">
+                                <label class="checkbox-inline"><input type="checkbox" value="">Bannir le propriétaire de la publication </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" type="sumbit">Envoyer</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Retour</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
                 <!--End Page Header -->
             </div>
