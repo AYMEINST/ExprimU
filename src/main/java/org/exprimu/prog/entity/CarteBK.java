@@ -19,7 +19,7 @@ public class CarteBK implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idCarte;
-	private int numeroCarteBk;
+	private Long numeroCarteBk;
 	private Date dateExperation;	
 	@ManyToOne
 	@JoinColumn(name="idUtilisateur")
@@ -27,7 +27,7 @@ public class CarteBK implements Serializable {
 
 	
 
-	public CarteBK(Long idCarte, int numeroCarteBk, Date dateExperation, Utilisateur utilisateur) {
+	public CarteBK(Long idCarte, Long numeroCarteBk, Date dateExperation, Utilisateur utilisateur) {
 		super();
 		this.idCarte = idCarte;
 		this.numeroCarteBk = numeroCarteBk;
@@ -56,13 +56,13 @@ public class CarteBK implements Serializable {
 
 
 
-	public int getNumeroCarteBk() {
+	public Long getNumeroCarteBk() {
 		return numeroCarteBk;
 	}
 
 
 
-	public void setNumeroCarteBk(int numeroCarteBk) {
+	public void setNumeroCarteBk(Long numeroCarteBk) {
 		this.numeroCarteBk = numeroCarteBk;
 	}
 

@@ -52,16 +52,16 @@ public class UtilisateurMetier implements UtilisateurMetierImp {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String name = auth.getName();
 		User user = (User) auth.getPrincipal();
-		String username = user.getUsername(); 
+		String email = user.getUsername(); 
 		String password = user.getPassword();
 		List<String> l = new ArrayList<String>();
 		for (GrantedAuthority x : user.getAuthorities()) {
 			l.add(x.getAuthority());
 		}
 		Map<String, Object> x = new HashMap<String, Object>(4);
-		x.put("username", username);
+		x.put("username", email);
 		x.put("password", password);
-     	x.put("idutilisateur", getUtilisateurByEmail(username));
+     	x.put("utilisateur", getUtilisateurByEmail(email));
 		x.put("role", l);		
 		return x;
 	}
@@ -71,6 +71,7 @@ public class UtilisateurMetier implements UtilisateurMetierImp {
 		List<Utilisateur> x = utilisateurRepository.getUtilisateurByEmail(email);
 		return ((x.isEmpty()) ? null : x.get(0));
 	}
+
 
 	
 	

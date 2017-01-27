@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{Layout.html}" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="Layout :: header">
+<script type="text/javascript" src="../static/js/myApp.js"   th:src="@{../js/myApp.js}"></script>
+</head>
+<body ng-app="carteManager" ng-controller="exprimUController">
+
+	<header th:replace="Layout ::header-content"> </header>
+
+
+	<div layout:fragment="custom-content">
+		<section id="creationCompte">
+			<div class="container">
+				<h1 class="titre-contact">Ajouter une carte bancaire</h1>
+				<div class="col-md-12 offset-md-12">
+					<form >
+						<div class="col-lg-12">
+							<div class="col-lg-6">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">Numero
+										carte bancaire</span> <input type="number" class="form-control"
+										placeholder="Entrez votre Numero carte  bancaire"
+										aria-describedby="basic-addon1"  ng-model="CarteForm.numeroCarteBk" />
+								</div>
+							</div>
+
+							<div class="col-lg-6">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">Date
+										d'expiration</span> <input type="date" class="form-control"
+										aria-describedby="basic-addon1" ng-model="CarteForm.dateExpiration	" />
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-sm-offset-5 col-sm-2 text-center">
+				<button type="button" class="btn btn-default btn-sm"
+					id="boutonEnvoyer"  ng-click="submitBK()" >Envoyer</button>
+			</div>
+		</section>
+
+		<div class="container">
+			<h2>Bordered Table</h2>
+			<p>The .table-bordered class adds borders to a table:</p>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Numero carte Bancaire</th>
+						<th>Date D'expiration</th>
+						<th>Fonction attribue</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="carte in Cartes">
+						<td>{{ carte.numeroCarteBk }}</td>
+						<td>{{ carte.dateExpiration }}</td>
+						 <td><a ng-click="editCateBK(carte)" class="blue-button">Edit</a> | <a ng-click="deleteBK(carte)" class="red-button">Delete</a></td>
+					</tr>
+					
+
+				</tbody>
+			</table>
+		</div>
+	
+	</div>
+
+
+
+
+
+
+	<footer th:replace="Layout :: footer"> </footer>
+	<script type="text/javascript" src="../static/angular/angular.min.js" th:src="@{../angular/angular.min.js}"></script>
+    <script type="text/javascript" src="../static/js/myApp.js"   th:src="@{../js/myApp.js}"></script>
+</body>
+
+</html>

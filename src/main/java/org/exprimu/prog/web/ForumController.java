@@ -27,6 +27,7 @@ import org.exprimu.prog.entity.Utilisateur;
 import org.exprimu.prog.metier.ForumCommentaireMetier;
 import org.exprimu.prog.metier.ForumMetier;
 import org.exprimu.prog.metier.UtilisateurMetier;
+import org.exprimu.prog.metierImp.UtilisateurMetierImp;
 
 @Controller
 @RequestMapping(value = "/ForumJson")
@@ -39,6 +40,8 @@ public class ForumController {
 
 	@Autowired
 	private UtilisateurMetier utilisateurMetier;
+	@Autowired
+	private UtilisateurMetierImp utilisateurI;
 
 	@ResponseBody
 	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })

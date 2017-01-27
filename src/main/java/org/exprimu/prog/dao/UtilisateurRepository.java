@@ -9,4 +9,5 @@ import org.exprimu.prog.entity.Utilisateur;
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> {
 	@Query("SELECT u FROM Utilisateur u WHERE u.email = :email")
 	public List<Utilisateur> getUtilisateurByEmail(@Param("email") String email);
+	
 }

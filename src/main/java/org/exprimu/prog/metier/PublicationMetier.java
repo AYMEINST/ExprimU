@@ -14,7 +14,9 @@ import org.exprimu.prog.dao.UtilisateurRepository;
 import org.exprimu.prog.entity.Document;
 import org.exprimu.prog.entity.Publication;
 import org.exprimu.prog.entity.Utilisateur;
+import org.exprimu.prog.metierImp.DocumentMetierImp;
 import org.exprimu.prog.metierImp.PublicationMetierImp;
+import org.exprimu.prog.metierImp.UtilisateurMetierImp;
 
 @Service
 public class PublicationMetier implements PublicationMetierImp {
@@ -22,6 +24,12 @@ public class PublicationMetier implements PublicationMetierImp {
 	private PublicationRepository publicationRepository;
 	@Autowired
 	private DocumentRepository documentRepository;
+	@Autowired
+	private PublicationMetierImp publicationMetierI;
+	@Autowired
+	private DocumentMetierImp documentMetierI;
+	@Autowired
+	private UtilisateurMetierImp utilisateurI;
 	
 	@Override
 	public Page<Publication> publicationPage(int page, int size) {
@@ -66,7 +74,13 @@ public class PublicationMetier implements PublicationMetierImp {
 		publication.setDatePublication(new Date());		
 		return publicationRepository.save(publication);
 	}
-	
+
+	public void savePublication(Publication publication, Document document) {
+		publication.setUtilisateur((Utilisateur) utilisateurI.getConnectedUser().get("utilisateur"));
+		Publication P = publicationMetierI.save(publication);
+		document.setPublication(P);
+		documentMetierI.save(document);
+	}
 	
 	
 }
