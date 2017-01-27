@@ -40,5 +40,4 @@ public class PublicationController {
 	public void delete(@PathVariable(value="id") Long id) {
 		publicationMetierI.delete(id);
 	}
-
 }

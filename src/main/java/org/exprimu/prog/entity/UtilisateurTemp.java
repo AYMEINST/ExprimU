@@ -21,6 +21,10 @@ public class UtilisateurTemp implements Serializable {
 	/**
 	 * 
 	 */
+	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -73,26 +77,19 @@ public class UtilisateurTemp implements Serializable {
 		this.emailUtilisateurTemp = emailUtilisateurTemp;
 	}
 
-//	public Utilisateur getUtilisateur() {
-//		return utilisateur;
-//	}
-//
-//	public void setUtilisateur(Utilisateur utilisateur) {
-//		this.utilisateur = utilisateur;
-//	}
 
 	public UtilisateurTemp() {
 		super();
 	}
 
-	public UtilisateurTemp(Long idUtilisateurTemp, String nomUtilisateurTemp, String prenomUtilisateurTemp,
-			String motdepasse, String emailUtilisateurTemp) {
+	public UtilisateurTemp(String nomUtilisateurTemp, String prenomUtilisateurTemp, String motdepasse,
+			String emailUtilisateurTemp) {
 		super();
-		this.idUtilisateurTemp = idUtilisateurTemp;
 		this.nomUtilisateurTemp = nomUtilisateurTemp;
 		this.prenomUtilisateurTemp = prenomUtilisateurTemp;
 		this.motdepasse = motdepasse;
 		this.emailUtilisateurTemp = emailUtilisateurTemp;
 	}
-
+	
+	
 }

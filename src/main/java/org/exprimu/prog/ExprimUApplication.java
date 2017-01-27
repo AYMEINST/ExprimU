@@ -1,5 +1,6 @@
 package org.exprimu.prog;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Date;
@@ -68,4 +69,5 @@ public class ExprimUApplication {
 		// UPDATE utilisateur SET password = MD5(password)
 		
 	}
+
 }

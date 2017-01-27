@@ -8,4 +8,5 @@ public List<UtilisateurTemp> utilisateurtempList();
 public UtilisateurTemp getUtilisateurTemp(Long id);
 public UtilisateurTemp save(UtilisateurTemp utilisateurtemp);
 public void delete(Long id);
+public void desactiviercpt(Long id);
 }
