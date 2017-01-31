@@ -27,11 +27,10 @@ import org.exprimu.prog.entity.Utilisateur;
 import org.exprimu.prog.metier.ForumCommentaireMetier;
 import org.exprimu.prog.metier.ForumMetier;
 import org.exprimu.prog.metier.UtilisateurMetier;
-import org.exprimu.prog.metierImp.UtilisateurMetierImp;
 
 @Controller
 @RequestMapping(value = "/ForumJson")
-public class ForumController {
+public class ForumJsonController {
 	@Autowired
 	private ForumMetier forumMetier;
 
@@ -40,8 +39,6 @@ public class ForumController {
 
 	@Autowired
 	private UtilisateurMetier utilisateurMetier;
-	@Autowired
-	private UtilisateurMetierImp utilisateurI;
 
 	@ResponseBody
 	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
@@ -81,9 +78,14 @@ public class ForumController {
 	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
 	@RequestMapping(value = "/Map")
 	public Map<String, Object> Maps(@RequestParam(name = "page", defaultValue = "0") int page,
-			@RequestParam(name = "rech", defaultValue = "") String rech) {
+			@RequestParam(name = "rech", defaultValue = "") String rech, @RequestParam(name = "isMy", defaultValue = "0") int isMy) {
 		long id = ((Utilisateur) getConnectedUser().get("utilisateur")).getIdUtilisateur();
-		Page<Forum> forums = forumMetier.forumPage(page, 10);
+		Page<Forum> forums = null;
+		if (isMy ==0){
+			forums = forumMetier.forumPage(page, 10);
+		}else{
+			forums = forumMetier.myForumPage(id, page, 10);
+		}
 		List<Object> mx = new ArrayList<Object>();
 		for (Forum f : forums.getContent()) {
 			Map<String, Object> m = new HashMap<String, Object>();
@@ -115,6 +117,7 @@ public class ForumController {
 		Map<String, Object> x = new HashMap<String, Object>(3);
 		x.put("forum", forum);
 		x.put("user", utilisateur);
+		x.put("nbcommantaire", forum.getForumCommentaires().size());
 		x.put("commentaire", forum.getForumCommentaires());
 		return x;
 	}

@@ -153,6 +153,7 @@ public class Utilisateur implements Serializable {
 	public void setStatue_compte(boolean statue_compte) {
 		this.statue_compte = statue_compte;
 	}
+
 	@JsonIgnore
 	public List<Forum> getForums() {
 		return forums;
@@ -161,6 +162,7 @@ public class Utilisateur implements Serializable {
 	public void setForums(List<Forum> forums) {
 		this.forums = forums;
 	}
+
 	@JsonIgnore
 	public List<Commentaire> getListCommmentaire() {
 		return listCommmentaire;
@@ -169,6 +171,7 @@ public class Utilisateur implements Serializable {
 	public void setListCommmentaire(List<Commentaire> listCommmentaire) {
 		this.listCommmentaire = listCommmentaire;
 	}
+
 	@JsonIgnore
 	public List<Publication> getListPublication() {
 		return listPublication;
@@ -186,7 +189,6 @@ public class Utilisateur implements Serializable {
 		this.listCarteBk = listCarteBk;
 	}
 
-	@JsonIgnore
 	public Publication getIdNotPublication() {
 		return idNotPublication;
 	}
@@ -237,7 +239,7 @@ public class Utilisateur implements Serializable {
 		this.email = email;
 		this.statue_compte = statue_compte;
 	}
-
+	@JsonIgnore
 	public List<Amis> getAmislist() {
 		return amislist;
 	}

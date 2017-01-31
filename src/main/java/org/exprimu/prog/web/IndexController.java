@@ -25,4 +25,15 @@ public class IndexController {
 	public String carte() {
 		return "Carte";
 	}
+	
+	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
+	@RequestMapping(value = "/Index/Message")
+	public String message(Model model) {
+		return "message";
+	}
+	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
+	@RequestMapping(value = "/Index/Messagerie")
+	public String messagerie(Model model) {
+		return "messagerie";
+	}
 }

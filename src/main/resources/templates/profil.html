@@ -162,9 +162,7 @@ and open the template in the editor.
 										<i class="fa fa-globe" aria-hidden="true"></i> Public
 									</p>
 								</div>
-								<br/>
-								
-								<br />
+								<br /> <br />
 							</div>
 							<hr />
 							<div class="media">
@@ -178,18 +176,22 @@ and open the template in the editor.
 								<form>
 									<div class="media-body">
 										<p class="text-muted" style="margin-left: 5px;">
-											<label class="fa fa-globe"> Titre de la publication</label> 
-				                            <input	class="form-control"  type="text"  ng-model="PublicationForm.titrePublication"  name="titrePublication" placeholder="Entrez le titre  de  votre  plublication"  />
+											<label class="fa fa-globe"> Titre de la publication</label> <input
+												class="form-control" type="text"
+												ng-model="PublicationForm.titrePublication"
+												name="titrePublication"
+												placeholder="Entrez le titre  de  votre  plublication" />
 										</p>
 									</div>
 									<br />
 									<div class="panel-group">
 										<div class="media-body">
-											<textarea class="form-control" rows="5" type="text" placeholder="Ecrir votre  plublication"
+											<textarea class="form-control" rows="5" type="text"
+												placeholder="Ecrir votre  plublication"
 												ng-model="PublicationForm.statuePublication"
 												name="statuePublication"></textarea>
 										</div>
-										
+
 										<div>
 											<!-- 	<div class="pull-right btn-group-xs">
 												<input type="file" class="btn btn-default btn-xs"
@@ -252,16 +254,47 @@ and open the template in the editor.
 													<tr ng-repeat="publication in Publications">
 														<td>
 															<div class="post-content">
-																Yet another post.
-																<br /> <br /> {{ publication.statuePublication }}
-																<br /> <small><small><a
+																Yet another post. <br /> <br /> {{
+																publication.statuePublication }} <br /> <small><small><a
 																		href="#" style="text-decoration: none; color: grey;"><i><i
 																				class="fa fa-clock-o" aria-hidden="true"></i> 2
 																				minutes ago</i></a></small></small>
-															</div>
-															<div class="media-body">
-																<textarea class="form-control" rows="1"
-																	placeholder="Comment"></textarea>
+																<!-- //list  all comment -->
+																<div id="accordion" class="panel-group">
+
+
+																	<div class="panel panel-default">
+																		<div class="panel-heading">
+																			<h4 class="panel-title">
+																				<a href="#collapseThree" data-parent="#accordion"
+																					data-toggle="collapse">Afficher les
+																					commentaires </a>
+																			</h4>
+																		</div>
+																		<div class="panel-collapse collapse"
+																			id="collapseThree">
+																			<div class="panel-body">...commm</div>
+																		</div>
+																	</div>
+																</div>
+
+															</div> <!-- </td>
+															<td> -->
+															<div class="panel-group">
+																<form>
+																	<div class="media-body">
+																		<textarea class="form-control" rows="1"
+																			placeholder="Comment"
+																			
+																			id="com_{{publication.idPublication }}"
+																			name="contenuCommenatire"  ></textarea>
+																	</div>
+																	<div class="pull-left btn-group-xs">
+																		<button class="btn btn-default btn-xs" type="button"
+																			ng-click="submitCommentaire(publication)">Commenter</button>
+																	</div>
+
+																</form>
 															</div>
 														</td>
 													</tr>

@@ -2,11 +2,16 @@ var app = angular.module("publicationManager",[]);
 app.controller("exprimUPublicationController", function($scope,$http) {
 	     
 	$scope.Publications = [];
+	$scope.Commentaires = [];
 	$scope.Documents = [];  
 	$scope.PublicationForm = {              
 			idPublication:"",
 			titrePublication : ""  ,
 			statuePublication:""
+        };  
+	$scope.CommentaireForm = {              
+			idCommenatire:"",
+			contenuCommenatire : ""  
         };  
 	
 //	$scope.DocumentForm = {              
@@ -18,7 +23,7 @@ app.controller("exprimUPublicationController", function($scope,$http) {
         //Now load the data from server  
 	  _refreshPublicationData();  
    
-        //HTTP POST/PUT methods for add/edit carte   
+        //HTTP POST/PUT methods for add/edit publication   
         // with the help of id, we are going to find out whether it is put or post operation  angular.toJson($scope.CarteForm),  data = 
           
         $scope.submitPublication = function() {  
@@ -35,6 +40,29 @@ app.controller("exprimUPublicationController", function($scope,$http) {
                  
             }).then( _success, _error );  
         };  
+        
+        //save  Commenataire  
+        $scope.submitCommentaire = function(publication) {  
+        	var com = document.getElementById("com_"+publication.idPublication).value;
+        	//alert(com);
+        	var params="";
+            var method = "";  
+            var url = "";              
+                method = "POST";  
+                url = 'http://localhost:8080/Commentaire/Save';  
+                params="contenuCommenatire="+com+"&idPublication="+publication.idPublication;
+                alert(params);
+            $http({  
+                method : method,  
+                url : url,  
+                data : params,
+                headers : { 'Content-Type' : 'application/x-www-form-urlencoded'   } 
+                 
+            }).then( _successCommentaire, _error );  
+        };  
+        
+        
+         
    
         //HTTP DELETE- delete carte by Id  
         $scope.deleteBK = function(publication){  
@@ -45,7 +73,6 @@ app.controller("exprimUPublicationController", function($scope,$http) {
         };  
 
         $scope.editCateBK = function(publication) {  
-            
             $scope.PublicationForm.titrePublication = publication.titrePublication;  
             $scope.PublicationForm.statuePublication = publication.statuePublication;  
             $scope.DocumentForm.descriptionFichier = document.descriptionFichier;  
@@ -63,12 +90,28 @@ app.controller("exprimUPublicationController", function($scope,$http) {
                 console.log(response.statusText);  
             });  
         }  
+        /* Private Methods */  
+        //HTTP GET- get all carte collection  
+        function _refreshCommentaireData(){  
+            $http({  
+                method : 'GET',  
+                url : 'http://localhost:8080/Profil/list'  
+            }).then(function successCallback(response) {  
+            	$scope.Publications = response.data;  
+            }, function errorCallback(response) {  
+                console.log(response.statusText);  
+            });  
+        } 
    
         function _success(response) {  
             _refreshPublicationData();  
             _clearFormData()  
         }  
    
+        function _successCommentaire(response) {  
+//            _refreshCommentaireData();  
+            _clearFormData()  
+        }
         function _error(response) {  
             console.log(response.statusText);  
         }  
@@ -78,10 +121,8 @@ app.controller("exprimUPublicationController", function($scope,$http) {
         	$scope.PublicationForm.idDocument = -1;  
         	$scope.PublicationForm.titrePublication = "";
         	$scope.PublicationForm.statuePublication = "";
-//        	//files
-//        	$scope.DocumentForm.idDocument="";
-//        	$scope.DocumentForm.descriptionFichier="";
-//        	$scope.DocumentForm.idFichier="";
+        	$scope.CommentaireForm.idCommenatire="",
+        	$scope.CommentaireForm.contenuCommenatire= ""  
           
         };  
     });  

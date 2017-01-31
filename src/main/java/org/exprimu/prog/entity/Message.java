@@ -1,6 +1,7 @@
 package org.exprimu.prog.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -21,13 +22,15 @@ public class Message implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idMessage;
 	private String objet;
-	private String contenueMessage;
+	private Date date;
 	@ManyToOne
 	@JoinColumn(name = "idUtilisateurE")
 	private Utilisateur utilisateurE;
 	@ManyToOne
 	@JoinColumn(name = "idUtilisateurR")
 	private Utilisateur utilisateurR;
+	private boolean luE;
+	private boolean luR;
 
 	public Long getIdMessage() {
 		return idMessage;
@@ -45,12 +48,12 @@ public class Message implements Serializable {
 		this.objet = objet;
 	}
 
-	public String getContenueMessage() {
-		return contenueMessage;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setContenueMessage(String contenueMessage) {
-		this.contenueMessage = contenueMessage;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	public Utilisateur getUtilisateurE() {
@@ -69,18 +72,40 @@ public class Message implements Serializable {
 		this.utilisateurR = utilisateurR;
 	}
 
-	public Message(Long idMessage, String objet, String contenueMessage, Utilisateur utilisateurE,
+	public boolean isLuE() {
+		return luE;
+	}
+
+	public void setLuE(boolean luE) {
+		this.luE = luE;
+	}
+
+	public boolean isLuR() {
+		return luR;
+	}
+
+	public void setLuR(boolean luR) {
+		this.luR = luR;
+	}
+
+	public Message(String objet, Date date, boolean luE, boolean luR, Utilisateur utilisateurE,
 			Utilisateur utilisateurR) {
-		super();
-		this.idMessage = idMessage;
 		this.objet = objet;
-		this.contenueMessage = contenueMessage;
+		this.date = date;
+		this.luE = luE;
+		this.luR = luR;
 		this.utilisateurE = utilisateurE;
 		this.utilisateurR = utilisateurR;
 	}
 
+	public Message(String objet, Date date, boolean luE, boolean luR) {
+		this.objet = objet;
+		this.date = date;
+		this.luE = luE;
+		this.luR = luR;
+	}
+
 	public Message() {
-		super();
 	}
 
 }

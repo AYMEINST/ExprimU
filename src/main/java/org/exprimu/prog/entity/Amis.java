@@ -57,11 +57,32 @@ public class Amis implements Serializable {
 	public void setUtilisateurP(Utilisateur utilisateurP) {
 		this.utilisateurP = utilisateurP;
 	}
+	
+	public Long getIdAmisList() {
+		return idAmisList;
+	}
 
+	public void setIdAmisList(Long idAmisList) {
+		this.idAmisList = idAmisList;
+	}
 
+	public Utilisateur getUtilisateurA() {
+		return utilisateurA;
+	}
+
+	public void setUtilisateurA(Utilisateur utilisateurA) {
+		this.utilisateurA = utilisateurA;
+	}
 
 	public Amis() {
-		super();
+		
 	}
+
+	public Amis(Utilisateur utilisateurP, Utilisateur utilisateurA, Date dateCreation) {
+		this.dateCreation = dateCreation;
+		this.utilisateurP = utilisateurP;
+		this.utilisateurA = utilisateurA;
+	}
+	
 
 }

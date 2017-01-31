@@ -31,4 +31,9 @@ return messageRepository.save(message);
 public void delete(Long id) {
 messageRepository.delete(messageRepository.findOne(id));
 }
+@Override
+public List<Message> getMessageByUtilisateur(Long idUtilisateur) {
+	// TODO Auto-generated method stub
+	return messageRepository.getMessageByUtilisateur(idUtilisateur);
+}
 }

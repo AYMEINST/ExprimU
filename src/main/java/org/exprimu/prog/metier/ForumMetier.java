@@ -1,5 +1,3 @@
-
-
 package org.exprimu.prog.metier;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +14,13 @@ public class ForumMetier implements ForumMetierImp {
 	@Autowired
 	private ForumRepository forumRepository;
 
+	
+	@Override
+	public Page<Forum> myForumPage(long id, int page, int size) {
+		// TODO Auto-generated method stub
+		return forumRepository.findMyAll(id, new PageRequest(page, size));
+	}
+	
 	@Override
 	public Page<Forum> forumPage(int page, int size) {
 		return forumRepository.findAll(new PageRequest(page, size));
@@ -40,4 +45,6 @@ public class ForumMetier implements ForumMetierImp {
 	public void delete(Long id) {
 		forumRepository.delete(forumRepository.findOne(id));
 	}
+
+	
 }

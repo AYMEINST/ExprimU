@@ -1,0 +1,196 @@
+.messagerie{
+  background-color: 000;
+}
+
+.user-section-inner {
+    height: 65px;
+width: 65px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+overflow: hidden;
+display: inline-block;
+float: left;
+margin-right: 15px;
+margin-top: 20px;
+}
+.user-section-inner img {
+  margin-left:10px;
+  width:55px;
+  height:60px;
+}
+
+    .listeUtilisateur{
+  padding-top: 15px;
+  margin-bottom: 15px;
+
+}
+.listeUtilisateur td{
+  text-align: center;
+  width: 100%;
+}
+.conversation{
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.transparent{
+    background-color: rgba(0,0,0,0);
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+
+.table-fixed thead {
+  width: 97%;
+}
+.table-fixed tbody {
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+  display: block;
+}
+.table-fixed tbody td, .table-fixed thead > tr> th {
+  float: left;
+  border-bottom-width: 0;
+}
+
+.listeUtilisateur .table-fixed tbody {
+  height: 200px;
+}
+
+.conversation td{
+  height: 125px;
+  float: none !important;
+}
+
+div.scrollmenu {
+    background-color: #EEE;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    color: #333;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    width: 125px;
+}
+
+div.scrollmenu a:hover {
+    background-color: #DDD;
+}
+
+.listeUtilisateur .user-section-inner, .conversation .user-section-inner img{
+  margin : 0px 0px 0px 0px !important;
+}
+
+.centrage {
+  text-align: center;
+}
+
+.messageNonLu{
+  border:2px solid #a94442 ;
+  border-radius: 4px;
+}
+
+.messageLu{
+}
+
+.utilisateur{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.listeUtilisateur .user-section-inner, .conversation .user-section-inner img{
+  margin : 0px 0px 0px 0px !important;
+}
+
+
+/* MODIF */
+
+.tchat{
+  color: #000000;
+}
+.CreerNouvelleConversation{
+  border:2px solid #42a944 ;
+  border-radius: 4px;
+}
+
+.nouvelleConversation{
+  margin: 0 auto;
+  width: 90px;
+}
+
+.destinataire{
+  background-color: #d9edf7 !important;
+  border:1px solid #31708f !important;
+  border-radius: 4px  !important;
+  text-align: right  !important;
+}
+.expediteur{
+  background-color: #fcf8e3 !important;
+  border:1px solid #8a6d3b !important;
+  border-radius: 4px !important;
+  text-align: left !important;
+
+}
+
+.conversationTexte{
+  height: 100%;
+  margin: 10px 0px 10px 0px;
+}
+
+.texte{
+  width: auto!important;
+}
+
+#madiv{
+  height:500px;
+  overflow:auto}
+
+  @media(max-width:650px) {
+    .conversationTexte{
+      font-size:9px;
+    }
+    .user-section-inner{
+      display: none;
+    }
+    .col-xs-2{
+      float: none !important;
+    }
+    #madiv{
+      height:250px;
+    }
+    .col-xs-12{
+      padding-right: 5px;
+    padding-left: 5px;
+    }
+  }
+
+@media(max-width:500px) {
+
+  .col-xs-12{
+    padding-right: 1px;
+  padding-left: 1px;
+  }
+}
