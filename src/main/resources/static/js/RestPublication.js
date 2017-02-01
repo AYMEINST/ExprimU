@@ -22,7 +22,6 @@ app.controller("exprimUPublicationController", function($scope,$http) {
 //        };  
         //Now load the data from server  
 	  _refreshPublicationData();  
-   
         //HTTP POST/PUT methods for add/edit publication   
         // with the help of id, we are going to find out whether it is put or post operation  angular.toJson($scope.CarteForm),  data = 
           
@@ -92,12 +91,12 @@ app.controller("exprimUPublicationController", function($scope,$http) {
         }  
         /* Private Methods */  
         //HTTP GET- get all carte collection  
-        function _refreshCommentaireData(){  
+        function _refreshCommentaireData(publication){  
             $http({  
                 method : 'GET',  
-                url : 'http://localhost:8080/Profil/list'  
+                url : 'http://localhost:8080/Commentaire/getComm/'+ publication.idPublication  
             }).then(function successCallback(response) {  
-            	$scope.Publications = response.data;  
+            	$scope.Commentaires = response.data;  
             }, function errorCallback(response) {  
                 console.log(response.statusText);  
             });  

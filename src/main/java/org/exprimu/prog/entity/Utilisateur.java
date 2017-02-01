@@ -51,7 +51,7 @@ public class Utilisateur implements Serializable {
 
 	@ManyToOne()
 	@JoinColumn(name = "id_notePublication")
-	private Publication idNotPublication;
+	private NotePublication idNotPublication;
 
 	@OneToMany(mappedBy = "utilisateurR")
 	private List<Message> listMessagesR;
@@ -189,11 +189,11 @@ public class Utilisateur implements Serializable {
 		this.listCarteBk = listCarteBk;
 	}
 
-	public Publication getIdNotPublication() {
+	public NotePublication getIdNotPublication() {
 		return idNotPublication;
 	}
 
-	public void setIdNotPublication(Publication idNotPublication) {
+	public void setIdNotPublication(NotePublication idNotPublication) {
 		this.idNotPublication = idNotPublication;
 	}
 	@JsonIgnore

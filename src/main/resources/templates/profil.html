@@ -261,19 +261,40 @@ and open the template in the editor.
 																				minutes ago</i></a></small></small>
 																<!-- //list  all comment -->
 																<div id="accordion" class="panel-group">
-
-
 																	<div class="panel panel-default">
 																		<div class="panel-heading">
 																			<h4 class="panel-title">
-																				<a href="#collapseThree" data-parent="#accordion"
-																					data-toggle="collapse">Afficher les
-																					commentaires </a>
+																				<button href="#collapseThree" data-parent="#accordion"
+																					data-toggle="collapse" ng-click="_refreshCommentaireData(publication)">Afficher les
+																					commentaires </button>
 																			</h4>
 																		</div>
 																		<div class="panel-collapse collapse"
 																			id="collapseThree">
-																			<div class="panel-body">...commm</div>
+																			<div class="panel-body">
+																				<table>
+																					<thead>
+																						<tr>
+																							<th>Liste des commentaires</th>
+																						</tr>
+
+																					</thead>
+																					<tbody>
+																						<tr ng-repeat="commentaire in Commentaires ">
+																							<td>
+																							<div class="post-content" >
+																							{{commentaire.contenuCommenatire}}
+																							</div>
+																							
+																							</td>
+																						</tr>
+																					</tbody>
+
+
+
+																				</table>
+
+																			</div>
 																		</div>
 																	</div>
 																</div>
@@ -285,9 +306,8 @@ and open the template in the editor.
 																	<div class="media-body">
 																		<textarea class="form-control" rows="1"
 																			placeholder="Comment"
-																			
 																			id="com_{{publication.idPublication }}"
-																			name="contenuCommenatire"  ></textarea>
+																			name="contenuCommenatire"></textarea>
 																	</div>
 																	<div class="pull-left btn-group-xs">
 																		<button class="btn btn-default btn-xs" type="button"

@@ -43,6 +43,14 @@ public class CommentaireMetier implements CommentaireMetierImp {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<Commentaire> ListPublicationCommentaire(Long idPublication) {
+			return commentaireRepository.ListPublicationCommentaire(idPublication);
+	}
+
+	
+	
 		
 
 }

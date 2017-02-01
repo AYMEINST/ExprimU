@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class CommPublicationController {
 	@Autowired
 	private CommentaireMetier  commentaireMetier;
+	
+
 	@Autowired
 	private UtilisateurMetierImp UtilisateurMetier;
 	@Autowired
@@ -58,6 +60,13 @@ public class CommPublicationController {
 	@RequestMapping( value = "/Delete/{id}", method = RequestMethod.DELETE)
 	public void delete(@PathVariable Long id) {
 		commentaireMetier.delete(id);
+	}
+	
+
+	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
+	@RequestMapping(value = "/getComm/{idPublication}", method = RequestMethod.GET)
+	public List<Commentaire> ListPublicationCommentaire(Long idPublication) {
+		return commentaireMetier.ListPublicationCommentaire(idPublication);
 	}
 
 }

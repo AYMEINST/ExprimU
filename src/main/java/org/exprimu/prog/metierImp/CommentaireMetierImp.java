@@ -8,4 +8,5 @@ public List<Commentaire> commentaireList();
 public Commentaire getCommentaire(Long id);
 public Commentaire save(Commentaire commentaire);
 public void delete(Long id);
+public List<Commentaire> ListPublicationCommentaire(Long idPublication);
 }
