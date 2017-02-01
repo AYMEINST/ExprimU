@@ -61,8 +61,7 @@ and open the template in the editor.
 	<script src="../static/js/myscript.js" type="text/javascript" th:src="@{../js/myscript.js}"></script>
 	<script src="../static/js/jquery.BlackAndWhite.js" th:src="@{../js/jquery.BlackAndWhite.js}"></script>
 	 <script src="../static/plugins/dataTables/jquery.dataTables.js"  th:src="@{../plugins/dataTables/jquery.dataTables.js}"></script>
-	 <script src="../static/angularjs/angular.min.js"  th:src="@{../angularjs/angular.min.js}"></script>
-	 	<script type="text/javascript" src="../static/js/utilisateurjs.js"	th:src="@{/js/utilisateurjs.js}"></script>
+
 	<script>
 		//PrettyPhoto
 		jQuery(document).ready(function() {
@@ -94,7 +93,7 @@ and open the template in the editor.
 	</script>
 </head>
 
-<body ng-app="UtilisateurTemp" ng-controller="UtilisateurTempController">
+<body ng-app="utilisateurtempon" ng-controller="utilisateurtemponController">
 	<header>
 		<!-- MENU BLOCK -->
 			<div class="menu_block">
@@ -178,6 +177,11 @@ and open the template in the editor.
 							<span class="input-group-addon" id="basic-addon1">Adresse mail</span>
 							<input type="text" class="form-control" id="adresse" ng-model="utilisateurForm.emailUtilisateurTemp" placeholder="Entrez votre adresse mail" aria-describedby="basic-addon1"/>
 						</div>
+						
+					 </div>
+					 <div>
+					 <span>{{messsuc}}</span>
+					<!--  <span id="mailv"></span> -->
 					 </div>
 					 </div>
 					<div class="col-lg-12">
@@ -296,5 +300,7 @@ and open the template in the editor.
 	
 	
 </div>
+	 <script src="../static/angularjs/angular.min.js"  th:src="@{../angularjs/angular.min.js}"></script>
+	 	<script type="text/javascript" src="../static/js/utilisateurjs.js"	th:src="@{/js/utilisateurjs.js}"></script>
 </body>
 </html>

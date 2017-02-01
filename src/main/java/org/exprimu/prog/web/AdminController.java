@@ -6,12 +6,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/Index")
-public class IndexController {
+@RequestMapping(value = "/Admin")
+public class AdminController {
 	
 	@RequestMapping(value = "/index")
 	public String index(Model model) {
-		return "index";
+		return "admin/index";
 	}
 
 //	@RequestMapping(value = "/Forum")
@@ -26,17 +26,17 @@ public class IndexController {
 	public String formut(Model model){
 		return "utilisateurt";	
 	}
-//    
-//    @Secured(value={"ROLE_ADMIN"})
-//    @RequestMapping(value="/admin")
-//    public String admin(Model model){
-//    	return "admin/index";
-//    }
-//    
-//    @Secured(value={"ROLE_ADMIN"})
-//    @RequestMapping(value="/listUserTmp")
-//    public String utilisateurtamp(Model model){
-//    	return "admin/gestionutilisateurstampon";
-//    }
+    
+    @Secured(value={"ROLE_ADMIN"})
+    @RequestMapping(value="/admin")
+    public String admin(Model model){
+    	return "admin/index";
+    }
+    
+    @Secured(value={"ROLE_ADMIN"})
+    @RequestMapping(value="/listUserTmp")
+    public String utilisateurtamp(Model model){
+    	return "admin/gestionutilisateurstampon";
+    }
 	                                                                                                                                                                                                                                                                                                     
 }

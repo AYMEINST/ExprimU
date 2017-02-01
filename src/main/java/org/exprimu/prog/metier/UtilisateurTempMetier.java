@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.exprimu.prog.dao.UtilisateurTempRepository;
 import org.exprimu.prog.entity.Utilisateur;
 import org.exprimu.prog.entity.UtilisateurTemp;
+import org.exprimu.prog.metierImp.UtilisateurMetierImp;
 import org.exprimu.prog.metierImp.UtilisateurTempMetierImp;
 
 @Service
@@ -49,6 +50,7 @@ public class UtilisateurTempMetier implements UtilisateurTempMetierImp {
 		utilisateurtempRepository.delete(utilisateurtempRepository.findOne(id));
 	}
 	@Transactional
+	@Override
 	public void accepteru(Long id) {
 		Utilisateur utilisateur = new Utilisateur();
 		UtilisateurTemp utp = getUtilisateurTemp(id);
@@ -57,7 +59,7 @@ public class UtilisateurTempMetier implements UtilisateurTempMetierImp {
 		utilisateur.setEmail(utp.getEmailUtilisateurTemp());
 		utilisateur.setPassword(utp.getMotdepasse());
 		utilisateur.setStatue_compte(true);
-		Utilisateur ut = utilisateurMetier.save(utilisateur);
+		utilisateurMetier.save(utilisateur);
 		delete(id);
 	}
 
@@ -70,7 +72,21 @@ public class UtilisateurTempMetier implements UtilisateurTempMetierImp {
 		utilisateur.setEmail(utp.getEmailUtilisateurTemp());
 		utilisateur.setPassword(utp.getMotdepasse());
 		utilisateur.setStatue_compte(false);
-		Utilisateur ut = utilisateurMetier.save(utilisateur);
+		utilisateurMetier.save(utilisateur);
 		delete(id);
+	}
+
+	@Override
+	public boolean rechercherbymail(String mail) {
+		int numbermail =utilisateurtempRepository.rechecherByMail(mail);
+		System.out.println("num de ligne :"+numbermail);
+		boolean testmail=true;
+		if(numbermail>1){
+			testmail=true;
+		}
+		else if(numbermail == 0){
+			testmail=false;
+		}
+		return testmail;
 	}
 }
