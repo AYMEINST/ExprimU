@@ -28,12 +28,22 @@ public class IndexController {
 	
 	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
 	@RequestMapping(value = "/Index/Message")
-	public String message(Model model) {
+	public String message() {
 		return "message";
 	}
 	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
 	@RequestMapping(value = "/Index/Messagerie")
-	public String messagerie(Model model) {
+	public String messagerie() {
 		return "messagerie";
+	}
+//	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
+//	@RequestMapping(value = "/Index/Accueil")
+//	public String accueil() {
+//		return "accueil";
+//	}
+	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
+	@RequestMapping(value = "/Index/Quisommenous")
+	public String QuiSommeNous() {
+		return "quisommesnous";
 	}
 }

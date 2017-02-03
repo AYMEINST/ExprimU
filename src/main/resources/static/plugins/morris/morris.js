@@ -754,7 +754,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     Line.prototype.defaults = {
       lineWidth: 3,
       pointSize: 4,
-      lineColors: ['#0b62a4', '#7A92A3', '#4da74d', '#afd8f8', '#edc240', '#cb4b4b', '#9440ed'],
+      //Change color
+      backgroundColor:['#000000'],
+      lineColors: ['#e29e9e', '#98cde7', '#ade098', '#ece0a1', '#c6aef2', '#aef2de', '#f2c8ae'],
       pointStrokeWidths: [1],
       pointStrokeColors: ['#ffffff'],
       pointFillColors: [],
@@ -1434,7 +1436,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     Bar.prototype.defaults = {
       barSizeRatio: 0.75,
       barGap: 3,
-      barColors: ['#0b62a4', '#7a92a3', '#4da74d', '#afd8f8', '#edc240', '#cb4b4b', '#9440ed'],
+      barColors: ['#e29e9e', '#98cde7', '#ade098', '#ece0a1', '#c6aef2', '#aef2de', '#f2c8ae'],
       barOpacity: 1.0,
       barRadius: [0, 0, 0, 0],
       xLabelMargin: 50
@@ -1652,7 +1654,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     __extends(Donut, _super);
 
     Donut.prototype.defaults = {
-      colors: ['#0B62A4', '#3980B5', '#679DC6', '#95BBD7', '#B0CCE1', '#095791', '#095085', '#083E67', '#052C48', '#042135'],
+      colors: ['#e29e9e', '#98cde7', '#ade098', '#ece0a1', '#c6aef2', '#aef2de', '#f2c8ae'],
       backgroundColor: '#FFFFFF',
       labelColor: '#000000',
       formatter: Morris.commas,

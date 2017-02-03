@@ -11,14 +11,14 @@ public class SecurityController {
 	@Autowired
 	private UtilisateurMetier utilisateurMetier;
 
-	@RequestMapping(value = "/login")
+	@RequestMapping(value = "/Index/Accueil")
 	public String AppLogin() {
-		return "login";
+		return "accueil";
 	}
 	
 	@RequestMapping(value = "/")
 	public String LoginDefault() {
-		return "login";
+		return "accueil";
 	}
 	
 
