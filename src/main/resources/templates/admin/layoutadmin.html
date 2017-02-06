@@ -11,6 +11,7 @@
     <link href="../../static/plugins/pace/pace-theme-big-counter.css" th:href="@{../../plugins/pace/pace-theme-big-counter.css}" rel="stylesheet" />
     <link href="../../static/css/admin-style.css" th:href="@{../../css/admin-style.css}" rel="stylesheet" />
      <link href="../../static/css/admin-main-style.css" th:href="@{../../css/admin-main-style.css}" rel="stylesheet" />
+     <link href="../../static/css/style-admin.css" th:href="@{../../css/style-admin.css}" rel="stylesheet" />
 	<!-- Page-Level CSS -->
     <link href="../../static/plugins/dataTables/dataTables.bootstrap.css" th:href="@{../../plugins/dataTables/dataTables.bootstrap.css}" rel="stylesheet" />
 </head>
@@ -290,10 +291,10 @@
                         <a href="statistique.html"><i class="fa fa-users fa-fw"></i>Statistiques</a>
                     </li>
                     <li class="">
-                        <a ng-href="/Admin/listUserTmp"><i class="fa fa-users fa-fw"></i>Gestion des utilisateurs</a>
+                        <a href="gestionutilisateurs.html" ><i class="fa fa-users fa-fw"></i>Gestion des utilisateurs</a>
                     </li>
                     <li class="">
-                        <a href="gestionutilisateurstampon.html"><i class="fa fa-user fa-fw"></i>Gestion des utilisateurs tampon</a>
+                        <a href="/Admin/listUserTmp"><i class="fa fa-user fa-fw"></i>Gestion des utilisateurs tampon</a>
                     </li>
                     <li class="">
                         <a href="gestionforums.html"><i class="fa fa-comments-o fa-fw"></i>Gestion du Forums</a>
@@ -337,7 +338,6 @@
     <script src="../../static/plugins/dataTables/jquery.dataTables.js"  th:src="@{../plugins/dataTables/jquery.dataTables.js}"></script>
     <script src="../../static/plugins/dataTables/dataTables.bootstrap.js"  th:src="@{../plugins/dataTables/dataTables.bootstrap.js}"></script>
      <script src="../../static/angularjs/angular.min.js"  th:src="@{../angularjs/angular.min.js}"></script>
-     <script src="../../static/js/utilisateurjs.js"  th:src="@{../js/utilisateurjs.js}"></script>
     <script>
         $(document).ready(function () {
             $('#dataTables-example').dataTable();

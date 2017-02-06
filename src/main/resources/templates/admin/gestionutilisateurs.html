@@ -1,321 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org/">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExprimU - Administration</title>
-    <link rel="shortcut icon" href="../../static/images/favicon.ico">
-    <!-- Core CSS - Include with every page -->
-    <link href="../../static/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
-    <link href="../../static/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="../../static/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
-    <link href="../../static/css/admin-style.css" rel="stylesheet" />
-      <link href="../../static/css/admin-main-style.css" rel="stylesheet" />
+<head th:replace="admin/layoutadmin :: header">
 
 </head>
 
-<body>
+<body ng-app="apputilisateurs" ng-controller="ControllerUtilisateur">
     <!--  wrapper -->
     <div id="wrapper">
-        <!-- navbar top -->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
-            <!-- navbar-header -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">
-                    <img src="../../static/images/Logo-.png" alt="" />
-                </a>
-            </div>
-            <!-- end navbar-header -->
-            <!-- navbar-top-links -->
-            <ul class="nav navbar-top-links navbar-right">
-                <!-- main dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="top-label label label-danger">3</span><i class="fa fa-envelope fa-3x"></i>
-                    </a>
-                    <!-- dropdown-messages -->
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong><span class=" label label-danger">Andrew Smith</span></strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong><span class=" label label-info">Jonney Depp</span></strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong><span class=" label label-success">Jonney Depp</span></strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- end dropdown-messages -->
-                </li>
+	<!-- navbar top -->
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation"
+			id="navbar" th:replace="admin/layoutadmin :: navbartop"></nav>
+		<!-- end navbar top -->
 
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="top-label label label-success">4</span>  <i class="fa fa-tasks fa-3x"></i>
-                    </a>
-                    <!-- dropdown tasks -->
-                    <ul class="dropdown-menu dropdown-tasks">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 1</strong>
-                                        <span class="pull-right text-muted">40% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 2</strong>
-                                        <span class="pull-right text-muted">20% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                            <span class="sr-only">20% Complete</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 3</strong>
-                                        <span class="pull-right text-muted">60% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (warning)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 4</strong>
-                                        <span class="pull-right text-muted">80% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only">80% Complete (danger)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Tasks</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- end dropdown-tasks -->
-                </li>
-
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="top-label label label-warning">5</span>  <i class="fa fa-bell fa-3x"></i>
-                    </a>
-                    <!-- dropdown alerts-->
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i>New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i>3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i>Message Sent
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i>New Task
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i>Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- end dropdown-alerts -->
-                </li>
-
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-3x"></i>
-                    </a>
-                    <!-- dropdown user-->
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
-                        </li>
-                    </ul>
-                    <!-- end dropdown-user -->
-                </li>
-                <!-- end main dropdown -->
-            </ul>
-            <!-- end navbar-top-links -->
-
-        </nav>
-        <!-- end navbar top -->
-
-        <!-- navbar side -->
-        <nav class="navbar-default navbar-static-side" role="navigation">
-            <!-- sidebar-collapse -->
-            <div class="sidebar-collapse">
-                <!-- side-menu -->
-                <ul class="nav" id="side-menu">
-                    <li>
-                        <!-- user image section-->
-                        <div class="user-section">
-                            <div class="user-section-inner">
-                                <img src="../../static/images/user.jpg" alt="">
-                            </div>
-                            <div class="user-info">
-                                <div>Jonny <strong>Deen</strong></div>
-                                <div class="user-text-online">
-                                    <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
-                                </div>
-                                <a href="login.html"></i>Déconnexion</a>
-                            </div>
-                        </div>
-                        <!--end user image section-->
-                    </li>
-                    <li class="sidebar-search">
-                        <!-- search section-->
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                        </div>
-                        <!--end search section-->
-                    </li>
-                    <li class="">
-                        <a href="statistique.html"><i class="fa fa-users fa-fw"></i>Statistiques</a>
-                    </li>
-                    <li class="">
-                        <a href="gestionutilisateurs.html"><i class="fa fa-users fa-fw"></i>Gestion des utilisateurs</a>
-                    </li>
-                    <li class="">
-                        <a href="gestionutilisateurstampon.html"><i class="fa fa-user fa-fw"></i>Gestion des utilisateurs tampon</a>
-                    </li>
-                    <li class="">
-                        <a href="gestionforums.html"><i class="fa fa-comments-o fa-fw"></i>Gestion du Forums</a>
-                    </li>
-                    <li class="">
-                        <a href="gestionpublications.html"><i class="fa fa-file-o fa-fw"></i>Gestion des publications</a>
-                    </li>
-                    <li class="">
-                        <a href="gestionnotes.html"><i class="fa fa-star fa-fw"></i>Gestion des notes</a>
-                    </li>
-                    <li class="">
-                        <a href="gestionpagedaccueil.html"><i class="fa fa-home fa-fw"></i>Gestion de la page d'accueil</a>
-                    </li>
-                    <li class="">
-                        <a href="gestionarticlessignales.html"><i class="fa fa-exclamation-triangle fa-fw"></i>Gestion des articles signalés</a>
-                    </li>
-
-                </ul>
-                <!-- end side-menu -->
-            </div>
-            <!-- end sidebar-collapse -->
-        </nav>
+		<!-- navbar side -->
+		<nav class="navbar-default navbar-static-side" role="navigation"
+			th:replace="admin/layoutadmin :: navbarleft"></nav>
+		<!-- end navbar side -->
+        
         <!-- end navbar side -->
         <!--  page-wrapper -->
         <div id="page-wrapper">
@@ -328,9 +30,33 @@
                 <div class="col-lg-12">
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
+                    <div class="row">
+							<div class="form-group col-sm-3">
+								<label for="sel1">Select list:</label>
+								<!-- 	<select ng-model="size" class="form-control" id="sel1">
+									<option value="10">10</option>
+									<option value="20">20</option>
+									<option value="30">30</option>
+									<option value="40">40</option>
+								</select> -->
+
+								<select class="form-control"
+									ng-options="category.name for category in categories"
+									ng-model="book.category"
+									ng-change="getScoreData(book.category.name)"></select>
+								
+							</div>
+							<div class="form-group col-sm-3 ">
+								<label>Search:</label>
+								<!--  ng-keypress="chercher($event)"  -->
+								<input type="text" ng-model="motcle"
+									ng-keypress="chercher($event)" class="form-control"
+									placeholder="Search">
+							</div>
+						</div>
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table class="table table-striped table-bordered table-hover" >
                                     <thead>
                                         <tr>
                                             <th>Nom</th>
@@ -338,159 +64,42 @@
                                             <th>Date de naissance</th>
                                             <th>Adresse</th>
                                             <th>Code postal</th>
-                                            <th>Pays</th>
                                             <th>Adresse mail</th>
+                                            <th>statue</th>
                                             <th>Pseudo</th>
                                             <th>Option</th>
-
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Francis </td>
-                                            <td>Corin</td>
-                                            <td>3/4/1985</td>
-                                            <td>98 rue Léon Dierx</td>
-                                            <td>93190</td>
-                                            <td>France</td>
-                                            <td>FrancisCorin@gmail.com</td>
-                                            <td>FCorin</td>
-                                            <td><i class="fa fa-ban fa-2x" title="Bannir l'utilisateur"></i> <i class="fa fa-trash-o fa-2x" title="Supprimer l'utilisateur"></i> <i class="fa fa-pencil fa-2x" title="Modifier l'utilisateur"></i> <i class="fa fa-unlock-alt fa-2x" title="Suspendre temporairement l'utilisateur"></i> <a href="messagerie.html"><i class="fa fa-envelope-o fa-2x" title="Envoyer un message à l'utilisateur"></i></a></td>
+                                        <tr ng-repeat="utilisateur in utilisateurs.content">
+                                            <td>{{utilisateur.nom}} </td>
+                                            <td>{{utilisateur.prenom}}</td>
+                                            <td>{{utilisateur.dateNaissance}}</td>
+                                            <td>{{utilisateur.adresse}}</td>
+                                            <td>{{utilisateur.codePostal}}</td>
+                                            <td>{{utilisateur.email}}</td>
+                                            <td>{{utilisateur.statue_compte}}</td>
+                                            <td>{{utilisateur.nom}}</td>
+                                            <td><i class="fa fa-ban fa-2x" title="Bannir l'utilisateur"></i> <i class="fa fa-trash-o fa-2x" title="Supprimer l'utilisateur"></i> <i class="fa fa-pencil fa-2x" title="Modifier l'utilisateur"></i> <i class="fa fa-unlock-alt fa-2x" title="Suspendre temporairement l'utilisateur"></i> <a href="messagerie.html"><i class="fa fa-envelope-o fa-2x" title="Envoyer un message � l'utilisateur"></i></a></td>
                                         </tr>
-                                        <tr>
-                                            <td>Hrodger</td>
-                                            <td>Arminius</td>
-                                            <td>11/30/1984</td>
-                                            <td>21 quai Saint-Nicolas</td>
-                                            <td>37000</td>
-                                            <td>France</td>
-                                            <td>ArminiusHrodger@gmail.com</td>
-                                            <td>ArminiusLeGrand</td>
-                                            <td><i class="fa fa-ban fa-2x" title="Bannir l'utilisateur"></i> <i class="fa fa-trash-o fa-2x" title="Supprimer l'utilisateur"></i> <i class="fa fa-pencil fa-2x" title="Modifier l'utilisateur"></i> <i class="fa fa-unlock-alt fa-2x" title="Suspendre temporairement l'utilisateur"></i> <a href="messagerie.html"><i class="fa fa-envelope-o fa-2x" title="Envoyer un message à l'utilisateur"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Onyekachi</td>
-                                            <td>Mamadou</td>
-                                            <td>5/20/1969</td>
-                                            <td>8 Boulevard de Normandie</td>
-                                            <td>38600</td>
-                                            <td>France</td>
-                                            <td>OnyekachiMamadou@gmail.com</td>
-                                            <td>OnyekachiMamadou</td>
-                                            <td><i class="fa fa-ban fa-2x" title="Bannir l'utilisateur"></i> <i class="fa fa-trash-o fa-2x" title="Supprimer l'utilisateur"></i> <i class="fa fa-pencil fa-2x" title="Modifier l'utilisateur"></i> <i class="fa fa-unlock-alt fa-2x" title="Suspendre temporairement l'utilisateur"></i> <a href="messagerie.html"><i class="fa fa-envelope-o fa-2x" title="Envoyer un message à l'utilisateur"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Józefina</td>
-                                            <td>Nina</td>
-                                            <td>1/7/1991</td>
-                                            <td>47 boulevard Aristide Briand</td>
-                                            <td>33110</td>
-                                            <td>France</td>
-                                            <td>JozefinaNina@gmail.com</td>
-                                            <td>Ninina</td>
-                                            <td><i class="fa fa-ban fa-2x" title="Bannir l'utilisateur"></i> <i class="fa fa-trash-o fa-2x" title="Supprimer l'utilisateur"></i> <i class="fa fa-pencil fa-2x" title="Modifier l'utilisateur"></i> <i class="fa fa-unlock-alt fa-2x" title="Suspendre temporairement l'utilisateur"></i> <a href="messagerie.html"><i class="fa fa-envelope-o fa-2x" title="Envoyer un message à l'utilisateur"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Maha</td>
-                                            <td>Rasha</td>
-                                            <td>3/25/1987</td>
-                                            <td>44 rue de la Hulotais</td>
-                                            <td>83700</td>
-                                            <td>france</td>
-                                            <td>MahaRasha@gmail.com</td>
-                                            <td>Raja1</td>
-                                            <td><i class="fa fa-ban fa-2x" title="Bannir l'utilisateur"></i> <i class="fa fa-trash-o fa-2x" title="Supprimer l'utilisateur"></i> <i class="fa fa-pencil fa-2x" title="Modifier l'utilisateur"></i> <i class="fa fa-unlock-alt fa-2x" title="Suspendre temporairement l'utilisateur"></i> <a href="messagerie.html"><i class="fa fa-envelope-o fa-2x" title="Envoyer un message à l'utilisateur"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Rabab</td>
-                                            <td>Muhsina</td>
-                                            <td>5/31/1957</td>
-                                            <td>54 rue des six frères Ruellan</td>
-                                            <td>44230</td>
-                                            <td>France</td>
-                                            <td>RababMuhsina@gmail.com</td>
-                                            <td>rabab5</td>
-                                            <td><i class="fa fa-ban fa-2x" title="Bannir l'utilisateur"></i> <i class="fa fa-trash-o fa-2x" title="Supprimer l'utilisateur"></i> <i class="fa fa-pencil fa-2x" title="Modifier l'utilisateur"></i> <i class="fa fa-unlock-alt fa-2x" title="Suspendre temporairement l'utilisateur"></i> <a href="messagerie.html"><i class="fa fa-envelope-o fa-2x" title="Envoyer un message à l'utilisateur"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jamil</td>
-                                            <td>Habibullah</td>
-                                            <td>25/12/2000</td>
-                                            <td>2 rue de la plante verte</td>
-                                            <td>12030</td>
-                                            <td>France</td>
-                                            <td>JamilHabibullah@gmail.com</td>
-                                            <td>HabibullahJamilHabibullah</td>
-                                            <td><i class="fa fa-ban fa-2x" title="Bannir l'utilisateur"></i> <i class="fa fa-trash-o fa-2x" title="Supprimer l'utilisateur"></i> <i class="fa fa-pencil fa-2x" title="Modifier l'utilisateur"></i> <i class="fa fa-unlock-alt fa-2x" title="Suspendre temporairement l'utilisateur"></i> <a href="messagerie.html"><i class="fa fa-envelope-o fa-2x" title="Envoyer un message à l'utilisateur"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Farhan</td>
-                                            <td>Mahmoud</td>
-                                            <td>3/28/1986</td>
-                                            <td>71 rue Banaudon</td>
-                                            <td>69005</td>
-                                            <td>France</td>
-                                            <td>MahmoudFarhan@gmail.com</td>
-                                            <td>MahmoudTunis</td>
-                                            <td><i class="fa fa-ban fa-2x" title="Bannir l'utilisateur"></i> <i class="fa fa-trash-o fa-2x" title="Supprimer l'utilisateur"></i> <i class="fa fa-pencil fa-2x" title="Modifier l'utilisateur"></i> <i class="fa fa-unlock-alt fa-2x" title="Suspendre temporairement l'utilisateur"></i> <a href="messagerie.html"><i class="fa fa-envelope-o fa-2x" title="Envoyer un message à l'utilisateur"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Léopold</td>
-                                            <td>Gautier</td>
-                                            <td>01/01/1600</td>
-                                            <td>rue du prince Bebert</td>
-                                            <td>19475</td>
-                                            <td>France</td>
-                                            <td>LéopoldGautier@gmail.com</td>
-                                            <td>LGautier</td>
-                                            <td><i class="fa fa-ban fa-2x" title="Bannir l'utilisateur"></i> <i class="fa fa-trash-o fa-2x" title="Supprimer l'utilisateur"></i> <i class="fa fa-pencil fa-2x" title="Modifier l'utilisateur"></i> <i class="fa fa-unlock-alt fa-2x" title="Suspendre temporairement l'utilisateur"></i> <a href="messagerie.html"><i class="fa fa-envelope-o fa-2x" title="Envoyer un message à l'utilisateur"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Erwann</td>
-                                            <td>Erwan</td>
-                                            <td>9/5/1956</td>
-                                            <td>24 place Maurice-Charretier</td>
-                                            <td>94500</td>
-                                            <td>France</td>
-                                            <td>ErwannErwan@gmail.com</td>
-                                            <td>Erwannn</td>
-                                            <td><i class="fa fa-ban fa-2x" title="Bannir l'utilisateur"></i> <i class="fa fa-trash-o fa-2x" title="Supprimer l'utilisateur"></i> <i class="fa fa-pencil fa-2x" title="Modifier l'utilisateur"></i> <i class="fa fa-unlock-alt fa-2x" title="Suspendre temporairement l'utilisateur"></i> <a href="messagerie.html"><i class="fa fa-envelope-o fa-2x" title="Envoyer un message à l'utilisateur"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sigismund</td>
-                                            <td>Patrick</td>
-                                            <td>9/4/1981</td>
-                                            <td>Inge Beisheim Platz 54</td>
-                                            <td>25437</td>
-                                            <td>Germany</td>
-                                            <td>SigismundPatrick@gmail.com</td>
-                                            <td>SigismundIII</td>
-                                            <td><i class="fa fa-ban fa-2x" title="Bannir l'utilisateur"></i> <i class="fa fa-trash-o fa-2x" title="Supprimer l'utilisateur"></i> <i class="fa fa-pencil fa-2x" title="Modifier l'utilisateur"></i> <i class="fa fa-unlock-alt fa-2x" title="Suspendre temporairement l'utilisateur"></i> <a href="messagerie.html"><i class="fa fa-envelope-o fa-2x" title="Envoyer un message à l'utilisateur"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Simon</td>
-                                            <td>Ernest</td>
-                                            <td>7/30/1994></td>
-                                            <td>79 Faubourg Saint Honoré</td>
-                                            <td>75019</td>
-                                            <td>France</td>
-                                            <td>SimonErnest@gmail.com</td>
-                                            <td>SimonE</td>
-                                            <td><i class="fa fa-ban fa-2x" title="Bannir l'utilisateur"></i> <i class="fa fa-trash-o fa-2x" title="Supprimer l'utilisateur"></i> <i class="fa fa-pencil fa-2x" title="Modifier l'utilisateur"></i> <i class="fa fa-unlock-alt fa-2x" title="Suspendre temporairement l'utilisateur"></i> <a href="messagerie.html"><i class="fa fa-envelope-o fa-2x" title="Envoyer un message à l'utilisateur"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Nicoline</td>
-                                            <td>Ninette</td>
-                                            <td>7/1/1993</td>
-                                            <td>88 rue des Dunes</td>
-                                            <td>38400</td>
-                                            <td>France</td>
-                                            <td>NicolineNinette@gmail.com</td>
-                                            <td>Nicotine</td>
-                                            <td><i class="fa fa-ban fa-2x" title="Bannir l'utilisateur"></i> <i class="fa fa-trash-o fa-2x" title="Supprimer l'utilisateur"></i> <i class="fa fa-pencil fa-2x" title="Modifier l'utilisateur"></i> <i class="fa fa-unlock-alt fa-2x" title="Suspendre temporairement l'utilisateur"></i> <a href="messagerie.html"><i class="fa fa-envelope-o fa-2x" title="Envoyer un message à l'utilisateur"></i></a></td>
-                                        </tr>
+                                        
+                                   
                                     </tbody>
                                 </table>
+                                <div class="col-sm-6">
+									<div class="dataTables_info" id="dataTables-example_info"
+										role="alert" aria-live="polite" aria-relevant="all">Affichage
+										des element compris entre 1 et {{book.category.name}} sur {{totatelement}}</div>
+								</div>
+									<div class="container">
+									<ul class="nav nav-pills">
+										<li ng-class="{active:pageCourant==($index)}"
+											class="clickable" ng-repeat="p in pages track by $index">
+											<a ng-click="gotopage($index)">{{$index}}</a>
+										</li>
+									</ul>
+								</div>	
                             </div>
 
                         </div>
@@ -508,21 +117,8 @@
     </div>
     <!-- end wrapper -->
 
-    <!-- Core Scripts - Include with every page -->
-    <script src="../../static/plugins/jquery-1.10.2.js"></script>
-    <script src="../../static/plugins/bootstrap/bootstrap.min.js"></script>
-    <script src="../../static/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="../../static/plugins/pace/pace.js"></script>
-    <script src="../../static/js/siminta.js"></script>
-    <!-- Page-Level Plugin Scripts-->
-    <script src="../../static/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="../../static/plugins/dataTables/dataTables.bootstrap.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#dataTables-example').dataTable();
-        });
-    </script>
-
+    <div th:replace="admin/layoutadmin :: scriptejs"></div>
+    <script src="../../static/js/utilisateur.js"  th:src="@{../js/utilisateur.js}"></script>
 </body>
 
 </html>

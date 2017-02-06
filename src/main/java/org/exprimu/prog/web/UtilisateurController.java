@@ -1,21 +1,21 @@
 package org.exprimu.prog.web;
 
-import javax.mail.MessagingException;
-import javax.swing.plaf.synth.SynthSliderUI;
-import javax.websocket.server.PathParam;
+import java.util.List;
 
+import org.exprimu.prog.dao.UtilisateurRepository;
 import org.exprimu.prog.entity.Utilisateur;
-import org.exprimu.prog.entity.UtilisateurTemp;
 import org.exprimu.prog.metier.UtilisateurMetier;
 import org.exprimu.prog.metier.UtilisateurTempMetier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,6 +27,8 @@ public class UtilisateurController {
 	private JavaMailSender javaMailSender;
 	@Autowired
 	private UtilisateurTempMetier utilisateurTempMetier;
+	@Autowired
+	private UtilisateurRepository utilisateurRepository;
 
 	public Page<Utilisateur> utilisateurPage(int page, int size) {
 		return utilisateurMetier.utilisateurPage(page, size);
@@ -50,8 +52,8 @@ public class UtilisateurController {
         javaMailSender.send(mailMessage);
 		return "redirect:/Index/listUserTmp";
 	}
-	
-	@RequestMapping(value="/desactiverut/{id}",method=RequestMethod.GET)
+	@Secured(value={"ROLE_ADMIN"})
+	@RequestMapping(value="/desactiverut/{id}",method=RequestMethod.POST)
 	public String desactiverUt(@RequestBody Long id) {
 		utilisateurTempMetier.desactiviercpt(id);
 		SimpleMailMessage mailMessage = new SimpleMailMessage();
@@ -64,5 +66,23 @@ public class UtilisateurController {
 		return "redirect:/Index/listUserTmp";
 	}
 	
+	@Secured(value={"ROLE_ADMIN"})
+	@RequestMapping(value="/listuser",method=RequestMethod.GET)
+	public Page<Utilisateur> listuser(@RequestParam(name="mc",defaultValue="")String mc,
+			@RequestParam(name="page",defaultValue="")int page,
+			@RequestParam(name="size",defaultValue="")int size
+			){
+		return utilisateurRepository.listuserByMc("%"+mc+"%", new PageRequest(page, size));
+	}
+	
+//	@Secured(value={"ROLE_ADMIN"})
+//	@RequestMapping(value="/listuser",method=RequestMethod.GET)
+//	public List<Utilisateur> listuser(
+//			){
+//		System.out.println("ici ");
+//		return utilisateurRepository.findAll();
+//	}
+	
+
 	
 }

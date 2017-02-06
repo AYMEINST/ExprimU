@@ -156,7 +156,7 @@ public class Utilisateur implements Serializable {
 	public void setStatue_compte(boolean statue_compte) {
 		this.statue_compte = statue_compte;
 	}
-
+	@JsonIgnore
 	public List<Forum> getForums() {
 		return forums;
 	}
@@ -164,7 +164,7 @@ public class Utilisateur implements Serializable {
 	public void setForums(List<Forum> forums) {
 		this.forums = forums;
 	}
-
+	@JsonIgnore
 	public List<Commentaire> getListCommmentaire() {
 		return listCommmentaire;
 	}
@@ -172,7 +172,7 @@ public class Utilisateur implements Serializable {
 	public void setListCommmentaire(List<Commentaire> listCommmentaire) {
 		this.listCommmentaire = listCommmentaire;
 	}
-
+	@JsonIgnore
 	public List<Publication> getListPublication() {
 		return listPublication;
 	}
@@ -180,7 +180,7 @@ public class Utilisateur implements Serializable {
 	public void setListPublication(List<Publication> listPublication) {
 		this.listPublication = listPublication;
 	}
-
+	@JsonIgnore
 	public List<CarteBK> getListCarteBk() {
 		return listCarteBk;
 	}
@@ -196,7 +196,7 @@ public class Utilisateur implements Serializable {
 	public void setIdNotPublication(Publication idNotPublication) {
 		this.idNotPublication = idNotPublication;
 	}
-
+	@JsonIgnore
 	public List<Message> getListMessagesR() {
 		return listMessagesR;
 	}
@@ -204,7 +204,7 @@ public class Utilisateur implements Serializable {
 	public void setListMessagesR(List<Message> listMessagesR) {
 		this.listMessagesR = listMessagesR;
 	}
-
+	@JsonIgnore
 	public List<Message> getListMessagesE() {
 		return listMessagesE;
 	}
@@ -212,7 +212,8 @@ public class Utilisateur implements Serializable {
 	public void setListMessagesE(List<Message> listMessagesE) {
 		this.listMessagesE = listMessagesE;
 	}
-
+	
+	@JsonIgnore
 	public Amis getAmislist() {
 		return amislist;
 	}
@@ -220,7 +221,7 @@ public class Utilisateur implements Serializable {
 	public void setAmislist(Amis amislist) {
 		this.amislist = amislist;
 	}
-
+	@JsonIgnore
 	public List<Roles> getListRoles() {
 		return ListRoles;
 	}

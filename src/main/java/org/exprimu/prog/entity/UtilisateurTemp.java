@@ -14,6 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -31,6 +33,8 @@ public class UtilisateurTemp implements Serializable {
 	private Long idUtilisateurTemp;
 	private String nomUtilisateurTemp;
 	private String prenomUtilisateurTemp;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date dateUtilisateur;
 	private String motdepasse;
 	private String emailUtilisateurTemp;
 //	@ManyToOne
@@ -82,14 +86,24 @@ public class UtilisateurTemp implements Serializable {
 		super();
 	}
 
-	public UtilisateurTemp(String nomUtilisateurTemp, String prenomUtilisateurTemp, String motdepasse,
-			String emailUtilisateurTemp) {
+	public UtilisateurTemp(String nomUtilisateurTemp, String prenomUtilisateurTemp, Date dateUtilisateur,
+			String motdepasse, String emailUtilisateurTemp) {
 		super();
 		this.nomUtilisateurTemp = nomUtilisateurTemp;
 		this.prenomUtilisateurTemp = prenomUtilisateurTemp;
+		this.dateUtilisateur = dateUtilisateur;
 		this.motdepasse = motdepasse;
 		this.emailUtilisateurTemp = emailUtilisateurTemp;
 	}
-	
+
+	public Date getDateUtilisateur() {
+		return dateUtilisateur;
+	}
+
+	public void setDateUtilisateur(Date dateUtilisateur) {
+		this.dateUtilisateur = dateUtilisateur;
+	}
+
+
 	
 }

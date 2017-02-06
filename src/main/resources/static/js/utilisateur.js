@@ -1,13 +1,18 @@
- var app = angular.module("utilisateurtempon", []);  
+ var app = angular.module("apputilisateurs", []);  
 
             //Controller Part  
-            app.controller("utilisateurtemponController", function($scope, $http) {  
+            app.controller("ControllerUtilisateur", function($scope, $http) {  
             	$scope.motcle="";
             	$scope.pageCourant=0;
             	$scope.size=10;
             	$scope.pages=[];
             	
             	  $scope.categories = [{'name': '10'}, {'name': '20'}, {'name': '30'}, {'name': '40'}];
+            	  $scope.book = {};
+            	  $scope.book.category = 'SF';
+            	  
+            	  
+            	  $scope.actives = [{'act': 'True'}, {'act': 'False'}];
             	  $scope.book = {};
             	  $scope.book.category = 'SF';
             	  
@@ -102,13 +107,14 @@
                         }  
                 	
                     }).then( _success, _error );  
+                	_refreshUserTempData();
                 }; 
                 //HTTP annuler un  utilisateur tempon-
                 $scope.desactiverut = function(utilisateur) {  
                 console.log(utilisateur);
                 	$http({  
                         method : 'POST',  
-                        url : '/utilisateur/desactiverut/'+utilisateur.idUtilisateurTemp,  
+                        url : '/utilisateur/saveusertemp/'+utilisateur.idUtilisateurTemp,  
                         data : utilisateur.idUtilisateurTemp, 
                         headers : {  
                             'Content-Type' : 'application/json'  
@@ -129,8 +135,9 @@
                 function _refreshUserTempData() {  
                     $http({  
                         method : 'GET',  
-                        url : "http://localhost:8080/utilisateurt/checher?mc="+$scope.motcle+"&page="+$scope.pageCourant+"&size="+$scope.size,
-                    }).then(function successCallback(response) {  
+                        url : "http://localhost:8080/utilisateur/listuser?mc="+$scope.motcle+"&page="+$scope.pageCourant+"&size="+$scope.size,
+                    }).then(function successCallback(response) { 
+                    	
                         $scope.utilisateurs = response.data;  
                         $scope.pages= new Array(response.data.totalPages);
                         $scope.totatelement=response.data.totalElements;

@@ -11,4 +11,6 @@ public void delete(Long id);
 public void desactiviercpt(Long id);
 public boolean rechercherbymail(String mail);
 public void accepteru(Long id);
+//public Page<UtilisateurTemp> checher(String mc,int page,int size);
+//Page<UtilisateurTemp> checher(String mc, int page, int size);
 }
