@@ -11,7 +11,7 @@ public class SecurityController {
 	@Autowired
 	private UtilisateurMetier utilisateurMetier;
 
-	@RequestMapping(value = "/Index/Accueil")
+	@RequestMapping(value = "/login")
 	public String AppLogin() {
 		return "accueil";
 	}

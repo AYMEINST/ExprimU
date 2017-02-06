@@ -1,69 +1,85 @@
 package org.exprimu.prog.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 @Entity
-public class Fichier implements Serializable {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Fichier {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idFichier;
-	private Integer size;
-	private String type;
 	private String name;
-	private Byte[] date;
+	private String mime;
+	private Long size;
+	private byte[] data;
+
+	public Fichier() {
+	}
+
+	public Fichier(String name, String mime, Long size, byte[] data) {
+		this.name = name;
+		this.mime = mime;
+		this.size = size;
+		this.data = data;
+	}
+
 	public Long getIdFichier() {
 		return idFichier;
 	}
+
 	public void setIdFichier(Long idFichier) {
 		this.idFichier = idFichier;
 	}
-	public Integer getSize() {
-		return size;
-	}
-	public void setSize(Integer size) {
-		this.size = size;
-	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Byte[] getDate() {
-		return date;
+
+	public String getMime() {
+		return mime;
 	}
-	public void setDate(Byte[] date) {
-		this.date = date;
+
+	public void setMime(String mime) {
+		this.mime = mime;
 	}
-	public Fichier(Long idFichier, Integer size, String type, String name, Byte[] date) {
-		super();
-		this.idFichier = idFichier;
+
+	public Long getSize() {
+		return size;
+	}
+
+	public void setSize(Long size) {
 		this.size = size;
-		this.type = type;
-		this.name = name;
-		this.date = date;
 	}
-	public Fichier() {
-		super();
+
+	public byte[] getData() {
+		return data;
 	}
-	
-	
+
+	public void setData(byte[] data) {
+		this.data = data;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Fichier other = (Fichier) obj;
+		if (idFichier == null) {
+			if (other.idFichier != null)
+				return false;
+		} else if (!idFichier.equals(other.idFichier))
+			return false;
+		return true;
+	}
 
 }

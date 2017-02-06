@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable().authorizeRequests()
 		.antMatchers("/css/**","/js/**","/images/**","/angular/**").permitAll()
 		.anyRequest().authenticated().and()
-		.formLogin().loginPage("/Index/Accueil").permitAll().defaultSuccessUrl("/Index/Accueil")
+		.formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/Profil/Home")
 		.and()
 		.logout().invalidateHttpSession(true).logoutUrl("/logout")
 		.permitAll()

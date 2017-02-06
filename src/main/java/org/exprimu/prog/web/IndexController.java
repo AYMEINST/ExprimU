@@ -36,14 +36,16 @@ public class IndexController {
 	public String messagerie() {
 		return "messagerie";
 	}
-//	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
-//	@RequestMapping(value = "/Index/Accueil")
-//	public String accueil() {
-//		return "accueil";
-//	}
+	
 	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
 	@RequestMapping(value = "/Index/Quisommenous")
 	public String QuiSommeNous() {
 		return "quisommesnous";
+	}
+	
+	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
+	@RequestMapping(value = "/Index/Accueil")
+	public String AppLogin() {
+		return "accueil";
 	}
 }

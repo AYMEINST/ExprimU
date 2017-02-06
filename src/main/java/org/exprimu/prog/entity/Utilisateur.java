@@ -31,7 +31,7 @@ public class Utilisateur implements Serializable {
 	private Date dateNaissance;
 	private String adresse;
 	private String codePostal;
-	private Long photo;
+	private Long idFile;
 	private String profession;
 	private String password;
 	private String email;
@@ -114,12 +114,12 @@ public class Utilisateur implements Serializable {
 		this.codePostal = codePostal;
 	}
 
-	public Long getPhoto() {
-		return photo;
+	public Long getIdFile() {
+		return idFile;
 	}
 
-	public void setPhoto(Long photo) {
-		this.photo = photo;
+	public void setIdFile(Long idFile) {
+		this.idFile = idFile;
 	}
 
 	public String getProfession() {
@@ -226,14 +226,14 @@ public class Utilisateur implements Serializable {
 	}
 
 	public Utilisateur( String nom, String prenom, Date dateNaissance, String adresse,
-			String codePostal, Long photo, String profession, String password, String email, boolean statue_compte) {
+			String codePostal, Long idFile, String profession, String password, String email, boolean statue_compte) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
 		this.adresse = adresse;
 		this.codePostal = codePostal;
-		this.photo = photo;
+		this.idFile = idFile;
 		this.profession = profession;
 		this.password = password;
 		this.email = email;
