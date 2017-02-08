@@ -38,7 +38,7 @@ public class UtilisateurController {
 		return utilisateurMetier.getUtilisateur(id);
 	}
 	
-	@Secured(value={"ROLE_ADMIN"})
+	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
 	@RequestMapping(value="/saveusertemp/{id}",method=RequestMethod.POST)
 	public String saveu(@RequestBody Long id) {
 		System.out.println("hi hh+++");
@@ -52,7 +52,7 @@ public class UtilisateurController {
         javaMailSender.send(mailMessage);
 		return "redirect:/Index/listUserTmp";
 	}
-	@Secured(value={"ROLE_ADMIN"})
+	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
 	@RequestMapping(value="/desactiverut/{id}",method=RequestMethod.POST)
 	public String desactiverUt(@RequestBody Long id) {
 		utilisateurTempMetier.desactiviercpt(id);
@@ -66,7 +66,7 @@ public class UtilisateurController {
 		return "redirect:/Index/listUserTmp";
 	}
 	
-	@Secured(value={"ROLE_ADMIN"})
+	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
 	@RequestMapping(value="/listuser",method=RequestMethod.GET)
 	public Page<Utilisateur> listuser(@RequestParam(name="mc",defaultValue="")String mc,
 			@RequestParam(name="page",defaultValue="")int page,
@@ -75,13 +75,12 @@ public class UtilisateurController {
 		return utilisateurRepository.listuserByMc("%"+mc+"%", new PageRequest(page, size));
 	}
 	
-//	@Secured(value={"ROLE_ADMIN"})
-//	@RequestMapping(value="/listuser",method=RequestMethod.GET)
-//	public List<Utilisateur> listuser(
-//			){
-//		System.out.println("ici ");
-//		return utilisateurRepository.findAll();
-//	}
+	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
+	@RequestMapping(value="/UserConnect",method=RequestMethod.GET)
+	public Utilisateur userConnect(){
+		System.out.println("ici ");
+		return (Utilisateur) utilisateurMetier.getConnectedUser().get("utilisateur");
+	}
 	
 
 	

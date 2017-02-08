@@ -39,19 +39,22 @@ public class ExprimUApplication {
 
 		Utilisateur u = new Utilisateur("aly", "momo", new Date(), null, null, 0L, null, "123", "aly@gmail.com", true);
 		u.getListRoles().add(r1);
+		u.setPseudonyme("maan354");
 		r1.getUtilisateur().add(u);
 		u.getListRoles().add(r2);
 		r2.getUtilisateur().add(u);
 		Utilisateur u1 = utilisateurMetier.save(u);
 
-		u = new Utilisateur("admin", "ad", new Date(), null, null, 0L, null, "123", "admin@gmail.com", true);
+		u = new Utilisateur("admin", "the  boss", new Date(), null, null, 0L, null, "123", "admin@gmail.com", true);
 		u.getListRoles().add(r2);
 		r2.getUtilisateur().add(u);
+		u.setPseudonyme("admin");
 		Utilisateur u2 = utilisateurMetier.save(u);
 
-		u = new Utilisateur("user", "us", new Date(), null, null, 0L, null, "123", "user@gmail.com", true);
+		u = new Utilisateur("ndiaye", "Mohamed aly  anda  ", new Date(), null, null, 0L, null, "123", "user@gmail.com", true);
 		u.getListRoles().add(r1);
 		r1.getUtilisateur().add(u);
+		u.setPseudonyme("Moha");
 		Utilisateur u3 = utilisateurMetier.save(u);
 
 		// UPDATE utilisateur SET password = MD5(password)

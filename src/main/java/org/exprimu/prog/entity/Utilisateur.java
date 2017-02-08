@@ -35,6 +35,8 @@ public class Utilisateur implements Serializable {
 	private String profession;
 	private String password;
 	private String email;
+	private String genre;
+	private String pseudonyme;
 	private boolean statue_compte;
 
 	@OneToMany(mappedBy = "idUtilisateur", fetch = FetchType.LAZY)
@@ -65,6 +67,23 @@ public class Utilisateur implements Serializable {
 	@ManyToMany
 	@JoinTable(name = "Role_utilisateur", joinColumns = @JoinColumn(name = "idUtilisateur", referencedColumnName = "idUtilisateur"), inverseJoinColumns = @JoinColumn(name = "idRole", referencedColumnName = "idRole"))
 	private List<Roles> ListRoles = new ArrayList<Roles>();
+
+	
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
+	public String getPseudonyme() {
+		return pseudonyme;
+	}
+
+	public void setPseudonyme(String pseudonyme) {
+		this.pseudonyme = pseudonyme;
+	}
 
 	public Long getIdUtilisateur() {
 		return idUtilisateur;

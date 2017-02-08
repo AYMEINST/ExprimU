@@ -13,7 +13,7 @@ public class IndexController {
 	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
 	@RequestMapping(value = "/Profil/Home")
 	public String Home() {
-		return "profil";
+		return "monprofil";
 	}
 
 	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
@@ -68,5 +68,11 @@ public class IndexController {
 	@RequestMapping(value = "/Index/Publication")
 	public String publication(Model model) {
 		return "ajoutpublication";
+	}
+	
+	@Secured(value = { "ROLE_USER", "ROLE_ADMIN"})
+	@RequestMapping(value = "/Index/Actualite")
+	public String actualite(Model model) {
+		return "actualites";
 	}
 }

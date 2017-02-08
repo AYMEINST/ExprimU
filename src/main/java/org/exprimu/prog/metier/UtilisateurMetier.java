@@ -71,6 +71,8 @@ public class UtilisateurMetier implements UtilisateurMetierImp {
 		List<Utilisateur> x = utilisateurRepository.getUtilisateurByEmail(email);
 		return ((x.isEmpty()) ? null : x.get(0));
 	}
+	
+	
 
 
 	
