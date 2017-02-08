@@ -14,10 +14,16 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class UtilisateurTemp implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * 
 	 */
@@ -27,6 +33,8 @@ public class UtilisateurTemp implements Serializable {
 	private Long idUtilisateurTemp;
 	private String nomUtilisateurTemp;
 	private String prenomUtilisateurTemp;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date dateUtilisateur;
 	private String motdepasse;
 	private String emailUtilisateurTemp;
 //	@ManyToOne
@@ -73,26 +81,29 @@ public class UtilisateurTemp implements Serializable {
 		this.emailUtilisateurTemp = emailUtilisateurTemp;
 	}
 
-//	public Utilisateur getUtilisateur() {
-//		return utilisateur;
-//	}
-//
-//	public void setUtilisateur(Utilisateur utilisateur) {
-//		this.utilisateur = utilisateur;
-//	}
 
 	public UtilisateurTemp() {
 		super();
 	}
 
-	public UtilisateurTemp(Long idUtilisateurTemp, String nomUtilisateurTemp, String prenomUtilisateurTemp,
+	public UtilisateurTemp(String nomUtilisateurTemp, String prenomUtilisateurTemp, Date dateUtilisateur,
 			String motdepasse, String emailUtilisateurTemp) {
 		super();
-		this.idUtilisateurTemp = idUtilisateurTemp;
 		this.nomUtilisateurTemp = nomUtilisateurTemp;
 		this.prenomUtilisateurTemp = prenomUtilisateurTemp;
+		this.dateUtilisateur = dateUtilisateur;
 		this.motdepasse = motdepasse;
 		this.emailUtilisateurTemp = emailUtilisateurTemp;
 	}
 
+	public Date getDateUtilisateur() {
+		return dateUtilisateur;
+	}
+
+	public void setDateUtilisateur(Date dateUtilisateur) {
+		this.dateUtilisateur = dateUtilisateur;
+	}
+
+
+	
 }

@@ -1,0 +1,6 @@
+.clickable{
+	cursor: pointer;
+}
+li.clickable.ng-scope{
+	cursor: pointer;;
+}
