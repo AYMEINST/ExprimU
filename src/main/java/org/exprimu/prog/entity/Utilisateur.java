@@ -37,6 +37,7 @@ public class Utilisateur implements Serializable {
 	private String email;
 	private String genre;
 	private String pseudonyme;
+	private String pays;
 	private boolean statue_compte;
 
 	@OneToMany(mappedBy = "idUtilisateur", fetch = FetchType.LAZY)
@@ -69,6 +70,14 @@ public class Utilisateur implements Serializable {
 	private List<Roles> ListRoles = new ArrayList<Roles>();
 
 	
+	public String getPays() {
+		return pays;
+	}
+
+	public void setPays(String pays) {
+		this.pays = pays;
+	}
+
 	public String getGenre() {
 		return genre;
 	}

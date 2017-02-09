@@ -19,14 +19,13 @@ public class GetFile {
 	
 	@RequestMapping(value = "/index")
 	public void index(@RequestParam(name = "id", defaultValue = "0")long id, HttpServletResponse response) throws IOException{
-		Fichier f = fichierMetier.findOne(id);
-        response.setContentType(f.getMime());
-		response.addHeader("Content-Disposition", "attachment; filename=" + f.getName());
-		response.setContentLength((int) f.getData().length);
+		Fichier F = fichierMetier.findOne(id);
+        response.setContentType(F.getMime());
+		response.addHeader("Content-Disposition", "attachment; filename=" + F.getName());
+		response.setContentLength((int) F.getData().length);
 
 		OutputStream responseOutputStream = response.getOutputStream();
-		for(int bytes : f.getData())
+		for(int bytes : F.getData())
 			responseOutputStream.write(bytes);
 	}
-
 }

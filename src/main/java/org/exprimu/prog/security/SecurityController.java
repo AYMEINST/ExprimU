@@ -20,6 +20,17 @@ public class SecurityController {
 	public String LoginDefault() {
 		return "accueil";
 	}
-	
+	@RequestMapping(value = "/admin")
+	public String admiAcces() {
+		return "admin/index";
+	}
 
+	@RequestMapping(value = "/forgetpassword")
+	public String forgetPassword() {
+		return "motdepasseperdu";
+	}
+	@RequestMapping(value = "/registration")
+	public String Registration() {
+		return "creationcompte";
+	}
 }

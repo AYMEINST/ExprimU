@@ -3,6 +3,19 @@ app.controller("exprimUProfileController", function($scope,$http) {
 	     
 	$scope.Utilisateur = [];  
 	$scope.Utilisateurs = []; 
+	$scope.FromUtilisateur={
+		idUtilisateur : "",
+		nom : "",
+		prenom : "",
+		password : "",
+		profession : "",
+		email : "",
+		adresse:"",
+		codePostal:"",
+		genre:"",
+		pseudonyme:"",
+		dateNaissance:""
+	};
 	
         //Now load the data from server  
 	_refreshUserConnectData();  
@@ -17,7 +30,7 @@ app.controller("exprimUProfileController", function($scope,$http) {
             $http({  
                 method : method,  
                 url : url,  
-                data : angular.toJson($scope.CarteForm) ,
+                data : angular.toJson($scope.FromUtilisateur) ,
                 headers : { 'Content-Type' : 'application/json'   } 
                  
             }).then( _success, _error );  
@@ -41,7 +54,7 @@ app.controller("exprimUProfileController", function($scope,$http) {
         }  
    
         function _success(response) {  
-            _refreshBKData();  
+        	_refreshUserConnectData();  
             _clearFormData()  
         }  
    
@@ -51,7 +64,17 @@ app.controller("exprimUProfileController", function($scope,$http) {
    
         //Clear the form  
         function _clearFormData() {  
-        	
+        	FromUtilisateur.idUtilisateur = "",
+        	FromUtilisateur.nom = "",
+        	FromUtilisateur.prenom = "",
+        	FromUtilisateur.password = "",
+        	FromUtilisateur.profession = "",
+        	FromUtilisateur.email = "",
+        	FromUtilisateur.adresse="",
+        	FromUtilisateur.codePostal="",
+        	FromUtilisateur.genre="",
+        	FromUtilisateur.pseudonyme="",
+        	FromUtilisateur.dateNaissance=""
           
         };  
     });  
