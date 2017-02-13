@@ -33,6 +33,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable().authorizeRequests()
 		.antMatchers("/registration").access("hasRole('ROLE_USER')")  //give  authorization
 		.antMatchers("/forgetpassword").access("hasRole('ROLE_USER')")  //give  authorization
+		.antMatchers("/registrationAsking").access("hasRole('ROLE_USER')")  //give  authorization
+		.antMatchers("/Index/Actualite").access("hasRole('ROLE_USER')")  //give  authorization
+		.antMatchers("/Index/Quisommenous").access("hasRole('ROLE_USER')")  //give  authorization
 		.antMatchers("/admin").access("hasRole('ROLE_ADMIN')") //give  authorization
 		.antMatchers("/admin/*").hasAnyRole("ROLE_ADMIN")
 		.antMatchers("/css/**","/js/**","/images/**","/angular/**").permitAll()
@@ -41,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/Profil/Home")
 		.and()
 		.authorizeRequests()
-        .antMatchers("/forgetpassword","/registration","/admin").permitAll()
+        .antMatchers("/forgetpassword","/registration","/registrationAsking","/Index/Actualite","/Index/Quisommenous").permitAll()
         .anyRequest().authenticated()
         .and()
 		.logout().invalidateHttpSession(true).logoutUrl("/logout")

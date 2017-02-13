@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ExprimU</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<link rel="shortcut icon" href="../static/images/favicon.ico"
+	th:href="@{/images/favicon.ico}" />
+
+<!-- CSS -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous" />
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous" />
+
+<!-- Latest compiled and minified JavaScript -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	 -->
+<link href="../static/css/flexslider.css" rel="stylesheet"
+	type="text/css" th:href="@{/css/flexslider.css}" />
+<link href="../static/css/prettyPhoto.css" rel="stylesheet"
+	type="text/css" th:href="@{/css/prettyPhoto.css}" />
+<link href="../static/css/animate.css" rel="stylesheet" type="text/css"
+	media="all" th:href="@{/css/animate.css}" />
+<link href="../static/css/owl.carousel.css" rel="stylesheet"
+	th:href="@{/css/owl.carousel.css}" />
+<link href="../static/css/style.css" rel="stylesheet" type="text/css"
+	th:href="@{/css/style.css}" />
+<!-- FONTS -->
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500italic,700,500,700italic,900,900italic'
+	rel='stylesheet' type='text/css' />
+<link
+	href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+	rel="stylesheet" />
+
+<!-- SCRIPTS -->
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if IE]><html class="ie" lang="en"> <![endif]-->
+
+
+<!-- SCRIPTS -->
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if IE]><html cl
+    ass="ie" lang="en"> <![endif]-->
+
+<script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"
+	type="text/javascript"></script>
+<script src="../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"
+	type="text/javascript"></script>
+<script src="../static/js/jquery.prettyPhoto.js"
+	th:src="@{/js/jquery.prettyPhoto.js}" type="text/javascript"></script>
+<script src="../static/js/jquery.nicescroll.min.js"
+	th:src="@{/js/jquery.nicescroll.min.js}" type="text/javascript"></script>
+<script src="../static/js/superfish.min.js"
+	th:src="@{/js/superfish.min.js}" type="text/javascript"></script>
+<script src="../static/js/jquery.flexslider-min.js"
+	th:src="@{/js/jquery.flexslider-min.js}" type="text/javascript"></script>
+<script src="../static/js/owl.carousel.js"
+	th:src="@{/js/owl.carousel.js}" type="text/javascript"></script>
+<script src="../static/js/animate.js" th:src="@{/js/animate.js}"
+	type="text/javascript"></script>
+<script src="../static/js/myscript.js" th:src="@{/js/myscript.js}"
+	type="text/javascript"></script>
+<script src="../static/js/jquery.BlackAndWhite.js"
+	th:src="@{/js/jquery.BlackAndWhite.js}" type="text/javascript"></script>
+
+<script type="text/javascript" src="../static/js/RestPublication.js"
+	th:src="@{../js/RestPublication.js}"></script>
+
+<script>
+	//PrettyPhoto
+	jQuery(document).ready(function() {
+		$("a[rel^='prettyPhoto']").prettyPhoto();
+	});
+
+	//BlackAndWhite
+	$(window).load(function() {
+		$('.client_img').BlackAndWhite({
+			hoverEffect : true, // default true
+			// set the path to BnWWorker.js for a superfast implementation
+			webworkerPath : false,
+			// for the images with a fluid width and height
+			responsive : true,
+			// to invert the hover effect
+			invertHoverEffect : false,
+			// this option works only on the modern browsers ( on IE lower than 9 it remains always 1)
+			intensity : 1,
+			speed : { //this property could also be just speed: value for both fadeIn and fadeOut
+				fadeIn : 300, // 200ms for fadeIn animations
+				fadeOut : 300
+			// 800ms for fadeOut animations
+			},
+			onImageReady : function(img) {
+				// this callback gets executed anytime an image is converted
+			}
+		});
+	});
+</script>
+
+</head>
+<body ng-app="userManager" ng-controller="exprimUProfileController">
+
+	<!-- PRELOADER -->
+	<img id="preloader" th:src="@{/images/preloader.gif}" alt="" />
+	<!-- //PRELOADER -->
+	<div class="preloader_hide">
+
+		<!-- Modal -->
+	
+<!-- //Modal -->
+		<!-- PAGE -->
+		<div id="page">
+
+			<!-- HEADER -->
+			<header>
+				<!-- MENU BLOCK -->
+				<div class="menu_block">
+
+					<!-- CONTAINER -->
+					<div class="container clearfix">
+
+						<!-- LOGO -->
+						<div class="logo pull-left">
+							<div class="logo">
+								<div id="logo-max">
+									<a href="index.html"><img th:src="@{/images/Logo-.png}"
+										width="157" height="44" alt="image" /></a>
+								</div>
+								<div id="logo-min">
+									<a href="index.html"><img th:src="@{/images/Logo-min.png}"
+										width="44" height="44" alt="image" /></a>
+								</div>
+							</div>
+						</div>
+
+						<!--LANGUAGE -->
+						<div id="language-form" class="pull-right text-center btn-group">
+							<input type="image" th:src="@{/images/FR.svg}"
+								data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false" />
+							<ul class="dropdown-menu">
+								<li><a href="#"><img th:src="@{/images/GB.svg}"
+										style="height: 30px; width: 30px; margin-top: -5px;"
+										alt="Anglais" /> English</a></li>
+								<li><a href="#"><img th:src="@{/images/FR.svg}"
+										style="height: 30px; width: 30px; margin-top: -5px;"
+										alt="Français" /> Français</a></li>
+							</ul>
+						</div>
+						<!--//LANGUAGE -->
+
+						<!-- SEARCH FORM -->
+						<div id="search-form" class="pull-right ">
+							<form method="get" action="#">
+								<input type="text" name="Search" value="Recherche"
+									onFocus="if (this.value == 'Search') this.value = '';"
+									onBlur="if (this.value == '') this.value = 'Search';" />
+							</form>
+						</div>
+						<!-- SEARCH FORM -->
+						<!-- MENU -->
+						<div class="pull-right">
+							<nav class="navmenu center row">
+
+								<ul>
+									<li class="first active scroll_btn"><a href="/Index/Accueil">Accueil</a></li>
+									<li class="scroll_btn"><a href="/Index/Actualite">Actualités</a></li>
+									<li class="scroll_btn"><a href="/Index/Publication">Publications</a></li>
+									<li class="scroll_btn"><a href="/Forum">Forums</a></li>
+									<li class="scroll_btn"><a href="/Index/Quisommenous">Qui sommes nous
+											?</a></li>
+									<li class="dropdown" ><span class="glyphicon glyphicon-user" aria-hidden="true">{{Utilisateur.pseudonyme }}</span>
+											<ul class="dropdown-menu" id="menu1">
+											    <li class="scroll_btn"><a href="/Profil/Home">{{Utilisateur.prenom}}</a></li>
+											    <li class="scroll_btn"><a href="#">{{Utilisateur.genre}}</a></li>
+											    <li class="scroll_btn"><a href="#">{{Utilisateur.profession}}</a></li>
+											    <li class="scroll_btn"><a href="/logout"><span class="glyphicon glyphicon-user" aria-hidden="true">Logout</span></a></li>
+										    </ul>
+								  </li>
+								</ul>
+							</nav>
+						</div>
+						<!-- //MENU -->
+					</div>
+					<!-- //MENU BLOCK -->
+				</div>
+				<!-- //CONTAINER -->
+			</header>
+			<!-- //HEADER -->
+		<section id="home" class="padbot0">
+			<div class="container" >
+				<div class="row">
+					<div class="col-sm-8 col-xs-12"><!-- Video, Notes, Info, Descritpion et Commentaires -->
+
+						<div class="col-xs-12 contenueTexte"><!-- Video -->
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non tristique ipsum, sed ultricies risus. Etiam vestibulum sagittis enim, nec suscipit lorem tristique vitae. Duis sapien lorem, ornare at posuere non, tincidunt blandit urna. Aenean ullamcorper nisi mauris. Cras posuere facilisis eros. Cras eu mattis metus. Duis eleifend, sapien et commodo finibus, erat ante rutrum lorem, et gravida elit massa non nibh. Nunc at convallis libero. Aenean sit amet pulvinar nulla. Suspendisse consequat interdum lacus vel lacinia. In vehicula vehicula odio, quis convallis lacus interdum et. Nam suscipit blandit ipsum, convallis tincidunt tortor molestie eu. Vivamus tempus consectetur pulvinar. Morbi sollicitudin malesuada nibh ut commodo.
+							Mauris a lorem eget tortor pellentesque mollis. Donec tempus tincidunt augue id semper. In malesuada, neque imperdiet pellentesque sodales, magna tellus ultrices nunc, quis tincidunt mauris eros sit amet ex. Vivamus pharetra gravida tellus vitae posuere. Vestibulum ac eros vulputate, dapibus dolor vel, fringilla quam. Mauris dictum imperdiet velit at semper. Pellentesque in lacus ex. In hac habitasse platea dictumst. In vel vehicula nunc, sed accumsan erat.
+							Vestibulum turpis dolor, hendrerit nec mi a, commodo condimentum augue. Aenean vel consectetur ex, nec sollicitudin ex. Quisque vel nisi et sapien interdum euismod et vel tellus. Praesent a purus ac mauris efficitur molestie. Cras in sagittis nulla. Sed pulvinar imperdiet mattis. Sed aliquet nec libero et lacinia. Donec feugiat erat ut purus ullamcorper pellentesque vel at tortor. Phasellus placerat, nibh non tristique tincidunt, tellus ipsum lobortis massa, malesuada ornare justo leo in nunc. Nullam ac faucibus mauris. Nulla eget lectus turpis. Sed gravida mauris quis nulla euismod, eget cursus sem pharetra.
+							Donec viverra, libero non gravida mollis, lectus arcu interdum libero, sed pellentesque neque nibh sit amet odio. Suspendisse lobortis dolor a fermentum faucibus. Morbi volutpat lectus arcu, vitae condimentum sem eleifend sed. Quisque sollicitudin est vitae orci tincidunt dapibus. Sed nisi diam, eleifend non ultrices a, porttitor molestie justo. Cras ut auctor orci, a vehicula lacus. Nam vel blandit ex, non facilisis augue.
+							Ut accumsan velit vel gravida lacinia. In lectus massa, blandit vel malesuada vitae, dictum sit amet est. Suspendisse tincidunt blandit neque, sed semper magna ultricies et. Curabitur nibh odio, dictum at laoreet vitae, porta ut lorem. Pellentesque nec orci non lorem rutrum fringilla laoreet non metus. Nulla non purus risus. Praesent non pulvinar orci. Sed tincidunt ornare nulla a iaculis. Suspendisse non sagittis urna. Nullam elementum mollis faucibus. Nulla efficitur diam et tortor vehicula lobortis. Duis et ornare lacus. Aenean rutrum quam congue cursus faucibus.
+							Nam ante justo, placerat eget porta ac, pharetra at enim. Duis scelerisque ante scelerisque, commodo enim sit amet, laoreet nibh. Aliquam mattis pretium pulvinar. Ut sed condimentum massa. Nam metus erat, interdum in ultrices aliquam, gravida eu leo. Integer quis augue a mi congue fringilla eu vel nisi. Aliquam faucibus, velit a imperdiet pharetra, risus odio gravida mauris, et fermentum augue augue in diam. Sed ac est et leo faucibus commodo. Ut volutpat dolor ut mi aliquet eleifend vulputate eget massa. Duis consequat enim ac semper facilisis. Sed ipsum orci, malesuada sed pretium a, aliquet eu orci. Suspendisse potenti.
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non tristique ipsum, sed ultricies risus. Etiam vestibulum sagittis enim, nec suscipit lorem tristique vitae. Duis sapien lorem, ornare at posuere non, tincidunt blandit urna. Aenean ullamcorper nisi mauris. Cras posuere facilisis eros. Cras eu mattis metus. Duis eleifend, sapien et commodo finibus, erat ante rutrum lorem, et gravida elit massa non nibh. Nunc at convallis libero. Aenean sit amet pulvinar nulla. Suspendisse consequat interdum lacus vel lacinia. In vehicula vehicula odio, quis convallis lacus interdum et. Nam suscipit blandit ipsum, convallis tincidunt tortor molestie eu. Vivamus tempus consectetur pulvinar. Morbi sollicitudin malesuada nibh ut commodo.
+							Mauris a lorem eget tortor pellentesque mollis. Donec tempus tincidunt augue id semper. In malesuada, neque imperdiet pellentesque sodales, magna tellus ultrices nunc, quis tincidunt mauris eros sit amet ex. Vivamus pharetra gravida tellus vitae posuere. Vestibulum ac eros vulputate, dapibus dolor vel, fringilla quam. Mauris dictum imperdiet velit at semper. Pellentesque in lacus ex. In hac habitasse platea dictumst. In vel vehicula nunc, sed accumsan erat.
+							Vestibulum turpis dolor, hendrerit nec mi a, commodo condimentum augue. Aenean vel consectetur ex, nec sollicitudin ex. Quisque vel nisi et sapien interdum euismod et vel tellus. Praesent a purus ac mauris efficitur molestie. Cras in sagittis nulla. Sed pulvinar imperdiet mattis. Sed aliquet nec libero et lacinia. Donec feugiat erat ut purus ullamcorper pellentesque vel at tortor. Phasellus placerat, nibh non tristique tincidunt, tellus ipsum lobortis massa, malesuada ornare justo leo in nunc. Nullam ac faucibus mauris. Nulla eget lectus turpis. Sed gravida mauris quis nulla euismod, eget cursus sem pharetra.
+							Donec viverra, libero non gravida mollis, lectus arcu interdum libero, sed pellentesque neque nibh sit amet odio. Suspendisse lobortis dolor a fermentum faucibus. Morbi volutpat lectus arcu, vitae condimentum sem eleifend sed. Quisque sollicitudin est vitae orci tincidunt dapibus. Sed nisi diam, eleifend non ultrices a, porttitor molestie justo. Cras ut auctor orci, a vehicula lacus. Nam vel blandit ex, non facilisis augue.
+							Ut accumsan velit vel gravida lacinia. In lectus massa, blandit vel malesuada vitae, dictum sit amet est. Suspendisse tincidunt blandit neque, sed semper magna ultricies et. Curabitur nibh odio, dictum at laoreet vitae, porta ut lorem. Pellentesque nec orci non lorem rutrum fringilla laoreet non metus. Nulla non purus risus. Praesent non pulvinar orci. Sed tincidunt ornare nulla a iaculis. Suspendisse non sagittis urna. Nullam elementum mollis faucibus. Nulla efficitur diam et tortor vehicula lobortis. Duis et ornare lacus. Aenean rutrum quam congue cursus faucibus.
+							Nam ante justo, placerat eget porta ac, pharetra at enim. Duis scelerisque ante scelerisque, commodo enim sit amet, laoreet nibh. Aliquam mattis pretium pulvinar. Ut sed condimentum massa. Nam metus erat, interdum in ultrices aliquam, gravida eu leo. Integer quis augue a mi congue fringilla eu vel nisi. Aliquam faucibus, velit a imperdiet pharetra, risus odio gravida mauris, et fermentum augue augue in diam. Sed ac est et leo faucibus commodo. Ut volutpat dolor ut mi aliquet eleifend vulputate eget massa. Duis consequat enim ac semper facilisis. Sed ipsum orci, malesuada sed pretium a, aliquet eu orci. Suspendisse potenti.
+						</div>
+
+						<div class="col-xs-12"><!-- Notes et Info -->
+							<h1>Titre de la video</h1>
+							<a href="profil.html">
+								<div class="col-xs-2 imagesPublications">
+									<img width="100%" height="100%" src="../static/images/user.jpg" alt=""/>
+								</div>
+								<h3 class="col-sm-4 col-xs-6">Francis_eau_de_Gamma</h3>
+							</a>
+							<div class="col-xs-6 text-right">
+								<h4>207 Vues</h4>
+								<div class="grandeResolution"><i class="fa fa-star fa-2x"></i><i class="fa fa-star fa-2x"></i><i class="fa fa-star fa-2x"></i><i class="fa fa-star-half-o fa-2x"></i><i class="fa fa-star-o fa-2x"></i></div>
+								<div class="petiteResolution"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></div>
+							</div>
+						</div>
+
+						<div class="col-xs-12"><!-- Descritpion -->
+							<p>
+								Mise en ligne le 8 février 2017
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pretium condimentum dolor, nec sagittis tortor suscipit a. Cras tristique odio ut urna accumsan, sit amet imperdiet ante congue. Fusce vitae tellus quis dui ullamcorper hendrerit nec at nisl. In commodo vel nisi ac ultrices. Cras quis mauris sed odio iaculis scelerisque eu rhoncus lectus. Cras consectetur orci in tempus posuere. Donec orci turpis, dapibus ac tincidunt in, molestie id tellus. Nam in egestas ex, vel ornare augue. Cras eu turpis quis justo efficitur placerat at sit amet risus. Proin vitae consectetur magna.
+							</p>
+							<h4 class="text-center" data-toggle="collapse" data-target="#demo">Description</h4></br>
+						  <div id="demo" class="collapse">
+								Sed condimentum quis nisi nec facilisis. Aenean eu ipsum tempor, condimentum sapien nec, tincidunt neque. Nam mollis sodales risus ac pretium. Integer eget ornare turpis. In hac habitasse platea dictumst. Etiam porttitor metus est, in mattis libero vehicula non. Aliquam cursus nulla a nibh accumsan, non euismod lectus suscipit. Suspendisse quis elit et massa mattis ornare egestas eget nisi. Duis eget diam eu mauris elementum laoreet vitae ac nulla. Integer ut justo augue. Suspendisse dignissim diam eu mauris fringilla, pretium aliquam urna ornare.
+								Nulla varius sem vel odio laoreet fermentum. Quisque vel pellentesque ligula. Sed molestie consequat nisl, et finibus arcu ullamcorper eget. Nullam consectetur arcu sem, id tempor nunc ullamcorper a. Etiam finibus porttitor arcu vitae laoreet. Fusce ullamcorper ante justo. Maecenas maximus finibus risus ac aliquam. Integer et ante tempus velit tincidunt pellentesque. Aliquam interdum lacinia est vitae sagittis. Suspendisse molestie quam nec dolor fringilla, quis vulputate tellus aliquam. Morbi feugiat dui id rhoncus vestibulum.
+								Nam ut ante accumsan urna rhoncus convallis a at enim. Sed congue neque ut nisi efficitur aliquet eget vel augue. Quisque placerat eget turpis quis pharetra. Vestibulum et arcu a leo faucibus lacinia. Phasellus porttitor justo ut pharetra tincidunt. Cras turpis nulla, eleifend nec elit sit amet, elementum facilisis ex. Fusce at nulla ac est malesuada fringilla. Vivamus mi tellus, viverra at nisl ut, scelerisque interdum ante. Vestibulum at nisi ipsum. Vestibulum facilisis purus in mollis condimentum. Fusce quis massa nec nulla eleifend dapibus. Aenean lobortis malesuada sem, non sollicitudin dui dictum at. Donec laoreet felis eget arcu viverra faucibus. Mauris ac fermentum magna, eu molestie risus. Aenean id metus augue. In et magna sem.
+								Aenean sed arcu interdum, rutrum massa vehicula, venenatis nisl. Sed eros nisi, efficitur vulputate nisl non, rutrum sollicitudin ipsum. Phasellus eget sagittis urna. Phasellus tristique, orci a facilisis finibus, dui leo finibus diam, a tristique nunc quam et eros. Suspendisse metus quam, ultrices maximus maximus id, ultrices non tellus. Donec in imperdiet sem, vitae luctus tortor. Nullam convallis sagittis metus, sed placerat lorem congue et. Curabitur mauris orci, mollis porttitor felis efficitur, accumsan hendrerit nibh. Aenean finibus quam vitae felis sollicitudin, vel faucibus arcu porta. Curabitur egestas cursus erat, vitae mattis augue vulputate a. Suspendisse a libero ut ex aliquet cursus. Aliquam rhoncus urna eu metus pharetra, non vulputate lorem cursus. Aenean finibus, lorem id accumsan luctus, urna enim rhoncus tortor, nec aliquet nunc nisl vel ligula. Phasellus pulvinar justo quam, ut eleifend nisl laoreet sit amet. Integer sapien mauris, placerat in nisi ut, tristique posuere nibh.
+							</div>
+						</div>
+
+						<div class="col-xs-12 publicationCommentaires text-right"><!-- Commentaires -->
+							<textarea class="form-control" rows="3" id="comment">Mettez votre commentaires ici</textarea>
+							<button type="submit" class="btn btn-primary">Envoyer</button>
+
+							<!-- Start Com2 -->
+							<div class="col-xs-12 contenueCommentaire">
+								<a href="profil.html">
+									<div class="col-xs-2 imagesPublications">
+										<img width="75%" height="75%" src="../static/images/user.jpg" alt=""/>
+									</div>
+								</a>
+								<div class="col-xs-10 col-lg-10  destinataire">
+									<div class="form-control conversationTexte commentaires text-left">
+										<h5><strong>Francis_eau_de_Gamma </strong>Il y a 2 jours</h5>
+										Merci, désolé mais j'ai mis pas mal de temps avant de la publier
+										anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement
+									</div>
+								</div>
+							</div>
+							<!-- End Com2 -->
+							<!-- Start Com2 -->
+							<div class="col-xs-12 contenueCommentaire">
+								<a href="profil.html">
+									<div class="col-xs-2 imagesPublications">
+										<img width="75%" height="75%" src="../static/images/user.jpg" alt=""/>
+									</div>
+								</a>
+								<div class="col-xs-10 col-lg-10  destinataire">
+									<div class="form-control conversationTexte commentaires text-left">
+										<h5><strong>Francis_eau_de_Gamma </strong>Il y a 2 jours</h5>
+										Merci, désolé mais j'ai mis pas mal de temps avant de la publier
+										anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement
+									</div>
+								</div>
+							</div>
+							<!-- End Com2 -->
+							<!-- Start Com2 -->
+							<div class="col-xs-12 contenueCommentaire">
+								<a href="profil.html">
+									<div class="col-xs-2 imagesPublications">
+										<img width="75%" height="75%" src="../static/images/user.jpg" alt=""/>
+									</div>
+								</a>
+								<div class="col-xs-10 col-lg-10  destinataire">
+									<div class="form-control conversationTexte commentaires text-left">
+										<h5><strong>Francis_eau_de_Gamma </strong>Il y a 2 jours</h5>
+										Merci, désolé mais j'ai mis pas mal de temps avant de la publier
+										anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement
+									</div>
+								</div>
+							</div>
+							<!-- End Com2 -->
+
+						</div>
+
+					</div>
+
+					<div class="col-xs-4 autresVideos" style="background-color:#ffffff"><!-- Autres videos-->
+						<!-- autres -->
+						<div class="col-xs-12 margeVideo">
+							<div class="col-xs-6 autresVideosG">
+								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+							</div>
+							<div class="col-xs-6 autresVideosD">
+								<a href="video.html"><h5>Titre de la video</h5></a>
+								<a href="profil.html"><p>Francis_eau_de_Gamma</p></a>
+								<p>207 Vues</p>
+							</div>
+						</div>
+						<!-- autres -->
+						<div class="col-xs-12 margeVideo">
+							<div class="col-xs-6 autresVideosG">
+								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+							</div>
+							<div class="col-xs-6 autresVideosD">
+								<a href="video.html"><h5>Titre de la video</h5></a>
+								<a href="profil.html"><p>Francis_eau_de_Gamma</p></a>
+								<p>207 Vues</p>
+							</div>
+						</div>
+						<!-- autres -->
+						<div class="col-xs-12 margeVideo">
+							<div class="col-xs-6 autresVideosG">
+								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+							</div>
+							<div class="col-xs-6 autresVideosD">
+								<a href="video.html"><h5>Titre de la video</h5></a>
+								<a href="profil.html"><p>Francis_eau_de_Gamma</p></a>
+								<p>207 Vues</p>
+							</div>
+						</div>
+						<!-- autres -->
+						<div class="col-xs-12 margeVideo">
+							<div class="col-xs-6 autresVideosG">
+								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+							</div>
+							<div class="col-xs-6 autresVideosD">
+								<a href="video.html"><h5>Titre de la video</h5></a>
+								<a href="profil.html"><p>Francis_eau_de_Gamma</p></a>
+								<p>207 Vues</p>
+							</div>
+						</div>
+						<!-- autres -->
+						<div class="col-xs-12 margeVideo">
+							<div class="col-xs-6 autresVideosG">
+								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+							</div>
+							<div class="col-xs-6 autresVideosD">
+								<a href="video.html"><h5>Titre de la video</h5></a>
+								<a href="profil.html"><p>Francis_eau_de_Gamma</p></a>
+								<p>207 Vues</p>
+							</div>
+						</div>
+						<!-- autres -->
+						<div class="col-xs-12 margeVideo">
+							<div class="col-xs-6 autresVideosG">
+								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+							</div>
+							<div class="col-xs-6 autresVideosD">
+								<a href="video.html"><h5>Titre de la video</h5></a>
+								<a href="profil.html"><p>Francis_eau_de_Gamma</p></a>
+								<p>207 Vues</p>
+							</div>
+						</div>
+						<!-- autres -->
+						<div class="col-xs-12 margeVideo">
+							<div class="col-xs-6 autresVideosG">
+								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+							</div>
+							<div class="col-xs-6 autresVideosD">
+								<a href="video.html"><h5>Titre de la video</h5></a>
+								<a href="profil.html"><p>Francis_eau_de_Gamma</p></a>
+								<p>207 Vues</p>
+							</div>
+						</div>
+						<!-- autres -->
+						<div class="col-xs-12 margeVideo">
+							<div class="col-xs-6 autresVideosG">
+								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+							</div>
+							<div class="col-xs-6 autresVideosD">
+								<a href="video.html"><h5>Titre de la video</h5></a>
+								<a href="profil.html"><p>Francis_eau_de_Gamma</p></a>
+								<p>207 Vues</p>
+							</div>
+						</div>
+						<!-- autres -->
+						<div class="col-xs-12 margeVideo">
+							<div class="col-xs-6 autresVideosG">
+								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+							</div>
+							<div class="col-xs-6 autresVideosD">
+								<a href="video.html"><h5>Titre de la video</h5></a>
+								<a href="profil.html"><p>Francis_eau_de_Gamma</p></a>
+								<p>207 Vues</p>
+							</div>
+						</div>
+						<!-- autres -->
+						<div class="col-xs-12 margeVideo">
+							<div class="col-xs-6 autresVideosG">
+								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+							</div>
+							<div class="col-xs-6 autresVideosD">
+								<a href="video.html"><h5>Titre de la video</h5></a>
+								<a href="profil.html"><p>Francis_eau_de_Gamma</p></a>
+								<p>207 Vues</p>
+							</div>
+						</div>
+						<!-- autres -->
+						<div class="col-xs-12 margeVideo">
+							<div class="col-xs-6 autresVideosG">
+								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+							</div>
+							<div class="col-xs-6 autresVideosD">
+								<a href="video.html"><h5>Titre de la video</h5></a>
+								<a href="profil.html"><p>Francis_eau_de_Gamma</p></a>
+								<p>207 Vues</p>
+							</div>
+						</div>
+						<!-- autres -->
+
+					</div>
+				</div>
+			</div>
+
+		</section><!-- //HOME -->
+		<!-- CONTACTS -->
+		<section id="contacts">
+		</section><!-- //CONTACTS -->
+		<!-- PROJECTS -->
+
+
+
+	</div><!-- //PAGE -->
+
+	<!-- CONTACTS -->
+
+	<footer>
+
+		<!-- CONTAINER -->
+		<div class="container">
+
+			<!-- ROW -->
+			<div class="row" data-appear-top-offset="-200" data-animated="fadeInUp">
+
+				<div class="col-lg-4 col-md-4 col-sm-6 padbot30">
+					<h4><b>Catégorie<b></h4>
+					<div class="recent_posts_small clearfix">
+						<div class="post_item_img_small">
+							<img src="../static/images/blog/1.jpg" alt="" />
+						</div>
+						<div class="post_item_content_small">
+							<a class="title" href="blog.html" >Actualités</a>
+							<ul class="post_item_inf_small">
+								<li>10 January 2014</li>
+							</ul>
+						</div>
+					</div>
+					<div class="recent_posts_small clearfix">
+						<div class="post_item_img_small">
+							<img src="../static/images/blog/1.jpg" alt="" />
+						</div>
+						<div class="post_item_content_small">
+							<a class="title" href="blog.html" >Blogs</a>
+							<ul class="post_item_inf_small">
+								<li>10 January 2014</li>
+							</ul>
+						</div>
+					</div>
+					<div class="recent_posts_small clearfix">
+						<div class="post_item_img_small">
+							<img src="../static/images/blog/2.jpg" alt="" />
+						</div>
+						<div class="post_item_content_small">
+							<a class="title" href="blog.html" >Videos et Images</a>
+							<ul class="post_item_inf_small">
+								<li>14 January 2014</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-lg-4 col-md-4 col-sm-6 padbot30 foot_about_block">
+					<h4><b>À propos de</b> Nous</h4>
+					<p>We value people over profits, quality over quantity, and keeping it real. As such, we deliver an unmatched working relationship with our clients.</p>
+					<h4><b>Suivez</b> Nous</h4>
+					<ul class="social">
+						<li><a href="javascript:void(0);" ><i class="fa fa-twitter"></i></a></li>
+						<li><a href="javascript:void(0);" ><i class="fa fa-facebook"></i></a></li>
+						<li><a href="javascript:void(0);" ><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="javascript:void(0);" ><i class="fa fa-pinterest-square"></i></a></li>
+						<li><a href="javascript:void(0);" ><i class="map_show fa fa-map-marker"></i></a></li>
+					</ul>
+				</div>
+
+				<div class="respond_clear"></div>
+
+				<div class="col-lg-4 col-md-4 padbot30">
+					<h4><b>Contactez</b> Nous</h4>
+
+					<!-- CONTACT FORM -->
+					<div class="span9 contact_form">
+						<div id="note"></div>
+						<div id="fields">
+							<form id="contact-form-face" class="clearfix" action="#">
+								<input type="text" name="name" value="Nom" onFocus="if (this.value == 'Name') this.value = '';" onBlur="if (this.value == '') this.value = 'Name';" />
+								<textarea name="message" onFocus="if (this.value == 'Message') this.value = '';" onBlur="if (this.value == '') this.value = 'Message';">Message</textarea>
+								<input class="contact_btn" type="submit" value="Envoyer le message" />
+							</form>
+						</div>
+					</div><!-- //CONTACT FORM -->
+				</div>
+			</div><!-- //ROW -->
+			<div class="row copyright">
+				<div class="col-lg-12 text-center">
+
+				 <p>ExprimU<i class="fa fa-geocode"></i>, <a href="http://designscrazed.org/" >Tous droits résérvés</a></p>
+				</div>
+
+			</div><!-- //ROW -->
+		</div><!-- //CONTAINER -->
+	</footer><!-- //FOOTER -->
+
+
+	<!-- MAP -->
+	<div id="map">
+		<a class="map_hide" href="javascript:void(0);" ><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></a>
+		<iframe src="http://maps.google.com/maps?f=q&amp;give%20a%20hand=s_q&amp;hl=en&amp;geocode=&amp;q=london&amp;sll=37.0625,-95.677068&amp;sspn=42.631141,90.263672&amp;ie=UTF8&amp;hq=&amp;hnear=London,+United+Kingdom&amp;ll=51.500141,-0.126257&amp;spn=0.026448,0.039396&amp;z=14&amp;output=embed" ></iframe>
+	</div><!-- //MAP -->
+
+</div>
+</body>
+</html>

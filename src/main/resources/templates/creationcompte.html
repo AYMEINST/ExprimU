@@ -99,7 +99,7 @@
 	</script>
 
 </head>
-<body>
+<body ng-app="userManager" ng-controller="exprimUProfileController">
 
 <!-- PRELOADER -->
 <img id="preloader" th:src="@{/images/preloader.gif}" alt="" />
@@ -177,9 +177,9 @@
 
 							<ul>
 								<ul>
-								<li class="first active scroll_btn"><a href="#home" >Accueil</a></li>
-								<li class="scroll_btn"><a href="#home" >Actualités</a></li>
-								<li class="scroll_btn"><a href="#home" >Qui sommes nous ?</a></li>
+								<li class="first active scroll_btn"><a href="/Index/Accueil" >Accueil</a></li>
+								<li class="scroll_btn"><a href="/Index/Actualite" >Actualités</a></li>
+								<li class="scroll_btn"><a href="/Index/Quisommenous" >Qui sommes nous ?</a></li>
 								<li class="scroll_btn last" data-toggle="modal" data-target="#myModal"><a href="#monProfil" ><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Se connecter</a></li>
 							</ul>
 							</ul>
@@ -198,19 +198,19 @@
 						<div class="col-lg-4">
 						 <div class="input-group">
 							 <span class="input-group-addon" id="basic-addon1">Nom</span>
-							 <input type="text" class="form-control" placeholder="Entrez votre nom" aria-describedby="basic-addon1"/>
+							 <input type="text" class="form-control" placeholder="Entrez votre nom" aria-describedby="basic-addon1" ng-model="FromUtilisateur.nom"/>
 						 </div>
 						</div>
 						<div class="col-lg-4">
 							<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1">Prénom</span>
-								<input type="text" class="form-control" placeholder="Entrez votre prénom" aria-describedby="basic-addon1"/>
+								<input type="text" class="form-control" placeholder="Entrez votre prénom" aria-describedby="basic-addon1" ng-model="FromUtilisateur.prenom" />
 							</div>
 						 </div>
 						 <div class="col-lg-4">
 							<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1">Date de naissance</span>
-								<input type="date" class="form-control" aria-describedby="basic-addon1"/>
+								<input type="date" class="form-control" data-date-format="YYYY-MM-DD" aria-describedby="basic-addon1" ng-model="FromUtilisateur.dateNaissance" />
 							</div>
 						 </div>
 					</div>
@@ -218,19 +218,24 @@
 						<div class="col-lg-4">
 						 <div class="input-group">
 							 <span class="input-group-addon" id="basic-addon1">Adresse</span>
-							 <input type="text" class="form-control" placeholder="Entrez votre adresse" aria-describedby="basic-addon1"/>
+							 <input type="text" class="form-control" placeholder="Entrez votre adresse" aria-describedby="basic-addon1"  ng-model="FromUtilisateur.adresse" />
 						 </div>
 						</div>
 						<div class="col-lg-4">
 							<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1">Code postal</span>
-								<input type="text" class="form-control" placeholder="Entrez votre code postal" aria-describedby="basic-addon1"/>
+								<input type="text" class="form-control" placeholder="Entrez votre code postal" aria-describedby="basic-addon1" ng-model="FromUtilisateur.codePostal" />
 							</div>
 						 </div>
-						 <div class="col-lg-4">
+						 <div class="col-lg-2">
 							<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1">Pays</span>
-								<input type="text" class="form-control" placeholder="Entrez votre pays" aria-describedby="basic-addon1"/>
+								<input type="text" class="form-control" placeholder="Entrez votre pays" aria-describedby="basic-addon1" ng-model="FromUtilisateur.pays" value="pays" />
+							</div>
+						 </div>
+						 <div class="col-lg-2">
+							<div class="input-group">
+								<input type="file" class="upload"   ng-file-model="files" multiple="multiple"  />
 							</div>
 						 </div>
 					</div>
@@ -238,25 +243,25 @@
 						<div class="col-lg-3">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1">Adresse mail</span>
-							<input type="mail" class="form-control" placeholder="Entrez votre adresse mail" aria-describedby="basic-addon1"/>
+							<input type="mail" class="form-control" placeholder="Entrez votre adresse mail" aria-describedby="basic-addon1" ng-model="FromUtilisateur.email" />
 						</div>
 					 </div>
-					 <div class="col-lg-3">
+					 <div class="col-lg-5">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1">Profession</span>
-							<input type="mail" class="form-control" placeholder="Entrez votre adresse mail" aria-describedby="basic-addon1"/>
+							<input type="mail" class="form-control" placeholder="Entrez votre adresse mail" aria-describedby="basic-addon1" ng-model="FromUtilisateur.profession" />
 						</div>
 					 </div>
 						<div class="col-lg-3">
 						 <div class="input-group">
 							 <span class="input-group-addon" id="basic-addon1">Pseudo</span>
-							 <input type="text" class="form-control" placeholder="Entrez votre pseudo" aria-describedby="basic-addon1"/>
+							 <input type="text" class="form-control" placeholder="Entrez votre pseudo" aria-describedby="basic-addon1" ng-model="FromUtilisateur.pseudonyme"/>
 						 </div>
 						</div>
-						<div class="col-lg-3">
+						<div class="col-lg-1">
 						 <div class="input-group">
-							 <span class="input-group-addon.input-sm" id="basic-addon1">Genre</span>
-							 <select class="selected">
+							 <span class="input-group-addon" id="basic-addon1">Genre</span>
+							 <select class="selected" ng-model="FromUtilisateur.genre">
 							  <option>M</option>
 							  <option>F</option>
 						   	 </select>
@@ -268,7 +273,7 @@
 						<div class="col-lg-6">
 							<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1">Mot de passe</span>
-								<input type="password" class="form-control" placeholder="Entrez votre mot de passe" aria-describedby="basic-addon1"/>
+								<input type="password" class="form-control" placeholder="Entrez votre mot de passe" aria-describedby="basic-addon1" ng-model="FromUtilisateur.password" />
 							</div>
 						 </div>
 						 <div class="col-lg-6">
@@ -279,7 +284,7 @@
 						 </div>
 					</div>
 					<div class="col-sm-offset-5 col-sm-2 text-center">
-            				<button type="button" class="btn btn-default btn-sm" id="boutonEnvoyer">Envoyer</button>
+            				<button type="submit" class="btn btn-default btn-sm" id="boutonEnvoyer"  ng-click="upload()" >Envoyer</button>
    			 		</div>
 				</form>
             </div>

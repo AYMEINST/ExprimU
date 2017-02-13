@@ -1,11 +1,15 @@
 
 package org.exprimu.prog.web;
 
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
+
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.http.HttpServletResponse;
 
 import org.exprimu.prog.entity.Document;
 import org.exprimu.prog.entity.Fichier;
@@ -113,8 +117,23 @@ public class PublicationController {
 			}
 		}
 		
-		
-		
+
 	}	
+	
+	@RequestMapping(value = "/download/{id}" ,method= RequestMethod.GET)
+	public void showFile( @RequestParam(name = "id", defaultValue = "0")long id, HttpServletResponse response) throws IOException{
+		List<Fichier> AllFilles =fichierMetier.findAll();
+		for (Fichier F : AllFilles) {
+	        response.setContentType(F.getMime());
+			response.addHeader("Content-Disposition", "attachment; filename=" + F.getName());
+			response.setContentLength((int) F.getData().length);
+			OutputStream responseOutputStream = response.getOutputStream();
+			for(int bytes : F.getData())
+				responseOutputStream.write(bytes);
+		}
+		
+		
+	}
+
 
 }

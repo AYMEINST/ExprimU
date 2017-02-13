@@ -267,6 +267,25 @@ public class Utilisateur implements Serializable {
 		this.email = email;
 		this.statue_compte = statue_compte;
 	}
+	
+	
+	public Utilisateur(String nom, String prenom, Date dateNaissance, String adresse, String codePostal, Long idFile,
+			String profession, String password, String email, String genre, String pseudonyme, String pays) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.adresse = adresse;
+		this.codePostal = codePostal;
+		this.idFile = idFile;
+		this.profession = profession;
+		this.password = password;
+		this.email = email;
+		this.genre = genre;
+		this.pseudonyme = pseudonyme;
+		this.pays = pays;
+	}
+
 	@JsonIgnore
 	public List<Amis> getAmislist() {
 		return amislist;

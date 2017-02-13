@@ -33,4 +33,8 @@ public class SecurityController {
 	public String Registration() {
 		return "creationcompte";
 	}
+	@RequestMapping(value = "/registrationAsking")
+	public String inscription() {
+		return "creationcomptetampon";
+	}
 }

@@ -231,10 +231,6 @@ blockquote:before {content:'“'; position:absolute; left:15px; top:13px; font-s
 
 
 
-
-
-
-
 /*-----------------------------------------------------------------------------------*/
 /*	HEADER
 /*-----------------------------------------------------------------------------------*/
@@ -2325,4 +2321,222 @@ input[type="color"]:focus {
 .couleurPaire{
 	background-color: #eee;
 	border :1px solid #eee;
+}
+
+
+/*actu*/
+
+.actuContenue{
+	height: 200px;
+}
+.actuCommentairesNotes{
+	height:200px
+}
+
+h4{
+	margin: 0px 0px 0px 0px ;
+}
+
+.notes p{
+	margin: 0px 0px 0px 0px;
+}
+
+@media (max-width: 768px) {
+	.actuPseudo{
+	    margin-left: -10px;
+	}
+	.scrollDescription {
+	  text-align: center;
+		overflow-y: scroll;
+		height:100px;
+	}
+	.scrollCommentaires {
+	  text-align: center;
+		overflow-y: scroll;
+		height:100px;
+	}
+	.actuCommentairesNotes{
+		height:100px
+	}
+}
+
+@media (min-width: 768px){
+  .scrollDescription {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+		height:200px;
+		padding-right: 10px;
+		padding-left: 10px;
+  }
+
+	.scrollCommentaires {
+    overflow-y: scroll;
+		height:200px;
+		padding-right: 10px;
+		padding-left: 10px;
+  }
+
+
+}
+
+.conversationTexte{
+  margin: 0px 15px 15px 15px;
+	height:100%;
+}
+
+.commentaires{
+	background-color: #ffffff;
+	color:#afafaf;
+}
+
+.contenueCommentaire{
+	margin: 5px 0px 5px;
+}
+
+.zoneTexte{
+	margin-top: 5px;
+}
+
+
+.petiteResolution{
+	margin: 0px -12px 0px -12px;
+}
+@media (min-width: 768px) and (max-width: 991px){
+	.grandeResolution{
+		display: none;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+	.grandeResolution{
+		display: none;
+	}
+	.description{
+		font-size: 10px;
+		line-height: 12px!important;
+	}
+}
+@media (min-width: 1200px) and (max-width: 1400px){
+	.description{
+		font-size: 9px;
+		line-height: 12px!important;
+	}
+}
+
+@media (min-width: 1200px){
+
+	.petiteResolution{
+		display: none;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 768px){
+	.petiteResolution{
+		display: none;
+	}
+}
+@media (max-width: 575px){
+	.grandeResolution{
+		display: none;
+	}
+	.utilisateur{
+		margin-left: -40px!important;
+	}
+	.conversationTexte{
+		margin: 0px 0px 0px 0px;
+	}
+	.imageConversation{
+		display: none;
+	}
+	h1 {
+		line-height:22px; font-size:20px;
+	}
+	h3 {
+		line-height:18px; font-size:16px;
+	}
+	h4 {
+		line-height:16px; font-size:14px;
+	}
+
+}
+
+@media (max-width: 450px){
+	.description{
+		display: none;
+	}
+}
+
+.utilisateur{
+	width: 100px;
+	margin-left: -20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.description{
+	font-size: 15px;
+	text-align: left;
+	overflow:hidden;
+	word-wrap: break-word;
+	margin-bottom: 0px;
+}
+
+@media (max-width: 767px){
+	.autresVideos{
+		display: none;
+	}
+	.imagesPublications{
+		display: none;
+	}
+	.contenueTexte{
+		margin-left: -30px;
+	}
+}
+
+.publicationCommentaires{
+	padding-top: 10px;
+}
+
+.pseudoResponsive{
+	width: 100px;
+	margin-left: -20px;
+	overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.autresVideosG{
+	padding-left: 0px;
+	padding-right: 5px;
+}
+.autresVideosD{
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.autresVideosD h5,.autresVideosD p{
+	margin:0px;
+}
+
+.margeVideo{
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+audio {
+	width: 100%;
+}
+
+.conteneurMedia{
+margin: 30px 30px 30px 30px;
+}
+
+.contenueTexte{
+	height: 400px;
+	overflow-y: scroll;
+	margin: 30px 0px 30px 0px;
 }

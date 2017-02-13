@@ -144,29 +144,6 @@ app
 					$scope.upload = function() {
 						alert($scope.files.length
 								+ " files selected ... Write your Upload Code");
-						// for (var i = 0; i < $scope.files.length; i++) {
-						//							
-						//							
-						// var formData = new FormData();
-						// formData.append("statue", data.statue);
-						// formData.append("tritrePublication",
-						// data.tritrePublication);
-						//							
-						// for (var i = 0 ; i < files.length ; i ++){
-						// formData.append('files', files[i]);
-						// }
-						//							
-						// $http({
-						// url: 'http://localhost:8080/Profil/Save',
-						// data: formData,
-						// transformRequest: angular.identity,
-						// headers: { 'Content-Type': undefined}
-						//							    
-						//							    
-						// }).then(function(data, status, headers, config) {
-						// // file is uploaded successfully
-						// console.log(data);
-						// });
 
 						$http(
 								{

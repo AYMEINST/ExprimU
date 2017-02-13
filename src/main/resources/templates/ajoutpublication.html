@@ -111,7 +111,7 @@
 </script>
 
 </head>
-<body ng-app="publicationManager" ng-controller="exprimUPublicationController">
+<body ng-app="publicationManager" ng-controller="exprimUProfileController">
 
 	<!-- PRELOADER -->
 <img id="preloader" th:src="@{/images/preloader.gif}" alt="" />
@@ -174,14 +174,14 @@
 							<nav class="navmenu center row">
 
 								<ul>
-									<li class="first active scroll_btn"><a href="#home">Accueil</a></li>
-									<li class="scroll_btn"><a href="#home">Actualités</a></li>
-									<li class="scroll_btn"><a href="#home">Publications</a></li>
-									<li class="scroll_btn"><a href="#home">Forums</a></li>
-									<li class="scroll_btn"><a href="#home">Qui sommes
-											nous ?</a></li>
+									<li class="first active scroll_btn"><a href="/Index/Accueil">Accueil</a></li>
+									<li class="scroll_btn"><a href="/Index/Actualite">Actualités</a></li>
+									<li class="scroll_btn"><a href="/Index/Publication">Publications</a></li>
+										<li class="scroll_btn"><a href="/Forum">Forums</a></li>
+									<li class="scroll_btn"><a href="/Index/Quisommenous">Qui sommes nous
+											?</a></li>
 									<li class="scroll_btn last" data-toggle="modal"
-										data-target="#myModal"><a href="#monProfil"><span
+										data-target="#myModal"><a href="/Profil/Home"><span
 											class="glyphicon glyphicon-user" aria-hidden="true"></span>
 											Mon profil</a></li>
 								</ul>
@@ -244,7 +244,7 @@
 									</div>
 								     <div class="form-group text-right">
 										<div class="fileUpload btn btn-primary"><i class="fa fa-paperclip" aria-hidden="true"></i><input type="file" class="upload"   ng-file-model="files" multiple="multiple"  /></div>
-										<button type="submit" class="btn btn-primary" ng-click="submitPublication()" >Envoyer</button>
+										<button type="submit" class="btn btn-primary" ng-click="upload()" >Envoyer</button>
 									</div>
 								</form>
 							</div>
@@ -268,7 +268,7 @@
 									</div>
 								     <div class="form-group text-right">
 										<div class="fileUpload btn btn-primary"><i class="fa fa-paperclip" aria-hidden="true"></i><input type="file" class="upload" ng-file-model="files" multiple="multiple" /></div>
-										<button type="submit" class="btn btn-primary" ng-click="submitPublication()" >Envoyer</button>
+										<button type="submit" class="btn btn-primary" ng-click="upload()" >Envoyer</button>
 									</div>
 								</form>
 							</div>
@@ -292,7 +292,7 @@
 									</div>
 								     <div class="form-group text-right">
 										<div class="fileUpload btn btn-primary"><i class="fa fa-paperclip" aria-hidden="true"></i><input type="file" class="upload" ng-file-model="files" multiple="multiple" /></div>
-										<button type="submit" class="btn btn-primary" ng-click="submitPublicationWithDocument()" >Envoyer</button>
+										<button type="submit" class="btn btn-primary" ng-click="upload()" >Envoyer</button>
 									</div>
 								</form>
 							</div>
@@ -325,22 +325,22 @@
 						<div class="row text-center">
 							<h1>Vos publications</h1>
 							<div class="col-xs-6 casePublication couleurPaire ">
-								<a href="accueil.html"><i class="fa fa-video-camera fa-5x"
+								<a href="/Index/Publication/Video"><i class="fa fa-video-camera fa-5x"
 									aria-hidden="true"></i><br/>
 								<span>Vidéos</span></a>
 							</div>
 							<div class="col-xs-6 casePublication couleurImpaire">
-								<a href="accueil.html"><i class="fa fa-music fa-5x"
+								<a href="/Index/Publication/Musique"><i class="fa fa-music fa-5x"
 									aria-hidden="true"></i><br/>
 								<span>Musiques</span></a>
 							</div>
 							<div class="col-xs-6 casePublication couleurImpaire">
-								<a href="accueil.html"><i class="fa fa-picture-o fa-5x"
+								<a href="/Index/Publication/Image"><i class="fa fa-picture-o fa-5x"
 									aria-hidden="true"></i><br/>
 								<span>Photos et Images</span></a>
 							</div>
 							<div class="col-xs-6 casePublication couleurPaire">
-								<a href="accueil.html"><i class="fa fa-file-text-o  fa-5x"
+								<a href="/Index/Publication/Pdf"><i class="fa fa-file-text-o  fa-5x"
 									aria-hidden="true"></i><br/>
 								<span>Articles</span></a>
 							</div>

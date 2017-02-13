@@ -119,76 +119,85 @@
 <div class="preloader_hide">
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<h4 class="modal-title">Connexion</h4>
-	</div>
-	<form>
-    <input type="text" name="user" placeholder="Username">
-    <input type="password" name="pass" placeholder="Password">
-    <input type="submit" name="login" class="login login-submit" value="login">
-    </form>
-    <div class="login-help">
-    	<a href="creationcompte.html">S'inscrire</a> • <a href="motdepasseperdu.html">Mot de passe oublié ?</a><a href="modificationmotdepasse.html">Changer de mot de passe</a>
-    </div>
-</div>
+
 <!-- //Modal -->
 
 	<!-- PAGE -->
 	<div id="page">
 
 		<!-- HEADER -->
-		<header>
-		<!-- MENU BLOCK -->
-			<div class="menu_block">
+		<!-- HEADER -->
+			<header>
+				<!-- MENU BLOCK -->
+				<div class="menu_block">
 
-				<!-- CONTAINER -->
-				<div class="container clearfix">
+					<!-- CONTAINER -->
+					<div class="container clearfix">
 
-					<!-- LOGO -->
-					<div class="logo pull-left">
-						<div class="logo">
-							<div id="logo-max"><a href="index.html" ><img src="../static/images/Logo-.png" width="157" height="44" alt="image"></a></div>
-							<div id="logo-min"><a href="index.html" ><img src="../static/images/Logo-min.png" width="44" height="44" alt="image"></a></div>
+						<!-- LOGO -->
+						<div class="logo pull-left">
+							<div class="logo">
+								<div id="logo-max">
+									<a href="index.html"><img th:src="@{/images/Logo-.png}"
+										width="157" height="44" alt="image" /></a>
+								</div>
+								<div id="logo-min">
+									<a href="index.html"><img th:src="@{/images/Logo-min.png}"
+										width="44" height="44" alt="image" /></a>
+								</div>
+							</div>
 						</div>
-					</div>
 
-					<!--LANGUAGE -->
-						<div id="language-form"class="pull-right text-center btn-group">
-						<input type="image"src="../static/images/FR.svg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						    <ul class="dropdown-menu">
-							    <li><a href="#"><img src="../static/images/GB.svg" style="height:30px;width: 30px;margin-top: -5px;" alt="Anglais"> English</a></li>
-							    <li><a href="#"><img src="../static/images/FR.svg" style="height:30px;width: 30px;margin-top: -5px;" alt="Français"> Français</a></li>
-		        			</ul>
-		        		</div>
-		        	<!--//LANGUAGE -->
-
-					<!-- SEARCH FORM -->
-					<div id="search-form" class="pull-right ">
-						<form method="get" action="#">
-							<input type="text" name="Search" value="Recherche" onFocus="if (this.value == 'Search') this.value = '';" onBlur="if (this.value == '') this.value = 'Search';" />
-						</form>
-					</div>
-					<!-- SEARCH FORM -->
-
-					<!-- MENU -->
-					<div class="pull-right">
-						<nav class="navmenu center row">
-
-							<ul>
-								<li class="first active scroll_btn"><a href="#home" >Accueil</a></li>
-								<li class="scroll_btn"><a href="#home" >Mes publications</a></li>
-								<li class="scroll_btn"><a href="#home" >Publier</a></li>
-								<li class="scroll_btn"><a href="#home" >Actualités</a></li>
-								<li class="scroll_btn"><a href="#home" >Qui sommes nous ?</a></li>
-								<li class="scroll_btn last" data-toggle="modal" data-target="#myModal"><a href="#monProfil" ><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Mon profil</a></li>
+						<!--LANGUAGE -->
+						<div id="language-form" class="pull-right text-center btn-group">
+							<input type="image" th:src="@{/images/FR.svg}"
+								data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false" />
+							<ul class="dropdown-menu">
+								<li><a href="#"><img th:src="@{/images/GB.svg}"
+										style="height: 30px; width: 30px; margin-top: -5px;"
+										alt="Anglais" /> English</a></li>
+								<li><a href="#"><img th:src="@{/images/FR.svg}"
+										style="height: 30px; width: 30px; margin-top: -5px;"
+										alt="Français" /> Français</a></li>
 							</ul>
-						</nav>
-					</div><!-- //MENU -->
-				</div><!-- //MENU BLOCK -->
-			</div><!-- //CONTAINER -->
-		</header><!-- //HEADER -->
+						</div>
+						<!--//LANGUAGE -->
+
+						<!-- SEARCH FORM -->
+						<div id="search-form" class="pull-right ">
+							<form method="get" action="#">
+								<input type="text" name="Search" value="Recherche"
+									onFocus="if (this.value == 'Search') this.value = '';"
+									onBlur="if (this.value == '') this.value = 'Search';" />
+							</form>
+						</div>
+						<!-- SEARCH FORM -->
+						<!-- MENU -->
+						<!-- MENU -->
+						<div class="pull-right">
+							<nav class="navmenu center row">
+
+								<ul>
+									<li class="first active scroll_btn"><a href="/Index/Accueil">Accueil</a></li>
+									<li class="scroll_btn"><a href="/Index/Actualite">Actualités</a></li>
+									<li class="scroll_btn"><a href="/Index/Publication">Publications</a></li>
+									<li class="scroll_btn"><a href="/Forum">Forums</a></li>
+									<li class="scroll_btn"><a href="/Index/Quisommenous">Qui sommes nous
+											?</a></li>
+									<li class="scroll_btn last" data-toggle="modal"
+										data-target="#myModal"><a href="/Profil/Home"><span
+											class="glyphicon glyphicon-user" aria-hidden="true"></span>
+											Mon profil</a></li>
+								</ul>
+							</nav>
+						</div>
+						<!-- //MENU -->
+					</div>
+					<!-- //MENU BLOCK -->
+				</div>
+				<!-- //CONTAINER -->
+			</header>
 
 		<!-- HOME -->
 		<section id="home" class="padbot0">
@@ -197,8 +206,9 @@
 					<div class="col-sm-8 col-xs-12"><!-- Video, Notes, Info, Descritpion et Commentaires -->
 
 						<div class="col-xs-12"><!-- Video -->
+							<!--<object src="../static/videos/test.pdf" width="100%" height="100%"></object>-->
 							<video width="100%" height="100%" controls="controls">
-								<source src="../static/videos/LES_GROS_MOTS_2.mp4" type="video/mp4" />
+								<source th:src="@{/videos/LES_GROS_MOTS_2.mp4}" type="video/mp4" />
 							</video>
 						</div>
 
@@ -206,15 +216,15 @@
 							<h1>Titre de la video</h1>
 							<a href="profil.html">
 								<div class="col-xs-2 imagesPublications">
-									<img width="100%" height="100%" src="../static/images/user.jpg" alt=""/>
+									<img width="100%" height="100%" th:src="@{/images/user.jpg}" alt=""/>
 								</div>
 								<h3 class="col-sm-4 col-xs-6">Francis_eau_de_Gamma</h3>
-								<div class="col-xs-6 text-right">
-									<h4>207 Vues</h4>
-									<div class="grandeResolution"><i class="fa fa-star fa-2x"></i><i class="fa fa-star fa-2x"></i><i class="fa fa-star fa-2x"></i><i class="fa fa-star-half-o fa-2x"></i><i class="fa fa-star-o fa-2x"></i></div>
-									<div class="petiteResolution"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></div>
-								</div>
 							</a>
+							<div class="col-xs-6 text-right">
+								<h4>207 Vues</h4>
+								<div class="grandeResolution"><i class="fa fa-star fa-2x"></i><i class="fa fa-star fa-2x"></i><i class="fa fa-star fa-2x"></i><i class="fa fa-star-half-o fa-2x"></i><i class="fa fa-star-o fa-2x"></i></div>
+								<div class="petiteResolution"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></div>
+							</div>
 						</div>
 
 						<div class="col-xs-12"><!-- Descritpion -->
@@ -222,7 +232,7 @@
 								Mise en ligne le 8 février 2017
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pretium condimentum dolor, nec sagittis tortor suscipit a. Cras tristique odio ut urna accumsan, sit amet imperdiet ante congue. Fusce vitae tellus quis dui ullamcorper hendrerit nec at nisl. In commodo vel nisi ac ultrices. Cras quis mauris sed odio iaculis scelerisque eu rhoncus lectus. Cras consectetur orci in tempus posuere. Donec orci turpis, dapibus ac tincidunt in, molestie id tellus. Nam in egestas ex, vel ornare augue. Cras eu turpis quis justo efficitur placerat at sit amet risus. Proin vitae consectetur magna.
 							</p>
-							<h4 class="text-center" data-toggle="collapse" data-target="#demo">Description</h4></br>
+							<h4 class="text-center" data-toggle="collapse" data-target="#demo">Description</h4><br/>
 						  <div id="demo" class="collapse">
 								Sed condimentum quis nisi nec facilisis. Aenean eu ipsum tempor, condimentum sapien nec, tincidunt neque. Nam mollis sodales risus ac pretium. Integer eget ornare turpis. In hac habitasse platea dictumst. Etiam porttitor metus est, in mattis libero vehicula non. Aliquam cursus nulla a nibh accumsan, non euismod lectus suscipit. Suspendisse quis elit et massa mattis ornare egestas eget nisi. Duis eget diam eu mauris elementum laoreet vitae ac nulla. Integer ut justo augue. Suspendisse dignissim diam eu mauris fringilla, pretium aliquam urna ornare.
 								Nulla varius sem vel odio laoreet fermentum. Quisque vel pellentesque ligula. Sed molestie consequat nisl, et finibus arcu ullamcorper eget. Nullam consectetur arcu sem, id tempor nunc ullamcorper a. Etiam finibus porttitor arcu vitae laoreet. Fusce ullamcorper ante justo. Maecenas maximus finibus risus ac aliquam. Integer et ante tempus velit tincidunt pellentesque. Aliquam interdum lacinia est vitae sagittis. Suspendisse molestie quam nec dolor fringilla, quis vulputate tellus aliquam. Morbi feugiat dui id rhoncus vestibulum.
@@ -239,7 +249,7 @@
 							<div class="col-xs-12 contenueCommentaire">
 								<a href="profil.html">
 									<div class="col-xs-2 imagesPublications">
-										<img width="75%" height="75%" src="../static/images/user.jpg" alt=""/>
+										<img width="75%" height="75%" th:src="@{/images/user.jpg}" alt=""/>
 									</div>
 								</a>
 								<div class="col-xs-10 col-lg-10  destinataire">
@@ -255,7 +265,7 @@
 							<div class="col-xs-12 contenueCommentaire">
 								<a href="profil.html">
 									<div class="col-xs-2 imagesPublications">
-										<img width="75%" height="75%" src="../static/images/user.jpg" alt=""/>
+										<img width="75%" height="75%" th:src="@{/images/user.jpg}" alt=""/>
 									</div>
 								</a>
 								<div class="col-xs-10 col-lg-10  destinataire">
@@ -271,7 +281,7 @@
 							<div class="col-xs-12 contenueCommentaire">
 								<a href="profil.html">
 									<div class="col-xs-2 imagesPublications">
-										<img width="75%" height="75%" src="../static/images/user.jpg" alt=""/>
+										<img width="75%" height="75%" th:src="@{/images/user.jpg}" alt=""/>
 									</div>
 								</a>
 								<div class="col-xs-10 col-lg-10  destinataire">
@@ -292,7 +302,7 @@
 						<!-- autres -->
 						<div class="col-xs-12 margeVideo">
 							<div class="col-xs-6 autresVideosG">
-								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+								<img th:src="@{/images/Video-square-2.jpg}" style="width: 100%; height: 100%" alt="" />
 							</div>
 							<div class="col-xs-6 autresVideosD">
 								<a href="video.html"><h5>Titre de la video</h5></a>
@@ -303,7 +313,7 @@
 						<!-- autres -->
 						<div class="col-xs-12 margeVideo">
 							<div class="col-xs-6 autresVideosG">
-								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+								<img th:src="@{/images/Video-square-2.jpg}" style="width: 100%; height: 100%" alt="" />
 							</div>
 							<div class="col-xs-6 autresVideosD">
 								<a href="video.html"><h5>Titre de la video</h5></a>
@@ -311,10 +321,10 @@
 								<p>207 Vues</p>
 							</div>
 						</div>
-						<!-- autres -->
+						
 						<div class="col-xs-12 margeVideo">
 							<div class="col-xs-6 autresVideosG">
-								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+								<img th:src="@{/images/Video-square-2.jpg}" style="width: 100%; height: 100%" alt="" />
 							</div>
 							<div class="col-xs-6 autresVideosD">
 								<a href="video.html"><h5>Titre de la video</h5></a>
@@ -322,10 +332,10 @@
 								<p>207 Vues</p>
 							</div>
 						</div>
-						<!-- autres -->
+						
 						<div class="col-xs-12 margeVideo">
 							<div class="col-xs-6 autresVideosG">
-								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+								<img th:src="@{/images/Video-square-2.jpg}" style="width: 100%; height: 100%" alt="" />
 							</div>
 							<div class="col-xs-6 autresVideosD">
 								<a href="video.html"><h5>Titre de la video</h5></a>
@@ -333,10 +343,10 @@
 								<p>207 Vues</p>
 							</div>
 						</div>
-						<!-- autres -->
+						
 						<div class="col-xs-12 margeVideo">
 							<div class="col-xs-6 autresVideosG">
-								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+								<img th:src="@{/images/Video-square-2.jpg}" style="width: 100%; height: 100%" alt="" />
 							</div>
 							<div class="col-xs-6 autresVideosD">
 								<a href="video.html"><h5>Titre de la video</h5></a>
@@ -344,10 +354,10 @@
 								<p>207 Vues</p>
 							</div>
 						</div>
-						<!-- autres -->
+						
 						<div class="col-xs-12 margeVideo">
 							<div class="col-xs-6 autresVideosG">
-								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+								<img th:src="@{/images/Video-square-2.jpg}" style="width: 100%; height: 100%" alt="" />
 							</div>
 							<div class="col-xs-6 autresVideosD">
 								<a href="video.html"><h5>Titre de la video</h5></a>
@@ -355,10 +365,10 @@
 								<p>207 Vues</p>
 							</div>
 						</div>
-						<!-- autres -->
+						
 						<div class="col-xs-12 margeVideo">
 							<div class="col-xs-6 autresVideosG">
-								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+								<img th:src="@{/images/Video-square-2.jpg}" style="width: 100%; height: 100%" alt="" />
 							</div>
 							<div class="col-xs-6 autresVideosD">
 								<a href="video.html"><h5>Titre de la video</h5></a>
@@ -366,10 +376,10 @@
 								<p>207 Vues</p>
 							</div>
 						</div>
-						<!-- autres -->
+						
 						<div class="col-xs-12 margeVideo">
 							<div class="col-xs-6 autresVideosG">
-								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+								<img th:src="@{/images/Video-square-2.jpg}" style="width: 100%; height: 100%" alt="" />
 							</div>
 							<div class="col-xs-6 autresVideosD">
 								<a href="video.html"><h5>Titre de la video</h5></a>
@@ -377,10 +387,10 @@
 								<p>207 Vues</p>
 							</div>
 						</div>
-						<!-- autres -->
+						
 						<div class="col-xs-12 margeVideo">
 							<div class="col-xs-6 autresVideosG">
-								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+								<img th:src="@{/images/Video-square-2.jpg}" style="width: 100%; height: 100%" alt="" />
 							</div>
 							<div class="col-xs-6 autresVideosD">
 								<a href="video.html"><h5>Titre de la video</h5></a>
@@ -388,10 +398,10 @@
 								<p>207 Vues</p>
 							</div>
 						</div>
-						<!-- autres -->
+						
 						<div class="col-xs-12 margeVideo">
 							<div class="col-xs-6 autresVideosG">
-								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+								<img th:src="@{/images/Video-square-2.jpg}" style="width: 100%; height: 100%" alt="" />
 							</div>
 							<div class="col-xs-6 autresVideosD">
 								<a href="video.html"><h5>Titre de la video</h5></a>
@@ -399,10 +409,10 @@
 								<p>207 Vues</p>
 							</div>
 						</div>
-						<!-- autres -->
+						
 						<div class="col-xs-12 margeVideo">
 							<div class="col-xs-6 autresVideosG">
-								<img src="../static/images/Video-square-2.jpg" style="width: 100%; height: 100%" alt="" />
+								<img th:src="@{/images/Video-square-2.jpg}" style="width: 100%; height: 100%" alt="" />
 							</div>
 							<div class="col-xs-6 autresVideosD">
 								<a href="video.html"><h5>Titre de la video</h5></a>
@@ -410,11 +420,12 @@
 								<p>207 Vues</p>
 							</div>
 						</div>
-						<!-- autres -->
+						
 
 					</div>
 				</div>
 			</div>
+
 
 		</section><!-- //HOME -->
 		<!-- CONTACTS -->
