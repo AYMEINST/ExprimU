@@ -83,7 +83,7 @@ public class PublicationController {
 	
 	@Secured(value = { "ROLE_ADMIN", "ROLE_USER" })
 	@RequestMapping(value = "/Save", method = RequestMethod.POST)
-	public void savePublication(@RequestParam String statue, @RequestParam String tritrePublication, @RequestParam("files") MultipartFile[] files) {
+	public void savePublication(@RequestParam String statue, @RequestParam String tritrePublication,@RequestParam String name,  @RequestParam("files") MultipartFile[] files) {
 		
 		System.out.println("Statue :" + statue);
 		System.out.println("TritrePublication :" + tritrePublication);
@@ -95,7 +95,7 @@ public class PublicationController {
 		Publication P = PublicationMetier.save(publication);
 		
 		for (MultipartFile file : files) {
-			if (!file.isEmpty()) {
+			//if (!file.isEmpty()) {
 				// file.getBytes();
 				System.out.println(file.getName());
 				System.out.println(file.getSize());
@@ -103,7 +103,7 @@ public class PublicationController {
 				
 				try {
 					Document document = new Document();
-					Fichier fichier = new Fichier(file.getName(), file.getContentType(), file.getSize(), file.getBytes());
+					Fichier fichier = new Fichier(name, file.getContentType(), file.getSize(), file.getBytes());
 					Long idFichier= fichierMetier.save(fichier).getIdFichier();
 					document.setDateCreation(new Date());
 					document.setIdFichier(idFichier);
@@ -114,26 +114,14 @@ public class PublicationController {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}
+			//}
 		}
 		
-
-	}	
+		
+		
+	}		
 	
-	@RequestMapping(value = "/download/{id}" ,method= RequestMethod.GET)
-	public void showFile( @RequestParam(name = "id", defaultValue = "0")long id, HttpServletResponse response) throws IOException{
-		List<Fichier> AllFilles =fichierMetier.findAll();
-		for (Fichier F : AllFilles) {
-	        response.setContentType(F.getMime());
-			response.addHeader("Content-Disposition", "attachment; filename=" + F.getName());
-			response.setContentLength((int) F.getData().length);
-			OutputStream responseOutputStream = response.getOutputStream();
-			for(int bytes : F.getData())
-				responseOutputStream.write(bytes);
-		}
-		
-		
-	}
+	
 
 
 }

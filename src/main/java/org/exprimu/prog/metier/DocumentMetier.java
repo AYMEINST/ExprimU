@@ -46,6 +46,20 @@ public class DocumentMetier implements DocumentMetierImp {
 		documentRepository.delete(documentRepository.findOne(id));
 	}
 
+	@Override
+	public List<Document> getAllDocumentPDFByIdPublication(Long idPublication) {
+		return documentRepository.getAllDocumentPDFByIdPublication(idPublication);
+	}
+	@Override
+	public List<Document> getAllDocumentPDFByIdUtilisateur(Long idUtilisateur) {
+		// TODO Auto-generated method stub
+		return documentRepository.getAllDocumentPDFByIdUtilisateur(idUtilisateur);
+	}
+	@Override
+	public List<Document> getAllDocumentIMGByIdUtilisateur(Long idUtilisateur) {
+		// TODO Auto-generated method stub
+		return documentRepository.getAllDocumentIMGByIdUtilisateur(idUtilisateur);
+	}
 	
 
 }
